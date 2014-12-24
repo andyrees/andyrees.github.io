@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://andyrees.github.io/</loc>
+    <lastmod>2014-12-24T11:56:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://andyrees.github.io/post/rock_spock/</loc>
+    <lastmod>2014-12-24T11:56:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andyrees.github.io/post/loudfixer/</loc>
+    <lastmod>2014-11-23T23:23:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andyrees.github.io/post/ffprobe_struct/</loc>
+    <lastmod>2014-10-24T10:01:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andyrees.github.io/about/</loc>
+    <lastmod>2014-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>

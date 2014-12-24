@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Daily Programmer Challenge on My Blog </title>
+    <link>http://andyrees.github.io/tags/daily-programmer-challenge/</link>
+    <language>en-GB</language>
+    <author>Andy Rees</author>
+    <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
+    <updated>Wed, 24 Dec 2014 11:56:34 UTC</updated>
+    
+    <item>
+      <title>Rock, paper, scissors, lizard, spock</title>
+      <link>http://andyrees.github.io/post/rock_spock/</link>
+      <pubDate>Wed, 24 Dec 2014 11:56:34 UTC</pubDate>
+      <author>Andy Rees</author>
+      <guid>http://andyrees.github.io/post/rock_spock/</guid>
+      <description>
+
+&lt;p&gt;This was a fun twenty minutes, during a quiet moment in the office on Chrsitmas Eve.&lt;/p&gt;
+
+&lt;div class=&#34;jumbotron&#34;&gt;
+  &lt;h1&gt;Daily Programmer Challenge&lt;/h1&gt;
+  &lt;p&gt;The challenge is to implement a basic game of Rock Paper Scissors Lizard Spock (to be called RPSLP for short). Your game will get the human choice. The computer AI will randomly pick a move. It will compare the results and display the moves and the out come (who wins or if a tie).&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;input:59b853c0f757b83da7c357000896bee8&#34;&gt;Input&lt;/h2&gt;
+
+&lt;p&gt;Get from the user their move being Rock, Paper Scissors, Lizard, Spock. Design and how you do it is up to you all.&lt;/p&gt;
+
+&lt;h2 id=&#34;output:59b853c0f757b83da7c357000896bee8&#34;&gt;Output&lt;/h2&gt;
+
+&lt;p&gt;Once the human move is obtained have the computer randomly pick their move. Display the moves back to the user and then give the results.
+Again the exact design is up to you as long as the output shows the moves again and the result of the game (who wins or if a tie).&lt;/p&gt;
+
+&lt;p&gt;Example Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Player Picks: Rock. 
+Computer Picks: Spock.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Spock Vaporizes Rock. Computer Wins!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;bufio&amp;quot;
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;log&amp;quot;
+	&amp;quot;math/rand&amp;quot;
+	&amp;quot;os&amp;quot;
+	&amp;quot;strings&amp;quot;
+	&amp;quot;time&amp;quot;
+)
+
+func generate_computer_choice() (choice string, err error) {
+	choices := []string{&amp;quot;rock&amp;quot;, &amp;quot;paper&amp;quot;, &amp;quot;scissors&amp;quot;, &amp;quot;lizard&amp;quot;, &amp;quot;spock&amp;quot;}
+	rand.Seed(time.Now().Unix())
+	myindex := rand.Intn(4)
+	return choices[myindex], nil
+}
+
+// returns int 1=user, 2=computer, 3=draw, and win string
+func winner(userchoice, computerchoice string) (int, string) {
+	winner := &amp;quot;Draw&amp;quot;
+	switch {
+	case userchoice == computerchoice:
+		return 3, &amp;quot;draw&amp;quot;
+	case userchoice == &amp;quot;scissors&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;paper&amp;quot;:
+		return 1, &amp;quot;User Wins: Scissors cut Paper&amp;quot;
+	case computerchoice == &amp;quot;scissors&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;paper&amp;quot;:
+		return 2, &amp;quot;Computer Wins: Scissors cut Paper&amp;quot;
+	case userchoice == &amp;quot;paper&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;rock&amp;quot;:
+		return 1, &amp;quot;User Wins: Paper covers Rock&amp;quot;
+	case computerchoice == &amp;quot;paper&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;rock&amp;quot;:
+		return 2, &amp;quot;Computer Wins: Paper covers Rock&amp;quot;
+	case userchoice == &amp;quot;rock&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;lizard&amp;quot;:
+		return 1, &amp;quot;User Wins: Rock crushes Lizard&amp;quot;
+	case computerchoice == &amp;quot;rock&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;lizard&amp;quot;:
+		return 2, &amp;quot;Computer Wins: Rock crushes Lizard&amp;quot;
+	case userchoice == &amp;quot;lizard&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;spock&amp;quot;:
+		return 1, &amp;quot;User Wins: Lizard poisons Spock&amp;quot;
+	case computerchoice == &amp;quot;lizard&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;spock&amp;quot;:
+		return 2, &amp;quot;Computer Wins: Lizard poisons Spock&amp;quot;
+	case userchoice == &amp;quot;spock&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;scissors&amp;quot;:
+		return 1, &amp;quot;User Wins: Spock smashes Scissors&amp;quot;
+	case computerchoice == &amp;quot;spock&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;scissors&amp;quot;:
+		return 2, &amp;quot;Computer Wins: Spock smashes Scissors&amp;quot;
+	case userchoice == &amp;quot;scissors&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;lizard&amp;quot;:
+		return 1, &amp;quot;User Wins: Scissors decapitate Lizard&amp;quot;
+	case computerchoice == &amp;quot;scissors&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;lizard&amp;quot;:
+		return 2, &amp;quot;Computer Wins: Scissors decapitate Lizard&amp;quot;
+	case userchoice == &amp;quot;lizard&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;paper&amp;quot;:
+		return 1, &amp;quot;User Wins: Lizard eats Paper&amp;quot;
+	case computerchoice == &amp;quot;lizard&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;paper&amp;quot;:
+		return 2, &amp;quot;Computer Wins: Lizard eats Paper&amp;quot;
+	case userchoice == &amp;quot;paper&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;spock&amp;quot;:
+		return 1, &amp;quot;User Wins: Paper disproves Spock&amp;quot;
+	case computerchoice == &amp;quot;paper&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;spock&amp;quot;:
+		return 2, &amp;quot;Computer Wins: Paper disproves Spock&amp;quot;
+	case userchoice == &amp;quot;spock&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;rock&amp;quot;:
+		return 1, &amp;quot;User Wins: Spock vaporizes Rock&amp;quot;
+	case computerchoice == &amp;quot;spock&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;rock&amp;quot;:
+		return 2, &amp;quot;Computer Wins: Spock vaporizes Rock&amp;quot;
+	case userchoice == &amp;quot;rock&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;scissors&amp;quot;:
+		return 1, &amp;quot;User Wins: Rock crushes Scissors&amp;quot;
+	case computerchoice == &amp;quot;rock&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;scissors&amp;quot;:
+		return 2, &amp;quot;Computer Wins: Rock crushes Scissors&amp;quot;
+	default:
+		return 3, winner
+	}
+	return 3, winner
+}
+
+func who_won_then(userChoice string) int {
+	fmt.Println(&amp;quot;You chose     : &amp;quot;, userChoice)
+	ch, err := generate_computer_choice()
+	if err != nil {
+		log.Fatalln(err)
+	}
+	fmt.Println(&amp;quot;Computer chose: &amp;quot;, ch)
+	who_won, win_string := winner(strings.ToLower(userChoice), ch)
+	fmt.Printf(&amp;quot;-----\n%s\n&amp;quot;, win_string)
+	return who_won
+}
+
+func stringInSlice(a string) bool {
+	choices := []string{&amp;quot;rock&amp;quot;, &amp;quot;paper&amp;quot;, &amp;quot;scissors&amp;quot;, &amp;quot;lizard&amp;quot;, &amp;quot;spock&amp;quot;}
+	for _, b := range choices {
+		if b == a {
+			return true
+		}
+	}
+	return false
+}
+
+func main() {
+	user_score := 0
+	computer_score := 0
+	draw_score := 0
+	fmt.Println(&amp;quot;Choose: Rock | Paper | Scissors | Lizard | Spock | Quit&amp;quot;)
+
+	scanner := bufio.NewScanner(os.Stdin)
+	for scanner.Scan() {
+		user_choice := strings.ToLower(scanner.Text())
+		if user_choice == &amp;quot;quit&amp;quot; {
+			fmt.Println(&amp;quot;Good Game&amp;quot;)
+			fmt.Printf(&amp;quot;User: %d, Computer: %d, Draw: %d\n&amp;quot;, user_score, computer_score, draw_score)
+			return
+		} else if stringInSlice(user_choice) {
+			score := who_won_then(user_choice)
+			switch score {
+			case 1:
+				user_score = user_score + 1
+			case 2:
+				computer_score = computer_score + 1
+			case 3:
+				draw_score = draw_score + 1
+			}
+		} else {
+			fmt.Println(&amp;quot;Choose: Rock | Paper | Scissors | Lizard | Spock | Quit&amp;quot;)
+		}
+		fmt.Printf(&amp;quot;User: %d, Computer: %d, Draw: %d\n&amp;quot;, user_score, computer_score, draw_score)
+		fmt.Println(&amp;quot;&amp;quot;)
+	}
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

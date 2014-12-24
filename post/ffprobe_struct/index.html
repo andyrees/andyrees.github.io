@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Andy Rees"> 
+
+    <title>Creating Go structs from ffprobe data - http://andyrees.github.io</title>
+    <link rel="canonical" href="http://andyrees.github.io/post/ffprobe_struct/">
+    
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://andyrees.github.io">My Blog</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/post/">Post Index</a></li>
+                    <li><a href="/about/">About Me</a></li>
+                    <li><a href="/post/index.xml" class="btn btn-info btn-xs"><i class="fa fa-rss fa-2x"></i></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="well well-sm">
+                    <h3>Creating Go structs from ffprobe data<br> <small></small></h3>
+                    <hr>
+                    <p>One thing that <a href="http://www.golang.org">Go</a> is very good at, is handling JSON and XML data effortlessly and unmarshalling data is simple from either. The only thing that matters is that the decoding &lsquo;struct&rsquo; represents the source schema. That is the real trick though, as data schemas can be quite complex and in reality it can be tedious.</p>
+
+<p>JSON&rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler. Here is a simple JSON unmarshal example in go:</p>
+
+<pre><code>package main
+
+import (
+	&quot;encoding/json&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	var jsonData = []byte(`[
+		{&quot;Name&quot;: &quot;Wilma&quot;, &quot;Role&quot;: &quot;Boss&quot;},
+		{&quot;Name&quot;: &quot;Fred&quot;,  &quot;Role&quot;: &quot;Thinks he's the boss&quot;}
+	]`)
+	
+	type Flintstone struct {
+		Name string
+		Role string
+	}
+	var flintstones []Flintstone
+	err := json.Unmarshal(jsonData, &amp;flintstones)
+	if err != nil {
+		fmt.Println(&quot;error:&quot;, err)
+	}
+	fmt.Printf(&quot;%+v&quot;, flintstones)
+}
+</code></pre>
+
+<p>When it comes to video, data structs can be complex and this can make the task tedious. For example look at the result of this command on a sample file:</p>
+
+<pre><code>ffprobe -show_format -show_streams -print_format json /path/to/bbb_sunflower_2160p_60fps_normal.mp4
+</code></pre>
+
+<p>This is a simple ffprobe call on a sample mp4, we require both the video and audio streams and the format wrapper information. The output is formatted as json.</p>
+
+<pre><code>{
+  &quot;format&quot;: {
+    &quot;bit_rate&quot;: &quot;8487798&quot;,
+    &quot;duration&quot;: &quot;634.533333&quot;,
+    &quot;filename&quot;: &quot;/path/to/bbb_sunflower_2160p_60fps_normal.mp4&quot;,
+    &quot;format_long_name&quot;: &quot;QuickTime / MOV&quot;,
+    &quot;format_name&quot;: &quot;mov,mp4,m4a,3gp,3g2,mj2&quot;,
+    &quot;nb_programs&quot;: 0,
+    &quot;nb_streams&quot;: 3,
+    &quot;probe_score&quot;: 100,
+    &quot;size&quot;: &quot;673223862&quot;,
+    &quot;start_time&quot;: &quot;0.000000&quot;,
+    &quot;tags&quot;: {
+      &quot;artist&quot;: &quot;Blender Foundation 2008, Janus Bager Kristensen 2013&quot;,
+      &quot;comment&quot;: &quot;Creative Commons Attribution 3.0 - http://bbb3d.renderfarming.net&quot;,
+      &quot;compatible_brands&quot;: &quot;isomavc1&quot;,
+      &quot;composer&quot;: &quot;Sacha Goedegebure&quot;,
+      &quot;creation_time&quot;: &quot;2013-12-17 16:40:26&quot;,
+      &quot;genre&quot;: &quot;Animation&quot;,
+      &quot;major_brand&quot;: &quot;isom&quot;,
+      &quot;minor_version&quot;: &quot;1&quot;,
+      &quot;title&quot;: &quot;Big Buck Bunny, Sunflower version&quot;
+    }
+  },
+  &quot;streams&quot;: [
+    {
+      &quot;avg_frame_rate&quot;: &quot;60/1&quot;,
+      &quot;bit_rate&quot;: &quot;8002648&quot;,
+      &quot;bits_per_raw_sample&quot;: &quot;8&quot;,
+      &quot;codec_long_name&quot;: &quot;H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10&quot;,
+      &quot;codec_name&quot;: &quot;h264&quot;,
+      &quot;codec_tag&quot;: &quot;0x31637661&quot;,
+      &quot;codec_tag_string&quot;: &quot;avc1&quot;,
+      &quot;codec_time_base&quot;: &quot;1/120&quot;,
+      &quot;codec_type&quot;: &quot;video&quot;,
+      &quot;display_aspect_ratio&quot;: &quot;16:9&quot;,
+      &quot;disposition&quot;: {
+        &quot;attached_pic&quot;: 0,
+        &quot;clean_effects&quot;: 0,
+        &quot;comment&quot;: 0,
+        &quot;default&quot;: 1,
+        &quot;dub&quot;: 0,
+        &quot;forced&quot;: 0,
+        &quot;hearing_impaired&quot;: 0,
+        &quot;karaoke&quot;: 0,
+        &quot;lyrics&quot;: 0,
+        &quot;original&quot;: 0,
+        &quot;visual_impaired&quot;: 0
+      },
+      &quot;duration&quot;: &quot;634.533333&quot;,
+      &quot;duration_ts&quot;: 38072000,
+      &quot;has_b_frames&quot;: 2,
+      &quot;height&quot;: 2160,
+      &quot;index&quot;: 0,
+      &quot;level&quot;: 51,
+      &quot;nb_frames&quot;: &quot;38072&quot;,
+      &quot;pix_fmt&quot;: &quot;yuv420p&quot;,
+      &quot;profile&quot;: &quot;High&quot;,
+      &quot;r_frame_rate&quot;: &quot;60/1&quot;,
+      &quot;sample_aspect_ratio&quot;: &quot;1:1&quot;,
+      &quot;start_pts&quot;: 2000,
+      &quot;start_time&quot;: &quot;0.033333&quot;,
+      &quot;tags&quot;: {
+        &quot;creation_time&quot;: &quot;2013-12-17 16:40:26&quot;,
+        &quot;handler_name&quot;: &quot;GPAC ISO Video Handler&quot;,
+        &quot;language&quot;: &quot;und&quot;
+      },
+      &quot;time_base&quot;: &quot;1/60000&quot;,
+      &quot;width&quot;: 3840
+    },
+    {
+      &quot;avg_frame_rate&quot;: &quot;0/0&quot;,
+      &quot;bit_rate&quot;: &quot;160000&quot;,
+      &quot;bits_per_sample&quot;: 0,
+      &quot;channel_layout&quot;: &quot;stereo&quot;,
+      &quot;channels&quot;: 2,
+      &quot;codec_long_name&quot;: &quot;MP3 (MPEG audio layer 3)&quot;,
+      &quot;codec_name&quot;: &quot;mp3&quot;,
+      &quot;codec_tag&quot;: &quot;0x6134706d&quot;,
+      &quot;codec_tag_string&quot;: &quot;mp4a&quot;,
+      &quot;codec_time_base&quot;: &quot;1/48000&quot;,
+      &quot;codec_type&quot;: &quot;audio&quot;,
+      &quot;disposition&quot;: {
+        &quot;attached_pic&quot;: 0,
+        &quot;clean_effects&quot;: 0,
+        &quot;comment&quot;: 0,
+        &quot;default&quot;: 1,
+        &quot;dub&quot;: 0,
+        &quot;forced&quot;: 0,
+        &quot;hearing_impaired&quot;: 0,
+        &quot;karaoke&quot;: 0,
+        &quot;lyrics&quot;: 0,
+        &quot;original&quot;: 0,
+        &quot;visual_impaired&quot;: 0
+      },
+      &quot;duration&quot;: &quot;634.200000&quot;,
+      &quot;duration_ts&quot;: 30441600,
+      &quot;index&quot;: 1,
+      &quot;nb_frames&quot;: &quot;26425&quot;,
+      &quot;r_frame_rate&quot;: &quot;0/0&quot;,
+      &quot;sample_fmt&quot;: &quot;s16p&quot;,
+      &quot;sample_rate&quot;: &quot;48000&quot;,
+      &quot;start_pts&quot;: 0,
+      &quot;start_time&quot;: &quot;0.000000&quot;,
+      &quot;tags&quot;: {
+        &quot;creation_time&quot;: &quot;2013-12-17 16:40:28&quot;,
+        &quot;handler_name&quot;: &quot;GPAC ISO Audio Handler&quot;,
+        &quot;language&quot;: &quot;und&quot;
+      },
+      &quot;time_base&quot;: &quot;1/48000&quot;
+    },
+    {
+      &quot;avg_frame_rate&quot;: &quot;0/0&quot;,
+      &quot;bit_rate&quot;: &quot;320000&quot;,
+      &quot;bits_per_sample&quot;: 0,
+      &quot;channel_layout&quot;: &quot;5.1(side)&quot;,
+      &quot;channels&quot;: 6,
+      &quot;codec_long_name&quot;: &quot;ATSC A/52A (AC-3)&quot;,
+      &quot;codec_name&quot;: &quot;ac3&quot;,
+      &quot;codec_tag&quot;: &quot;0x332d6361&quot;,
+      &quot;codec_tag_string&quot;: &quot;ac-3&quot;,
+      &quot;codec_time_base&quot;: &quot;1/48000&quot;,
+      &quot;codec_type&quot;: &quot;audio&quot;,
+      &quot;disposition&quot;: {
+        &quot;attached_pic&quot;: 0,
+        &quot;clean_effects&quot;: 0,
+        &quot;comment&quot;: 0,
+        &quot;default&quot;: 1,
+        &quot;dub&quot;: 0,
+        &quot;forced&quot;: 0,
+        &quot;hearing_impaired&quot;: 0,
+        &quot;karaoke&quot;: 0,
+        &quot;lyrics&quot;: 0,
+        &quot;original&quot;: 0,
+        &quot;visual_impaired&quot;: 0
+      },
+      &quot;dmix_mode&quot;: &quot;-1&quot;,
+      &quot;duration&quot;: &quot;634.144000&quot;,
+      &quot;duration_ts&quot;: 30438912,
+      &quot;index&quot;: 2,
+      &quot;loro_cmixlev&quot;: &quot;-1.000000&quot;,
+      &quot;loro_surmixlev&quot;: &quot;-1.000000&quot;,
+      &quot;ltrt_cmixlev&quot;: &quot;-1.000000&quot;,
+      &quot;ltrt_surmixlev&quot;: &quot;-1.000000&quot;,
+      &quot;nb_frames&quot;: &quot;19817&quot;,
+      &quot;r_frame_rate&quot;: &quot;0/0&quot;,
+      &quot;sample_fmt&quot;: &quot;fltp&quot;,
+      &quot;sample_rate&quot;: &quot;48000&quot;,
+      &quot;start_pts&quot;: 0,
+      &quot;start_time&quot;: &quot;0.000000&quot;,
+      &quot;tags&quot;: {
+        &quot;creation_time&quot;: &quot;2013-12-17 16:40:28&quot;,
+        &quot;handler_name&quot;: &quot;GPAC ISO Audio Handler&quot;,
+        &quot;language&quot;: &quot;und&quot;
+      },
+      &quot;time_base&quot;: &quot;1/48000&quot;
+    }
+  ]
+}
+</code></pre>
+
+<p>On the suface this looks like a mammoth task, but do not despair, the Go standard library has great tools like the &ldquo;reflect&rdquo; package, that allow for lexical scanning; the resulting data structure can be easily retrieved.</p>
+
+<div class="jumbotron">
+  <h1><a href="https://github.com/tmc/json-to-struct">Json-to-struct</a></h1>
+  <p>Is a really useful tool A simple command-line tool for generating to struct definitions from JSON.
+</p>
+</div>
+
+<p>In the case of JSON though, this has already been done by the Go community. A really useful tool for this is <a href="https://github.com/tmc/json-to-struct">json-to-struct</a>. It&rsquo;s simple to use and the output from the above command can be piped directly into it. For example:</p>
+
+<pre><code>ffprobe -show_format -show_streams -print_format json /path/to/bbb_sunflower_2160p_60fps_normal.mp4 | json-to-struct -name=Media
+</code></pre>
+
+<p>This results in a nice output which can be the start of a package for decoding media data from ffprobe.</p>
+
+<pre><code>package main
+
+type Media struct {
+	Format struct {
+		BitRate        string  `json:&quot;bit_rate&quot;`
+		Duration       string  `json:&quot;duration&quot;`
+		Filename       string  `json:&quot;filename&quot;`
+		FormatLongName string  `json:&quot;format_long_name&quot;`
+		FormatName     string  `json:&quot;format_name&quot;`
+		NbPrograms     float64 `json:&quot;nb_programs&quot;`
+		NbStreams      float64 `json:&quot;nb_streams&quot;`
+		ProbeScore     float64 `json:&quot;probe_score&quot;`
+		Size           string  `json:&quot;size&quot;`
+		StartTime      string  `json:&quot;start_time&quot;`
+		Tags           struct {
+			Artist           string `json:&quot;artist&quot;`
+			Comment          string `json:&quot;comment&quot;`
+			CompatibleBrands string `json:&quot;compatible_brands&quot;`
+			Composer         string `json:&quot;composer&quot;`
+			CreationTime     string `json:&quot;creation_time&quot;`
+			Genre            string `json:&quot;genre&quot;`
+			MajorBrand       string `json:&quot;major_brand&quot;`
+			MinorVersion     string `json:&quot;minor_version&quot;`
+			Title            string `json:&quot;title&quot;`
+		} `json:&quot;tags&quot;`
+	} `json:&quot;format&quot;`
+	Streams []struct {
+		AvgFrameRate       string `json:&quot;avg_frame_rate&quot;`
+		BitRate            string `json:&quot;bit_rate&quot;`
+		BitsPerRawSample   string `json:&quot;bits_per_raw_sample&quot;`
+		CodecLongName      string `json:&quot;codec_long_name&quot;`
+		CodecName          string `json:&quot;codec_name&quot;`
+		CodecTag           string `json:&quot;codec_tag&quot;`
+		CodecTagString     string `json:&quot;codec_tag_string&quot;`
+		CodecTimeBase      string `json:&quot;codec_time_base&quot;`
+		CodecType          string `json:&quot;codec_type&quot;`
+		DisplayAspectRatio string `json:&quot;display_aspect_ratio&quot;`
+		Disposition        struct {
+			AttachedPic     float64 `json:&quot;attached_pic&quot;`
+			CleanEffects    float64 `json:&quot;clean_effects&quot;`
+			Comment         float64 `json:&quot;comment&quot;`
+			Default         float64 `json:&quot;default&quot;`
+			Dub             float64 `json:&quot;dub&quot;`
+			Forced          float64 `json:&quot;forced&quot;`
+			HearingImpaired float64 `json:&quot;hearing_impaired&quot;`
+			Karaoke         float64 `json:&quot;karaoke&quot;`
+			Lyrics          float64 `json:&quot;lyrics&quot;`
+			Original        float64 `json:&quot;original&quot;`
+			VisualImpaired  float64 `json:&quot;visual_impaired&quot;`
+		} `json:&quot;disposition&quot;`
+		Duration          string  `json:&quot;duration&quot;`
+		DurationTs        float64 `json:&quot;duration_ts&quot;`
+		HasBFrames        float64 `json:&quot;has_b_frames&quot;`
+		Height            float64 `json:&quot;height&quot;`
+		Index             float64 `json:&quot;index&quot;`
+		Level             float64 `json:&quot;level&quot;`
+		NbFrames          string  `json:&quot;nb_frames&quot;`
+		PixFmt            string  `json:&quot;pix_fmt&quot;`
+		Profile           string  `json:&quot;profile&quot;`
+		RFrameRate        string  `json:&quot;r_frame_rate&quot;`
+		SampleAspectRatio string  `json:&quot;sample_aspect_ratio&quot;`
+		StartPts          float64 `json:&quot;start_pts&quot;`
+		StartTime         string  `json:&quot;start_time&quot;`
+		Tags              struct {
+			CreationTime string `json:&quot;creation_time&quot;`
+			HandlerName  string `json:&quot;handler_name&quot;`
+			Language     string `json:&quot;language&quot;`
+		} `json:&quot;tags&quot;`
+		TimeBase string  `json:&quot;time_base&quot;`
+		Width    float64 `json:&quot;width&quot;`
+	} `json:&quot;streams&quot;`
+}
+</code></pre>
+
+<p>Now you might not require all the data in the structs, so remove any elements that aren&rsquo;t required. As long as no child elements are needed this will be fine.</p>
+
+            </div>
+        </div>
+
+        
+        <div class="col-md-3">
+            <div class="well well-sm"> 
+                <h4>October 24, 2014<br>
+                <small>913 words</small></h4>
+                <hr>
+                <strong>Categories</strong>
+                <ul class="list-unstyled">
+                
+                    <li><a href="/categories/development">development</a></li>
+                
+                    <li><a href="/categories/transcoding">transcoding</a></li>
+                
+                </ul>
+                <hr>
+                <strong>Tags</strong><br>
+                <a class="label label-default" href="/tags/golang">golang</a> <a class="label label-default" href="/tags/ffmpeg">ffmpeg</a> <a class="label label-default" href="/tags/json-to-struct">json-to-struct</a> 
+            </div>
+                <div class="panel panel-default">
+        <div class="panel-heading" style="padding: 2px 15px;">
+            <h4>Connect with me</h4>
+        </div>
+        <div class="panel-body">
+            <a href="https://github.com/andyrees/" class="btn btn-primary btn-xs"><i class="fa fa-github-square fa-2x"></i></a>
+            <a href="https://twitter.com/andygolang" class="btn btn-info btn-xs"><i class="fa fa-twitter-square fa-2x"></i></a>
+             <a href="http://www.reddit.com/user/1spudrocket/" class="btn btn-info btn-xs"><i class="fa fa-reddit-square fa-2x"></i></a>
+
+        </div>
+    </div>
+
+        </div>
+    </div>
+        <footer>
+            <div class="row">
+                <hr>
+                <div class="col-sm-12">
+                    <p>&copy; Andy Rees 2014<br>
+                    Built with <a href="https://github.com/spf13/hugo">Hugo</a></p>
+                </div>
+            </div>
+        </footer>
+</div>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+</body>
+</html>

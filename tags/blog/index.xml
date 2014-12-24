@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Blog on My Blog </title>
+    <link>http://andyrees.github.io/tags/blog/</link>
+    <language>en-GB</language>
+    <author>Andy Rees</author>
+    <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
+    <updated>Mon, 01 Sep 2014 00:00:00 UTC</updated>
+    
+    <item>
+      <title>About</title>
+      <link>http://andyrees.github.io/about/</link>
+      <pubDate>Mon, 01 Sep 2014 00:00:00 UTC</pubDate>
+      <author>Andy Rees</author>
+      <guid>http://andyrees.github.io/about/</guid>
+      <description>&lt;p&gt;Programming to me is the ability to elevate the mundane into the elegant. Take a repetitive task and spend time coding a solution and you not save any time. But try that twice, you might get a slight advantage, three times and there is no contest.&lt;/p&gt;
+
+&lt;p&gt;Like many others, I started with BASIC in the 70s on a BBC Micro, Assembly code at University, then C and C++ later, Bash, Java &amp;amp; C#. Python allowed me to enjoy programming again; once you get over the white space. But my recent obsession is &lt;a href=&#34;http://www.golang.org/&#34;&gt;Golang&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Python might be nice to write, but it can be complex to deploy. However, Go has inferred runtime static typing, compiles to an executable with no runtime dependencies and is garbage collected and is as much a pleasure to code as python.&lt;/p&gt;
+
+&lt;p&gt;Go is increasingly the answer for both small and large projects, in my day to day activities. My recent adventures with broadcast regulations and perceived loudness, ended with quite a nice example of Go&amp;rsquo;s effectiveness resulting in a really useful &lt;a href=&#34;https://github.com/andyrees/loudfixer&#34;&gt;utility&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

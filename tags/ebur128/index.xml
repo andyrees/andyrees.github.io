@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Ebur128 on My Blog </title>
+    <link>http://andyrees.github.io/tags/ebur128/</link>
+    <language>en-GB</language>
+    <author>Andy Rees</author>
+    <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
+    <updated>Sun, 23 Nov 2014 23:23:58 UTC</updated>
+    
+    <item>
+      <title>loudfixer</title>
+      <link>http://andyrees.github.io/post/loudfixer/</link>
+      <pubDate>Sun, 23 Nov 2014 23:23:58 UTC</pubDate>
+      <author>Andy Rees</author>
+      <guid>http://andyrees.github.io/post/loudfixer/</guid>
+      <description>&lt;p&gt;I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers.&lt;/p&gt;
+
+&lt;p&gt;The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.&lt;/p&gt;
+
+&lt;p&gt;The result is a simple utilty to check the audio levels in a media file for compliance against the EBU R128 or ATSC A/85 RP standards.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://auphonic.com/blog/15/&#34;&gt;Audio loudness measurement and normalization with EBU R128 (Calm Act, ATSC A/85&lt;/a&gt;&lt;sup&gt;&lt;a href=&#34;#fn1&#34; id=&#34;ref1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;This &lt;a href=&#34;https://github.com/andyrees/loudfixer&#34;&gt;utility&lt;/a&gt; uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.&lt;/p&gt;
+
+&lt;p&gt;Once this is done it is possible to create a ffmpeg command to transcode the file according to the source settings, thus avoiding audio drift and any obvious deterioration, whilst correcting the audio levels and ensuring broadcast loudness audio level compliance.&lt;/p&gt;
+
+&lt;p&gt;Andy Rees&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Usage of loudfixer:
+-autofix=false: True to automatically correct the audio levels
+-ebu=true: True for EBUR 128, False for ATSC A/85 RP
+-filename=&amp;quot;&amp;quot;: Full path of file to check
+-output=&amp;quot;json&amp;quot;: choose: json | xml | simple
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;sup id=&#34;fn1&#34;&gt;1. [GRH. (2012). Audio loudness measurement and normalization with EBU R128 (Calm Act, ATSC A/85). Available: &lt;a href=&#34;http://auphonic.com/blog/15/&#34;&gt;http://auphonic.com/blog/15/&lt;/a&gt;. Last accessed 31 Aug 2014.]&lt;a href=&#34;#ref1&#34; title=&#34;Jump back to footnote 1 in the text.&#34;&gt;↩&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
