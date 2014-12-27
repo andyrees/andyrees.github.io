@@ -8,8 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="Andy Rees"> 
 
-    <title>Creating Go structs from ffprobe data - http://andyrees.github.io</title>
-    <link rel="canonical" href="http://andyrees.github.io/post/ffprobe_struct/">
+    <title>Creating Go structs from ffprobe data - http://localhost:1313</title>
+    <link rel="canonical" href="http://localhost:1313/post/ffprobe_struct/">
     
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/font-awesome.css" rel="stylesheet">
@@ -27,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://andyrees.github.io">My Blog</a>
+                <a class="navbar-brand" href="http://localhost:1313">My Blog</a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
@@ -45,7 +45,7 @@
             <div class="well well-sm">
                     <h3>Creating Go structs from ffprobe data<br> <small></small></h3>
                     <hr>
-                    <p>One thing that <a href="http://www.golang.org">Go</a> is very good at, is handling JSON and XML data effortlessly and unmarshalling data is simple from either. The only thing that matters is that the decoding &lsquo;struct&rsquo; represents the source schema. That is the real trick though, as data schemas can be quite complex and in reality it can be tedious.</p>
+                    <p>One thing that <a href="http://www.golang.org" target="_blank">Go</a> is very good at, is handling JSON and XML data effortlessly and unmarshalling data is simple from either. The only thing that matters is that the decoding &lsquo;struct&rsquo; represents the source schema. That is the real trick though, as data schemas can be quite complex and in reality it can be tedious.</p>
 
 <p>JSON&rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler. Here is a simple JSON unmarshal example in go:</p>
 
@@ -246,12 +246,12 @@ func main() {
 <p>On the suface this looks like a mammoth task, but do not despair, the Go standard library has great tools like the &ldquo;reflect&rdquo; package, that allow for lexical scanning; the resulting data structure can be easily retrieved.</p>
 
 <div class="jumbotron">
-  <h1><a href="https://github.com/tmc/json-to-struct">Json-to-struct</a></h1>
+  <h1><a href="https://github.com/tmc/json-to-struct" target="_blank">Json-to-struct</a></h1>
   <p>Is a really useful tool A simple command-line tool for generating to struct definitions from JSON.
 </p>
 </div>
 
-<p>In the case of JSON though, this has already been done by the Go community. A really useful tool for this is <a href="https://github.com/tmc/json-to-struct">json-to-struct</a>. It&rsquo;s simple to use and the output from the above command can be piped directly into it. For example:</p>
+<p>In the case of JSON though, this has already been done by the Go community. A really useful tool for this is <a href="https://github.com/tmc/json-to-struct" target="_blank">json-to-struct</a>. It&rsquo;s simple to use and the output from the above command can be piped directly into it. For example:</p>
 
 <pre><code>ffprobe -show_format -show_streams -print_format json /path/to/bbb_sunflower_2160p_60fps_normal.mp4 | json-to-struct -name=Media
 </code></pre>
@@ -374,7 +374,7 @@ type Media struct {
                 <hr>
                 <div class="col-sm-12">
                     <p>&copy; Andy Rees 2014<br>
-                    Built with <a href="https://github.com/spf13/hugo">Hugo</a></p>
+                    Built with <a href="https://github.com/spf13/hugo" target="_blank">Hugo</a></p>
                 </div>
             </div>
         </footer>

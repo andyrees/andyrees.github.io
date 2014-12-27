@@ -8,8 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="Andy Rees"> 
 
-    <title>loudfixer - http://andyrees.github.io</title>
-    <link rel="canonical" href="http://andyrees.github.io/post/loudfixer/">
+    <title>loudfixer - http://localhost:1313</title>
+    <link rel="canonical" href="http://localhost:1313/post/loudfixer/">
     
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/font-awesome.css" rel="stylesheet">
@@ -27,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://andyrees.github.io">My Blog</a>
+                <a class="navbar-brand" href="http://localhost:1313">My Blog</a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
@@ -51,9 +51,9 @@
 
 <p>The result is a simple utilty to check the audio levels in a media file for compliance against the EBU R128 or ATSC A/85 RP standards.</p>
 
-<p><a href="http://auphonic.com/blog/15/">Audio loudness measurement and normalization with EBU R128 (Calm Act, ATSC A/85</a><sup><a href="#fn1" id="ref1">1</a></sup></p>
+<p><a href="http://auphonic.com/blog/15/" target="_blank">Audio loudness measurement and normalization with EBU R128 (Calm Act, ATSC A/85</a><sup><a href="#fn1" id="ref1">1</a></sup></p>
 
-<p>This <a href="https://github.com/andyrees/loudfixer">utility</a> uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.</p>
+<p>This <a href="https://github.com/andyrees/loudfixer" target="_blank">utility</a> uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.</p>
 
 <p>Once this is done it is possible to create a ffmpeg command to transcode the file according to the source settings, thus avoiding audio drift and any obvious deterioration, whilst correcting the audio levels and ensuring broadcast loudness audio level compliance.</p>
 
@@ -108,7 +108,7 @@
                 <hr>
                 <div class="col-sm-12">
                     <p>&copy; Andy Rees 2014<br>
-                    Built with <a href="https://github.com/spf13/hugo">Hugo</a></p>
+                    Built with <a href="https://github.com/spf13/hugo" target="_blank">Hugo</a></p>
                 </div>
             </div>
         </footer>

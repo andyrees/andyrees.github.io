@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title> on My Blog </title>
-    <link>http://andyrees.github.io/</link>
+    <link>http://localhost:1313/</link>
     <language>en-GB</language>
     <author>Andy Rees</author>
     <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
@@ -10,10 +10,10 @@
     
     <item>
       <title>Rock, paper, scissors, lizard, spock</title>
-      <link>http://andyrees.github.io/post/rock_spock/</link>
+      <link>http://localhost:1313/post/rock_spock/</link>
       <pubDate>Wed, 24 Dec 2014 11:56:34 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/rock_spock/</guid>
+      <guid>http://localhost:1313/post/rock_spock/</guid>
       <description>
 
 &lt;p&gt;This was a fun twenty minutes, during a quiet moment in the office on Chrsitmas Eve.&lt;/p&gt;
@@ -171,19 +171,19 @@ func main() {
     
     <item>
       <title>loudfixer</title>
-      <link>http://andyrees.github.io/post/loudfixer/</link>
+      <link>http://localhost:1313/post/loudfixer/</link>
       <pubDate>Sun, 23 Nov 2014 23:23:58 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/loudfixer/</guid>
+      <guid>http://localhost:1313/post/loudfixer/</guid>
       <description>&lt;p&gt;I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers.&lt;/p&gt;
 
 &lt;p&gt;The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.&lt;/p&gt;
 
 &lt;p&gt;The result is a simple utilty to check the audio levels in a media file for compliance against the EBU R128 or ATSC A/85 RP standards.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://auphonic.com/blog/15/&#34;&gt;Audio loudness measurement and normalization with EBU R128 (Calm Act, ATSC A/85&lt;/a&gt;&lt;sup&gt;&lt;a href=&#34;#fn1&#34; id=&#34;ref1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://auphonic.com/blog/15/&#34; target=&#34;_blank&#34;&gt;Audio loudness measurement and normalization with EBU R128 (Calm Act, ATSC A/85&lt;/a&gt;&lt;sup&gt;&lt;a href=&#34;#fn1&#34; id=&#34;ref1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;p&gt;This &lt;a href=&#34;https://github.com/andyrees/loudfixer&#34;&gt;utility&lt;/a&gt; uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.&lt;/p&gt;
+&lt;p&gt;This &lt;a href=&#34;https://github.com/andyrees/loudfixer&#34; target=&#34;_blank&#34;&gt;utility&lt;/a&gt; uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.&lt;/p&gt;
 
 &lt;p&gt;Once this is done it is possible to create a ffmpeg command to transcode the file according to the source settings, thus avoiding audio drift and any obvious deterioration, whilst correcting the audio levels and ensuring broadcast loudness audio level compliance.&lt;/p&gt;
 
@@ -202,11 +202,11 @@ func main() {
     
     <item>
       <title>Creating Go structs from ffprobe data</title>
-      <link>http://andyrees.github.io/post/ffprobe_struct/</link>
+      <link>http://localhost:1313/post/ffprobe_struct/</link>
       <pubDate>Fri, 24 Oct 2014 10:01:04 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/ffprobe_struct/</guid>
-      <description>&lt;p&gt;One thing that &lt;a href=&#34;http://www.golang.org&#34;&gt;Go&lt;/a&gt; is very good at, is handling JSON and XML data effortlessly and unmarshalling data is simple from either. The only thing that matters is that the decoding &amp;lsquo;struct&amp;rsquo; represents the source schema. That is the real trick though, as data schemas can be quite complex and in reality it can be tedious.&lt;/p&gt;
+      <guid>http://localhost:1313/post/ffprobe_struct/</guid>
+      <description>&lt;p&gt;One thing that &lt;a href=&#34;http://www.golang.org&#34; target=&#34;_blank&#34;&gt;Go&lt;/a&gt; is very good at, is handling JSON and XML data effortlessly and unmarshalling data is simple from either. The only thing that matters is that the decoding &amp;lsquo;struct&amp;rsquo; represents the source schema. That is the real trick though, as data schemas can be quite complex and in reality it can be tedious.&lt;/p&gt;
 
 &lt;p&gt;JSON&amp;rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler. Here is a simple JSON unmarshal example in go:&lt;/p&gt;
 
@@ -407,12 +407,12 @@ func main() {
 &lt;p&gt;On the suface this looks like a mammoth task, but do not despair, the Go standard library has great tools like the &amp;ldquo;reflect&amp;rdquo; package, that allow for lexical scanning; the resulting data structure can be easily retrieved.&lt;/p&gt;
 
 &lt;div class=&#34;jumbotron&#34;&gt;
-  &lt;h1&gt;&lt;a href=&#34;https://github.com/tmc/json-to-struct&#34;&gt;Json-to-struct&lt;/a&gt;&lt;/h1&gt;
+  &lt;h1&gt;&lt;a href=&#34;https://github.com/tmc/json-to-struct&#34; target=&#34;_blank&#34;&gt;Json-to-struct&lt;/a&gt;&lt;/h1&gt;
   &lt;p&gt;Is a really useful tool A simple command-line tool for generating to struct definitions from JSON.
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;In the case of JSON though, this has already been done by the Go community. A really useful tool for this is &lt;a href=&#34;https://github.com/tmc/json-to-struct&#34;&gt;json-to-struct&lt;/a&gt;. It&amp;rsquo;s simple to use and the output from the above command can be piped directly into it. For example:&lt;/p&gt;
+&lt;p&gt;In the case of JSON though, this has already been done by the Go community. A really useful tool for this is &lt;a href=&#34;https://github.com/tmc/json-to-struct&#34; target=&#34;_blank&#34;&gt;json-to-struct&lt;/a&gt;. It&amp;rsquo;s simple to use and the output from the above command can be piped directly into it. For example:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;ffprobe -show_format -show_streams -print_format json /path/to/bbb_sunflower_2160p_60fps_normal.mp4 | json-to-struct -name=Media
 &lt;/code&gt;&lt;/pre&gt;
@@ -499,17 +499,17 @@ type Media struct {
     
     <item>
       <title>About</title>
-      <link>http://andyrees.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Sep 2014 00:00:00 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;Programming to me is the ability to elevate the mundane into the elegant. Take a repetitive task and spend time coding a solution and you not save any time. But try that twice, you might get a slight advantage, three times and there is no contest.&lt;/p&gt;
 
-&lt;p&gt;Like many others, I started with BASIC in the 70s on a BBC Micro, Assembly code at University, then C and C++ later, Bash, Java &amp;amp; C#. Python allowed me to enjoy programming again; once you get over the white space. But my recent obsession is &lt;a href=&#34;http://www.golang.org/&#34;&gt;Golang&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Like many others, I started with BASIC in the 70s on a BBC Micro, Assembly code at University, then C and C++ later, Bash, Java &amp;amp; C#. Python allowed me to enjoy programming again; once you get over the white space. But my recent obsession is &lt;a href=&#34;http://www.golang.org/&#34; target=&#34;_blank&#34;&gt;Golang&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Python might be nice to write, but it can be complex to deploy. However, Go has inferred runtime static typing, compiles to an executable with no runtime dependencies and is garbage collected and is as much a pleasure to code as python.&lt;/p&gt;
 
-&lt;p&gt;Go is increasingly the answer for both small and large projects, in my day to day activities. My recent adventures with broadcast regulations and perceived loudness, ended with quite a nice example of Go&amp;rsquo;s effectiveness resulting in a really useful &lt;a href=&#34;https://github.com/andyrees/loudfixer&#34;&gt;utility&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go is increasingly the answer for both small and large projects, in my day to day activities. My recent adventures with broadcast regulations and perceived loudness, ended with quite a nice example of Go&amp;rsquo;s effectiveness resulting in a really useful &lt;a href=&#34;https://github.com/andyrees/loudfixer&#34; target=&#34;_blank&#34;&gt;utility&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

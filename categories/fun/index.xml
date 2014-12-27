@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Fun on My Blog </title>
-    <link>http://andyrees.github.io/categories/fun/</link>
+    <link>http://localhost:1313/categories/fun/</link>
     <language>en-GB</language>
     <author>Andy Rees</author>
     <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
@@ -10,10 +10,10 @@
     
     <item>
       <title>Rock, paper, scissors, lizard, spock</title>
-      <link>http://andyrees.github.io/post/rock_spock/</link>
+      <link>http://localhost:1313/post/rock_spock/</link>
       <pubDate>Wed, 24 Dec 2014 11:56:34 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/rock_spock/</guid>
+      <guid>http://localhost:1313/post/rock_spock/</guid>
       <description>
 
 &lt;p&gt;This was a fun twenty minutes, during a quiet moment in the office on Chrsitmas Eve.&lt;/p&gt;
