@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Golang on My Blog </title>
-    <link>http://localhost:1313/tags/golang/</link>
+    <link>http://andyrees.github.io/tags/golang/</link>
     <language>en-GB</language>
     <author>Andy Rees</author>
     <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
@@ -10,10 +10,10 @@
     
     <item>
       <title>Rock, paper, scissors, lizard, spock</title>
-      <link>http://localhost:1313/post/rock_spock/</link>
+      <link>http://andyrees.github.io/post/rock_spock/</link>
       <pubDate>Wed, 24 Dec 2014 11:56:34 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://localhost:1313/post/rock_spock/</guid>
+      <guid>http://andyrees.github.io/post/rock_spock/</guid>
       <description>
 
 &lt;p&gt;This was a fun twenty minutes, during a quiet moment in the office on Chrsitmas Eve.&lt;/p&gt;
@@ -171,10 +171,10 @@ func main() {
     
     <item>
       <title>loudfixer</title>
-      <link>http://localhost:1313/post/loudfixer/</link>
+      <link>http://andyrees.github.io/post/loudfixer/</link>
       <pubDate>Sun, 23 Nov 2014 23:23:58 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://localhost:1313/post/loudfixer/</guid>
+      <guid>http://andyrees.github.io/post/loudfixer/</guid>
       <description>&lt;p&gt;I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers.&lt;/p&gt;
 
 &lt;p&gt;The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.&lt;/p&gt;
@@ -202,10 +202,10 @@ func main() {
     
     <item>
       <title>Creating Go structs from ffprobe data</title>
-      <link>http://localhost:1313/post/ffprobe_struct/</link>
+      <link>http://andyrees.github.io/post/ffprobe_struct/</link>
       <pubDate>Fri, 24 Oct 2014 10:01:04 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://localhost:1313/post/ffprobe_struct/</guid>
+      <guid>http://andyrees.github.io/post/ffprobe_struct/</guid>
       <description>&lt;p&gt;One thing that &lt;a href=&#34;http://www.golang.org&#34; target=&#34;_blank&#34;&gt;Go&lt;/a&gt; is very good at, is handling JSON and XML data effortlessly and unmarshalling data is simple from either. The only thing that matters is that the decoding &amp;lsquo;struct&amp;rsquo; represents the source schema. That is the real trick though, as data schemas can be quite complex and in reality it can be tedious.&lt;/p&gt;
 
 &lt;p&gt;JSON&amp;rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler. Here is a simple JSON unmarshal example in go:&lt;/p&gt;
