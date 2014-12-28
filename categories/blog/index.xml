@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Blog on My Blog </title>
-    <link>http://localhost:1313/categories/blog/</link>
+    <link>http://andyrees.github.io/categories/blog/</link>
     <language>en-GB</language>
     <author>Andy Rees</author>
     <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
@@ -10,10 +10,10 @@
     
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>http://andyrees.github.io/about/</link>
       <pubDate>Mon, 01 Sep 2014 00:00:00 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>http://andyrees.github.io/about/</guid>
       <description>&lt;p&gt;Programming to me is the ability to elevate the mundane into the elegant. Take a repetitive task and spend time coding a solution and you not save any time. But try that twice, you might get a slight advantage, three times and there is no contest.&lt;/p&gt;
 
 &lt;p&gt;Like many others, I started with BASIC in the 70s on a BBC Micro, Assembly code at University, then C and C++ later, Bash, Java &amp;amp; C#. Python allowed me to enjoy programming again; once you get over the white space. But my recent obsession is &lt;a href=&#34;http://www.golang.org/&#34; target=&#34;_blank&#34;&gt;Golang&lt;/a&gt;.&lt;/p&gt;

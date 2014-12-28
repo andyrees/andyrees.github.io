@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Json To Struct on My Blog </title>
-    <link>http://localhost:1313/tags/json-to-struct/</link>
+    <link>http://andyrees.github.io/tags/json-to-struct/</link>
     <language>en-GB</language>
     <author>Andy Rees</author>
     <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
@@ -10,10 +10,10 @@
     
     <item>
       <title>Creating Go structs from ffprobe data</title>
-      <link>http://localhost:1313/post/ffprobe_struct/</link>
+      <link>http://andyrees.github.io/post/ffprobe_struct/</link>
       <pubDate>Fri, 24 Oct 2014 10:01:04 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://localhost:1313/post/ffprobe_struct/</guid>
+      <guid>http://andyrees.github.io/post/ffprobe_struct/</guid>
       <description>&lt;p&gt;One thing that &lt;a href=&#34;http://www.golang.org&#34; target=&#34;_blank&#34;&gt;Go&lt;/a&gt; is very good at, is handling JSON and XML data effortlessly and unmarshalling data is simple from either. The only thing that matters is that the decoding &amp;lsquo;struct&amp;rsquo; represents the source schema. That is the real trick though, as data schemas can be quite complex and in reality it can be tedious.&lt;/p&gt;
 
 &lt;p&gt;JSON&amp;rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler. Here is a simple JSON unmarshal example in go:&lt;/p&gt;
