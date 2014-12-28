@@ -2,28 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://andyrees.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2014-12-24T11:56:34+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://andyrees.github.io/post/rock_spock/</loc>
+    <loc>http://localhost:1313/post/rock_spock/</loc>
     <lastmod>2014-12-24T11:56:34+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://andyrees.github.io/post/loudfixer/</loc>
+    <loc>http://localhost:1313/post/loudfixer/</loc>
     <lastmod>2014-11-23T23:23:58+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://andyrees.github.io/post/ffprobe_struct/</loc>
+    <loc>http://localhost:1313/post/ffprobe_struct/</loc>
     <lastmod>2014-10-24T10:01:04+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://andyrees.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2014-09-01T00:00:00+00:00</lastmod>
   </url>
   

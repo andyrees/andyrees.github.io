@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Development on My Blog </title>
-    <link>http://andyrees.github.io/categories/development/</link>
+    <link>http://localhost:1313/categories/development/</link>
     <language>en-GB</language>
     <author>Andy Rees</author>
     <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
@@ -10,10 +10,10 @@
     
     <item>
       <title>Rock, paper, scissors, lizard, spock</title>
-      <link>http://andyrees.github.io/post/rock_spock/</link>
+      <link>http://localhost:1313/post/rock_spock/</link>
       <pubDate>Wed, 24 Dec 2014 11:56:34 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/rock_spock/</guid>
+      <guid>http://localhost:1313/post/rock_spock/</guid>
       <description>
 
 &lt;p&gt;This was a fun twenty minutes, during a quiet moment in the office on Chrsitmas Eve.&lt;/p&gt;
@@ -40,141 +40,141 @@ Computer Picks: Spock.
 
 &lt;p&gt;Spock Vaporizes Rock. Computer Wins!&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;package main
+&lt;pre class=&#34;prettyprint&#34;&gt;
+package main
 
 import (
-	&amp;quot;bufio&amp;quot;
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;log&amp;quot;
-	&amp;quot;math/rand&amp;quot;
-	&amp;quot;os&amp;quot;
-	&amp;quot;strings&amp;quot;
-	&amp;quot;time&amp;quot;
+    &#34;bufio&#34;
+    &#34;fmt&#34;
+    &#34;log&#34;
+    &#34;math/rand&#34;
+    &#34;os&#34;
+    &#34;strings&#34;
+    &#34;time&#34;
 )
 
 func generate_computer_choice() (choice string, err error) {
-	choices := []string{&amp;quot;rock&amp;quot;, &amp;quot;paper&amp;quot;, &amp;quot;scissors&amp;quot;, &amp;quot;lizard&amp;quot;, &amp;quot;spock&amp;quot;}
-	rand.Seed(time.Now().Unix())
-	myindex := rand.Intn(4)
-	return choices[myindex], nil
+    choices := []string{&#34;rock&#34;, &#34;paper&#34;, &#34;scissors&#34;, &#34;lizard&#34;, &#34;spock&#34;}
+    rand.Seed(time.Now().Unix())
+    myindex := rand.Intn(4)
+    return choices[myindex], nil
 }
 
 // returns int 1=user, 2=computer, 3=draw, and win string
 func winner(userchoice, computerchoice string) (int, string) {
-	winner := &amp;quot;Draw&amp;quot;
-	switch {
-	case userchoice == computerchoice:
-		return 3, &amp;quot;draw&amp;quot;
-	case userchoice == &amp;quot;scissors&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;paper&amp;quot;:
-		return 1, &amp;quot;User Wins: Scissors cut Paper&amp;quot;
-	case computerchoice == &amp;quot;scissors&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;paper&amp;quot;:
-		return 2, &amp;quot;Computer Wins: Scissors cut Paper&amp;quot;
-	case userchoice == &amp;quot;paper&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;rock&amp;quot;:
-		return 1, &amp;quot;User Wins: Paper covers Rock&amp;quot;
-	case computerchoice == &amp;quot;paper&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;rock&amp;quot;:
-		return 2, &amp;quot;Computer Wins: Paper covers Rock&amp;quot;
-	case userchoice == &amp;quot;rock&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;lizard&amp;quot;:
-		return 1, &amp;quot;User Wins: Rock crushes Lizard&amp;quot;
-	case computerchoice == &amp;quot;rock&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;lizard&amp;quot;:
-		return 2, &amp;quot;Computer Wins: Rock crushes Lizard&amp;quot;
-	case userchoice == &amp;quot;lizard&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;spock&amp;quot;:
-		return 1, &amp;quot;User Wins: Lizard poisons Spock&amp;quot;
-	case computerchoice == &amp;quot;lizard&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;spock&amp;quot;:
-		return 2, &amp;quot;Computer Wins: Lizard poisons Spock&amp;quot;
-	case userchoice == &amp;quot;spock&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;scissors&amp;quot;:
-		return 1, &amp;quot;User Wins: Spock smashes Scissors&amp;quot;
-	case computerchoice == &amp;quot;spock&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;scissors&amp;quot;:
-		return 2, &amp;quot;Computer Wins: Spock smashes Scissors&amp;quot;
-	case userchoice == &amp;quot;scissors&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;lizard&amp;quot;:
-		return 1, &amp;quot;User Wins: Scissors decapitate Lizard&amp;quot;
-	case computerchoice == &amp;quot;scissors&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;lizard&amp;quot;:
-		return 2, &amp;quot;Computer Wins: Scissors decapitate Lizard&amp;quot;
-	case userchoice == &amp;quot;lizard&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;paper&amp;quot;:
-		return 1, &amp;quot;User Wins: Lizard eats Paper&amp;quot;
-	case computerchoice == &amp;quot;lizard&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;paper&amp;quot;:
-		return 2, &amp;quot;Computer Wins: Lizard eats Paper&amp;quot;
-	case userchoice == &amp;quot;paper&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;spock&amp;quot;:
-		return 1, &amp;quot;User Wins: Paper disproves Spock&amp;quot;
-	case computerchoice == &amp;quot;paper&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;spock&amp;quot;:
-		return 2, &amp;quot;Computer Wins: Paper disproves Spock&amp;quot;
-	case userchoice == &amp;quot;spock&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;rock&amp;quot;:
-		return 1, &amp;quot;User Wins: Spock vaporizes Rock&amp;quot;
-	case computerchoice == &amp;quot;spock&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;rock&amp;quot;:
-		return 2, &amp;quot;Computer Wins: Spock vaporizes Rock&amp;quot;
-	case userchoice == &amp;quot;rock&amp;quot; &amp;amp;&amp;amp; computerchoice == &amp;quot;scissors&amp;quot;:
-		return 1, &amp;quot;User Wins: Rock crushes Scissors&amp;quot;
-	case computerchoice == &amp;quot;rock&amp;quot; &amp;amp;&amp;amp; userchoice == &amp;quot;scissors&amp;quot;:
-		return 2, &amp;quot;Computer Wins: Rock crushes Scissors&amp;quot;
-	default:
-		return 3, winner
-	}
-	return 3, winner
+    winner := &#34;Draw&#34;
+    switch {
+    case userchoice == computerchoice:
+        return 3, &#34;draw&#34;
+    case userchoice == &#34;scissors&#34; &amp;&amp; computerchoice == &#34;paper&#34;:
+        return 1, &#34;User Wins: Scissors cut Paper&#34;
+    case computerchoice == &#34;scissors&#34; &amp;&amp; userchoice == &#34;paper&#34;:
+        return 2, &#34;Computer Wins: Scissors cut Paper&#34;
+    case userchoice == &#34;paper&#34; &amp;&amp; computerchoice == &#34;rock&#34;:
+        return 1, &#34;User Wins: Paper covers Rock&#34;
+    case computerchoice == &#34;paper&#34; &amp;&amp; userchoice == &#34;rock&#34;:
+        return 2, &#34;Computer Wins: Paper covers Rock&#34;
+    case userchoice == &#34;rock&#34; &amp;&amp; computerchoice == &#34;lizard&#34;:
+        return 1, &#34;User Wins: Rock crushes Lizard&#34;
+    case computerchoice == &#34;rock&#34; &amp;&amp; userchoice == &#34;lizard&#34;:
+        return 2, &#34;Computer Wins: Rock crushes Lizard&#34;
+    case userchoice == &#34;lizard&#34; &amp;&amp; computerchoice == &#34;spock&#34;:
+        return 1, &#34;User Wins: Lizard poisons Spock&#34;
+    case computerchoice == &#34;lizard&#34; &amp;&amp; userchoice == &#34;spock&#34;:
+        return 2, &#34;Computer Wins: Lizard poisons Spock&#34;
+    case userchoice == &#34;spock&#34; &amp;&amp; computerchoice == &#34;scissors&#34;:
+        return 1, &#34;User Wins: Spock smashes Scissors&#34;
+    case computerchoice == &#34;spock&#34; &amp;&amp; userchoice == &#34;scissors&#34;:
+        return 2, &#34;Computer Wins: Spock smashes Scissors&#34;
+    case userchoice == &#34;scissors&#34; &amp;&amp; computerchoice == &#34;lizard&#34;:
+        return 1, &#34;User Wins: Scissors decapitate Lizard&#34;
+    case computerchoice == &#34;scissors&#34; &amp;&amp; userchoice == &#34;lizard&#34;:
+        return 2, &#34;Computer Wins: Scissors decapitate Lizard&#34;
+    case userchoice == &#34;lizard&#34; &amp;&amp; computerchoice == &#34;paper&#34;:
+        return 1, &#34;User Wins: Lizard eats Paper&#34;
+    case computerchoice == &#34;lizard&#34; &amp;&amp; userchoice == &#34;paper&#34;:
+        return 2, &#34;Computer Wins: Lizard eats Paper&#34;
+    case userchoice == &#34;paper&#34; &amp;&amp; computerchoice == &#34;spock&#34;:
+        return 1, &#34;User Wins: Paper disproves Spock&#34;
+    case computerchoice == &#34;paper&#34; &amp;&amp; userchoice == &#34;spock&#34;:
+        return 2, &#34;Computer Wins: Paper disproves Spock&#34;
+    case userchoice == &#34;spock&#34; &amp;&amp; computerchoice == &#34;rock&#34;:
+        return 1, &#34;User Wins: Spock vaporizes Rock&#34;
+    case computerchoice == &#34;spock&#34; &amp;&amp; userchoice == &#34;rock&#34;:
+        return 2, &#34;Computer Wins: Spock vaporizes Rock&#34;
+    case userchoice == &#34;rock&#34; &amp;&amp; computerchoice == &#34;scissors&#34;:
+        return 1, &#34;User Wins: Rock crushes Scissors&#34;
+    case computerchoice == &#34;rock&#34; &amp;&amp; userchoice == &#34;scissors&#34;:
+        return 2, &#34;Computer Wins: Rock crushes Scissors&#34;
+    default:
+        return 3, winner
+    }
+    return 3, winner
 }
 
 func who_won_then(userChoice string) int {
-	fmt.Println(&amp;quot;You chose     : &amp;quot;, userChoice)
-	ch, err := generate_computer_choice()
-	if err != nil {
-		log.Fatalln(err)
-	}
-	fmt.Println(&amp;quot;Computer chose: &amp;quot;, ch)
-	who_won, win_string := winner(strings.ToLower(userChoice), ch)
-	fmt.Printf(&amp;quot;-----\n%s\n&amp;quot;, win_string)
-	return who_won
+    fmt.Println(&#34;You chose     : &#34;, userChoice)
+    ch, err := generate_computer_choice()
+    if err != nil {
+        log.Fatalln(err)
+    }
+    fmt.Println(&#34;Computer chose: &#34;, ch)
+    who_won, win_string := winner(strings.ToLower(userChoice), ch)
+    fmt.Printf(&#34;-----\n%s\n&#34;, win_string)
+    return who_won
 }
 
 func stringInSlice(a string) bool {
-	choices := []string{&amp;quot;rock&amp;quot;, &amp;quot;paper&amp;quot;, &amp;quot;scissors&amp;quot;, &amp;quot;lizard&amp;quot;, &amp;quot;spock&amp;quot;}
-	for _, b := range choices {
-		if b == a {
-			return true
-		}
-	}
-	return false
+    choices := []string{&#34;rock&#34;, &#34;paper&#34;, &#34;scissors&#34;, &#34;lizard&#34;, &#34;spock&#34;}
+    for _, b := range choices {
+        if b == a {
+            return true
+        }
+    }
+    return false
 }
 
 func main() {
-	user_score := 0
-	computer_score := 0
-	draw_score := 0
-	fmt.Println(&amp;quot;Choose: Rock | Paper | Scissors | Lizard | Spock | Quit&amp;quot;)
+    user_score := 0
+    computer_score := 0
+    draw_score := 0
+    fmt.Println(&#34;Choose: Rock | Paper | Scissors | Lizard | Spock | Quit&#34;)
 
-	scanner := bufio.NewScanner(os.Stdin)
-	for scanner.Scan() {
-		user_choice := strings.ToLower(scanner.Text())
-		if user_choice == &amp;quot;quit&amp;quot; {
-			fmt.Println(&amp;quot;Good Game&amp;quot;)
-			fmt.Printf(&amp;quot;User: %d, Computer: %d, Draw: %d\n&amp;quot;, user_score, computer_score, draw_score)
-			return
-		} else if stringInSlice(user_choice) {
-			score := who_won_then(user_choice)
-			switch score {
-			case 1:
-				user_score = user_score + 1
-			case 2:
-				computer_score = computer_score + 1
-			case 3:
-				draw_score = draw_score + 1
-			}
-		} else {
-			fmt.Println(&amp;quot;Choose: Rock | Paper | Scissors | Lizard | Spock | Quit&amp;quot;)
-		}
-		fmt.Printf(&amp;quot;User: %d, Computer: %d, Draw: %d\n&amp;quot;, user_score, computer_score, draw_score)
-		fmt.Println(&amp;quot;&amp;quot;)
-	}
+    scanner := bufio.NewScanner(os.Stdin)
+    for scanner.Scan() {
+        user_choice := strings.ToLower(scanner.Text())
+        if user_choice == &#34;quit&#34; {
+            fmt.Println(&#34;Good Game&#34;)
+            fmt.Printf(&#34;User: %d, Computer: %d, Draw: %d\n&#34;, user_score, computer_score, draw_score)
+            return
+        } else if stringInSlice(user_choice) {
+            score := who_won_then(user_choice)
+            switch score {
+            case 1:
+                user_score = user_score + 1
+            case 2:
+                computer_score = computer_score + 1
+            case 3:
+                draw_score = draw_score + 1
+            }
+        } else {
+            fmt.Println(&#34;Choose: Rock | Paper | Scissors | Lizard | Spock | Quit&#34;)
+        }
+        fmt.Printf(&#34;User: %d, Computer: %d, Draw: %d\n&#34;, user_score, computer_score, draw_score)
+        fmt.Println(&#34;&#34;)
+    }
 
 }
-
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;
 </description>
     </item>
     
     <item>
       <title>loudfixer</title>
-      <link>http://andyrees.github.io/post/loudfixer/</link>
+      <link>http://localhost:1313/post/loudfixer/</link>
       <pubDate>Sun, 23 Nov 2014 23:23:58 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/loudfixer/</guid>
+      <guid>http://localhost:1313/post/loudfixer/</guid>
       <description>&lt;p&gt;I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers.&lt;/p&gt;
 
 &lt;p&gt;The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.&lt;/p&gt;
@@ -202,207 +202,209 @@ func main() {
     
     <item>
       <title>Creating Go structs from ffprobe data</title>
-      <link>http://andyrees.github.io/post/ffprobe_struct/</link>
+      <link>http://localhost:1313/post/ffprobe_struct/</link>
       <pubDate>Fri, 24 Oct 2014 10:01:04 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/ffprobe_struct/</guid>
+      <guid>http://localhost:1313/post/ffprobe_struct/</guid>
       <description>&lt;p&gt;One thing that &lt;a href=&#34;http://www.golang.org&#34; target=&#34;_blank&#34;&gt;Go&lt;/a&gt; is very good at, is handling JSON and XML data effortlessly and unmarshalling data is simple from either. The only thing that matters is that the decoding &amp;lsquo;struct&amp;rsquo; represents the source schema. That is the real trick though, as data schemas can be quite complex and in reality it can be tedious.&lt;/p&gt;
 
 &lt;p&gt;JSON&amp;rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler. Here is a simple JSON unmarshal example in go:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;package main
+&lt;pre class=&#34;prettyprint&#34;&gt;
+package main
 
 import (
-	&amp;quot;encoding/json&amp;quot;
-	&amp;quot;fmt&amp;quot;
+    &#34;encoding/json&#34;
+    &#34;fmt&#34;
 )
 
 func main() {
-	var jsonData = []byte(`[
-		{&amp;quot;Name&amp;quot;: &amp;quot;Wilma&amp;quot;, &amp;quot;Role&amp;quot;: &amp;quot;Boss&amp;quot;},
-		{&amp;quot;Name&amp;quot;: &amp;quot;Fred&amp;quot;,  &amp;quot;Role&amp;quot;: &amp;quot;Thinks he&#39;s the boss&amp;quot;}
-	]`)
-	
-	type Flintstone struct {
-		Name string
-		Role string
-	}
-	var flintstones []Flintstone
-	err := json.Unmarshal(jsonData, &amp;amp;flintstones)
-	if err != nil {
-		fmt.Println(&amp;quot;error:&amp;quot;, err)
-	}
-	fmt.Printf(&amp;quot;%+v&amp;quot;, flintstones)
+    var jsonData = []byte(`[
+        {&#34;Name&#34;: &#34;Wilma&#34;, &#34;Role&#34;: &#34;Boss&#34;},
+        {&#34;Name&#34;: &#34;Fred&#34;,  &#34;Role&#34;: &#34;Thinks he&#39;s the boss&#34;}
+    ]`)
+    
+    type Flintstone struct {
+        Name string
+        Role string
+    }
+    var flintstones []Flintstone
+    err := json.Unmarshal(jsonData, &amp;flintstones)
+    if err != nil {
+        fmt.Println(&#34;error:&#34;, err)
+    }
+    fmt.Printf(&#34;%+v&#34;, flintstones)
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;
 
 &lt;p&gt;When it comes to video, data structs can be complex and this can make the task tedious. For example look at the result of this command on a sample file:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;ffprobe -show_format -show_streams -print_format json /path/to/bbb_sunflower_2160p_60fps_normal.mp4
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This is a simple ffprobe call on a sample mp4, we require both the video and audio streams and the format wrapper information. The output is formatted as json.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;format&amp;quot;: {
-    &amp;quot;bit_rate&amp;quot;: &amp;quot;8487798&amp;quot;,
-    &amp;quot;duration&amp;quot;: &amp;quot;634.533333&amp;quot;,
-    &amp;quot;filename&amp;quot;: &amp;quot;/path/to/bbb_sunflower_2160p_60fps_normal.mp4&amp;quot;,
-    &amp;quot;format_long_name&amp;quot;: &amp;quot;QuickTime / MOV&amp;quot;,
-    &amp;quot;format_name&amp;quot;: &amp;quot;mov,mp4,m4a,3gp,3g2,mj2&amp;quot;,
-    &amp;quot;nb_programs&amp;quot;: 0,
-    &amp;quot;nb_streams&amp;quot;: 3,
-    &amp;quot;probe_score&amp;quot;: 100,
-    &amp;quot;size&amp;quot;: &amp;quot;673223862&amp;quot;,
-    &amp;quot;start_time&amp;quot;: &amp;quot;0.000000&amp;quot;,
-    &amp;quot;tags&amp;quot;: {
-      &amp;quot;artist&amp;quot;: &amp;quot;Blender Foundation 2008, Janus Bager Kristensen 2013&amp;quot;,
-      &amp;quot;comment&amp;quot;: &amp;quot;Creative Commons Attribution 3.0 - http://bbb3d.renderfarming.net&amp;quot;,
-      &amp;quot;compatible_brands&amp;quot;: &amp;quot;isomavc1&amp;quot;,
-      &amp;quot;composer&amp;quot;: &amp;quot;Sacha Goedegebure&amp;quot;,
-      &amp;quot;creation_time&amp;quot;: &amp;quot;2013-12-17 16:40:26&amp;quot;,
-      &amp;quot;genre&amp;quot;: &amp;quot;Animation&amp;quot;,
-      &amp;quot;major_brand&amp;quot;: &amp;quot;isom&amp;quot;,
-      &amp;quot;minor_version&amp;quot;: &amp;quot;1&amp;quot;,
-      &amp;quot;title&amp;quot;: &amp;quot;Big Buck Bunny, Sunflower version&amp;quot;
+&lt;p&gt;This is a simple ffprobe call on a sample mp4, we require both the video and audio streams and the format wrapper information. The output is formatted as json.
+&lt;pre class=&#34;prettyprint&#34;&gt;
+```
+{
+  &amp;ldquo;format&amp;rdquo;: {
+    &amp;ldquo;bit_rate&amp;rdquo;: &amp;ldquo;8487798&amp;rdquo;,
+    &amp;ldquo;duration&amp;rdquo;: &amp;ldquo;634.533333&amp;rdquo;,
+    &amp;ldquo;filename&amp;rdquo;: &amp;ldquo;/path/to/bbb_sunflower_2160p_60fps_normal.mp4&amp;rdquo;,
+    &amp;ldquo;format_long_name&amp;rdquo;: &amp;ldquo;QuickTime / MOV&amp;rdquo;,
+    &amp;ldquo;format_name&amp;rdquo;: &amp;ldquo;mov,mp4,m4a,3gp,3g2,mj2&amp;rdquo;,
+    &amp;ldquo;nb_programs&amp;rdquo;: 0,
+    &amp;ldquo;nb_streams&amp;rdquo;: 3,
+    &amp;ldquo;probe_score&amp;rdquo;: 100,
+    &amp;ldquo;size&amp;rdquo;: &amp;ldquo;673223862&amp;rdquo;,
+    &amp;ldquo;start_time&amp;rdquo;: &amp;ldquo;0.000000&amp;rdquo;,
+    &amp;ldquo;tags&amp;rdquo;: {
+      &amp;ldquo;artist&amp;rdquo;: &amp;ldquo;Blender Foundation 2008, Janus Bager Kristensen 2013&amp;rdquo;,
+      &amp;ldquo;comment&amp;rdquo;: &amp;ldquo;Creative Commons Attribution 3.0 - &lt;a href=&#34;http://bbb3d.renderfarming.net&amp;quot;&#34;&gt;http://bbb3d.renderfarming.net&amp;quot;&lt;/a&gt;,
+      &amp;ldquo;compatible_brands&amp;rdquo;: &amp;ldquo;isomavc1&amp;rdquo;,
+      &amp;ldquo;composer&amp;rdquo;: &amp;ldquo;Sacha Goedegebure&amp;rdquo;,
+      &amp;ldquo;creation_time&amp;rdquo;: &amp;ldquo;2013-12-17 16:40:26&amp;rdquo;,
+      &amp;ldquo;genre&amp;rdquo;: &amp;ldquo;Animation&amp;rdquo;,
+      &amp;ldquo;major_brand&amp;rdquo;: &amp;ldquo;isom&amp;rdquo;,
+      &amp;ldquo;minor_version&amp;rdquo;: &amp;ldquo;1&amp;rdquo;,
+      &amp;ldquo;title&amp;rdquo;: &amp;ldquo;Big Buck Bunny, Sunflower version&amp;rdquo;
     }
   },
-  &amp;quot;streams&amp;quot;: [
+  &amp;ldquo;streams&amp;rdquo;: [
     {
-      &amp;quot;avg_frame_rate&amp;quot;: &amp;quot;60/1&amp;quot;,
-      &amp;quot;bit_rate&amp;quot;: &amp;quot;8002648&amp;quot;,
-      &amp;quot;bits_per_raw_sample&amp;quot;: &amp;quot;8&amp;quot;,
-      &amp;quot;codec_long_name&amp;quot;: &amp;quot;H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10&amp;quot;,
-      &amp;quot;codec_name&amp;quot;: &amp;quot;h264&amp;quot;,
-      &amp;quot;codec_tag&amp;quot;: &amp;quot;0x31637661&amp;quot;,
-      &amp;quot;codec_tag_string&amp;quot;: &amp;quot;avc1&amp;quot;,
-      &amp;quot;codec_time_base&amp;quot;: &amp;quot;1/120&amp;quot;,
-      &amp;quot;codec_type&amp;quot;: &amp;quot;video&amp;quot;,
-      &amp;quot;display_aspect_ratio&amp;quot;: &amp;quot;16:9&amp;quot;,
-      &amp;quot;disposition&amp;quot;: {
-        &amp;quot;attached_pic&amp;quot;: 0,
-        &amp;quot;clean_effects&amp;quot;: 0,
-        &amp;quot;comment&amp;quot;: 0,
-        &amp;quot;default&amp;quot;: 1,
-        &amp;quot;dub&amp;quot;: 0,
-        &amp;quot;forced&amp;quot;: 0,
-        &amp;quot;hearing_impaired&amp;quot;: 0,
-        &amp;quot;karaoke&amp;quot;: 0,
-        &amp;quot;lyrics&amp;quot;: 0,
-        &amp;quot;original&amp;quot;: 0,
-        &amp;quot;visual_impaired&amp;quot;: 0
+      &amp;ldquo;avg_frame_rate&amp;rdquo;: &amp;ldquo;&lt;sup&gt;60&lt;/sup&gt;&amp;frasl;&lt;sub&gt;1&lt;/sub&gt;&amp;rdquo;,
+      &amp;ldquo;bit_rate&amp;rdquo;: &amp;ldquo;8002648&amp;rdquo;,
+      &amp;ldquo;bits_per_raw_sample&amp;rdquo;: &amp;ldquo;8&amp;rdquo;,
+      &amp;ldquo;codec_long_name&amp;rdquo;: &amp;ldquo;H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10&amp;rdquo;,
+      &amp;ldquo;codec_name&amp;rdquo;: &amp;ldquo;h264&amp;rdquo;,
+      &amp;ldquo;codec_tag&amp;rdquo;: &amp;ldquo;0x31637661&amp;rdquo;,
+      &amp;ldquo;codec_tag_string&amp;rdquo;: &amp;ldquo;avc1&amp;rdquo;,
+      &amp;ldquo;codec_time_base&amp;rdquo;: &amp;ldquo;&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;120&lt;/sub&gt;&amp;rdquo;,
+      &amp;ldquo;codec_type&amp;rdquo;: &amp;ldquo;video&amp;rdquo;,
+      &amp;ldquo;display_aspect_ratio&amp;rdquo;: &amp;ldquo;16:9&amp;rdquo;,
+      &amp;ldquo;disposition&amp;rdquo;: {
+        &amp;ldquo;attached_pic&amp;rdquo;: 0,
+        &amp;ldquo;clean_effects&amp;rdquo;: 0,
+        &amp;ldquo;comment&amp;rdquo;: 0,
+        &amp;ldquo;default&amp;rdquo;: 1,
+        &amp;ldquo;dub&amp;rdquo;: 0,
+        &amp;ldquo;forced&amp;rdquo;: 0,
+        &amp;ldquo;hearing_impaired&amp;rdquo;: 0,
+        &amp;ldquo;karaoke&amp;rdquo;: 0,
+        &amp;ldquo;lyrics&amp;rdquo;: 0,
+        &amp;ldquo;original&amp;rdquo;: 0,
+        &amp;ldquo;visual_impaired&amp;rdquo;: 0
       },
-      &amp;quot;duration&amp;quot;: &amp;quot;634.533333&amp;quot;,
-      &amp;quot;duration_ts&amp;quot;: 38072000,
-      &amp;quot;has_b_frames&amp;quot;: 2,
-      &amp;quot;height&amp;quot;: 2160,
-      &amp;quot;index&amp;quot;: 0,
-      &amp;quot;level&amp;quot;: 51,
-      &amp;quot;nb_frames&amp;quot;: &amp;quot;38072&amp;quot;,
-      &amp;quot;pix_fmt&amp;quot;: &amp;quot;yuv420p&amp;quot;,
-      &amp;quot;profile&amp;quot;: &amp;quot;High&amp;quot;,
-      &amp;quot;r_frame_rate&amp;quot;: &amp;quot;60/1&amp;quot;,
-      &amp;quot;sample_aspect_ratio&amp;quot;: &amp;quot;1:1&amp;quot;,
-      &amp;quot;start_pts&amp;quot;: 2000,
-      &amp;quot;start_time&amp;quot;: &amp;quot;0.033333&amp;quot;,
-      &amp;quot;tags&amp;quot;: {
-        &amp;quot;creation_time&amp;quot;: &amp;quot;2013-12-17 16:40:26&amp;quot;,
-        &amp;quot;handler_name&amp;quot;: &amp;quot;GPAC ISO Video Handler&amp;quot;,
-        &amp;quot;language&amp;quot;: &amp;quot;und&amp;quot;
+      &amp;ldquo;duration&amp;rdquo;: &amp;ldquo;634.533333&amp;rdquo;,
+      &amp;ldquo;duration_ts&amp;rdquo;: 38072000,
+      &amp;ldquo;has_b_frames&amp;rdquo;: 2,
+      &amp;ldquo;height&amp;rdquo;: 2160,
+      &amp;ldquo;index&amp;rdquo;: 0,
+      &amp;ldquo;level&amp;rdquo;: 51,
+      &amp;ldquo;nb_frames&amp;rdquo;: &amp;ldquo;38072&amp;rdquo;,
+      &amp;ldquo;pix_fmt&amp;rdquo;: &amp;ldquo;yuv420p&amp;rdquo;,
+      &amp;ldquo;profile&amp;rdquo;: &amp;ldquo;High&amp;rdquo;,
+      &amp;ldquo;r_frame_rate&amp;rdquo;: &amp;ldquo;&lt;sup&gt;60&lt;/sup&gt;&amp;frasl;&lt;sub&gt;1&lt;/sub&gt;&amp;rdquo;,
+      &amp;ldquo;sample_aspect_ratio&amp;rdquo;: &amp;ldquo;1:1&amp;rdquo;,
+      &amp;ldquo;start_pts&amp;rdquo;: 2000,
+      &amp;ldquo;start_time&amp;rdquo;: &amp;ldquo;0.033333&amp;rdquo;,
+      &amp;ldquo;tags&amp;rdquo;: {
+        &amp;ldquo;creation_time&amp;rdquo;: &amp;ldquo;2013-12-17 16:40:26&amp;rdquo;,
+        &amp;ldquo;handler_name&amp;rdquo;: &amp;ldquo;GPAC ISO Video Handler&amp;rdquo;,
+        &amp;ldquo;language&amp;rdquo;: &amp;ldquo;und&amp;rdquo;
       },
-      &amp;quot;time_base&amp;quot;: &amp;quot;1/60000&amp;quot;,
-      &amp;quot;width&amp;quot;: 3840
+      &amp;ldquo;time_base&amp;rdquo;: &amp;ldquo;&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;60000&lt;/sub&gt;&amp;rdquo;,
+      &amp;ldquo;width&amp;rdquo;: 3840
     },
     {
-      &amp;quot;avg_frame_rate&amp;quot;: &amp;quot;0/0&amp;quot;,
-      &amp;quot;bit_rate&amp;quot;: &amp;quot;160000&amp;quot;,
-      &amp;quot;bits_per_sample&amp;quot;: 0,
-      &amp;quot;channel_layout&amp;quot;: &amp;quot;stereo&amp;quot;,
-      &amp;quot;channels&amp;quot;: 2,
-      &amp;quot;codec_long_name&amp;quot;: &amp;quot;MP3 (MPEG audio layer 3)&amp;quot;,
-      &amp;quot;codec_name&amp;quot;: &amp;quot;mp3&amp;quot;,
-      &amp;quot;codec_tag&amp;quot;: &amp;quot;0x6134706d&amp;quot;,
-      &amp;quot;codec_tag_string&amp;quot;: &amp;quot;mp4a&amp;quot;,
-      &amp;quot;codec_time_base&amp;quot;: &amp;quot;1/48000&amp;quot;,
-      &amp;quot;codec_type&amp;quot;: &amp;quot;audio&amp;quot;,
-      &amp;quot;disposition&amp;quot;: {
-        &amp;quot;attached_pic&amp;quot;: 0,
-        &amp;quot;clean_effects&amp;quot;: 0,
-        &amp;quot;comment&amp;quot;: 0,
-        &amp;quot;default&amp;quot;: 1,
-        &amp;quot;dub&amp;quot;: 0,
-        &amp;quot;forced&amp;quot;: 0,
-        &amp;quot;hearing_impaired&amp;quot;: 0,
-        &amp;quot;karaoke&amp;quot;: 0,
-        &amp;quot;lyrics&amp;quot;: 0,
-        &amp;quot;original&amp;quot;: 0,
-        &amp;quot;visual_impaired&amp;quot;: 0
+      &amp;ldquo;avg_frame_rate&amp;rdquo;: &amp;ldquo;0/0&amp;rdquo;,
+      &amp;ldquo;bit_rate&amp;rdquo;: &amp;ldquo;160000&amp;rdquo;,
+      &amp;ldquo;bits_per_sample&amp;rdquo;: 0,
+      &amp;ldquo;channel_layout&amp;rdquo;: &amp;ldquo;stereo&amp;rdquo;,
+      &amp;ldquo;channels&amp;rdquo;: 2,
+      &amp;ldquo;codec_long_name&amp;rdquo;: &amp;ldquo;MP3 (MPEG audio layer 3)&amp;rdquo;,
+      &amp;ldquo;codec_name&amp;rdquo;: &amp;ldquo;mp3&amp;rdquo;,
+      &amp;ldquo;codec_tag&amp;rdquo;: &amp;ldquo;0x6134706d&amp;rdquo;,
+      &amp;ldquo;codec_tag_string&amp;rdquo;: &amp;ldquo;mp4a&amp;rdquo;,
+      &amp;ldquo;codec_time_base&amp;rdquo;: &amp;ldquo;&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;48000&lt;/sub&gt;&amp;rdquo;,
+      &amp;ldquo;codec_type&amp;rdquo;: &amp;ldquo;audio&amp;rdquo;,
+      &amp;ldquo;disposition&amp;rdquo;: {
+        &amp;ldquo;attached_pic&amp;rdquo;: 0,
+        &amp;ldquo;clean_effects&amp;rdquo;: 0,
+        &amp;ldquo;comment&amp;rdquo;: 0,
+        &amp;ldquo;default&amp;rdquo;: 1,
+        &amp;ldquo;dub&amp;rdquo;: 0,
+        &amp;ldquo;forced&amp;rdquo;: 0,
+        &amp;ldquo;hearing_impaired&amp;rdquo;: 0,
+        &amp;ldquo;karaoke&amp;rdquo;: 0,
+        &amp;ldquo;lyrics&amp;rdquo;: 0,
+        &amp;ldquo;original&amp;rdquo;: 0,
+        &amp;ldquo;visual_impaired&amp;rdquo;: 0
       },
-      &amp;quot;duration&amp;quot;: &amp;quot;634.200000&amp;quot;,
-      &amp;quot;duration_ts&amp;quot;: 30441600,
-      &amp;quot;index&amp;quot;: 1,
-      &amp;quot;nb_frames&amp;quot;: &amp;quot;26425&amp;quot;,
-      &amp;quot;r_frame_rate&amp;quot;: &amp;quot;0/0&amp;quot;,
-      &amp;quot;sample_fmt&amp;quot;: &amp;quot;s16p&amp;quot;,
-      &amp;quot;sample_rate&amp;quot;: &amp;quot;48000&amp;quot;,
-      &amp;quot;start_pts&amp;quot;: 0,
-      &amp;quot;start_time&amp;quot;: &amp;quot;0.000000&amp;quot;,
-      &amp;quot;tags&amp;quot;: {
-        &amp;quot;creation_time&amp;quot;: &amp;quot;2013-12-17 16:40:28&amp;quot;,
-        &amp;quot;handler_name&amp;quot;: &amp;quot;GPAC ISO Audio Handler&amp;quot;,
-        &amp;quot;language&amp;quot;: &amp;quot;und&amp;quot;
+      &amp;ldquo;duration&amp;rdquo;: &amp;ldquo;634.200000&amp;rdquo;,
+      &amp;ldquo;duration_ts&amp;rdquo;: 30441600,
+      &amp;ldquo;index&amp;rdquo;: 1,
+      &amp;ldquo;nb_frames&amp;rdquo;: &amp;ldquo;26425&amp;rdquo;,
+      &amp;ldquo;r_frame_rate&amp;rdquo;: &amp;ldquo;0/0&amp;rdquo;,
+      &amp;ldquo;sample_fmt&amp;rdquo;: &amp;ldquo;s16p&amp;rdquo;,
+      &amp;ldquo;sample_rate&amp;rdquo;: &amp;ldquo;48000&amp;rdquo;,
+      &amp;ldquo;start_pts&amp;rdquo;: 0,
+      &amp;ldquo;start_time&amp;rdquo;: &amp;ldquo;0.000000&amp;rdquo;,
+      &amp;ldquo;tags&amp;rdquo;: {
+        &amp;ldquo;creation_time&amp;rdquo;: &amp;ldquo;2013-12-17 16:40:28&amp;rdquo;,
+        &amp;ldquo;handler_name&amp;rdquo;: &amp;ldquo;GPAC ISO Audio Handler&amp;rdquo;,
+        &amp;ldquo;language&amp;rdquo;: &amp;ldquo;und&amp;rdquo;
       },
-      &amp;quot;time_base&amp;quot;: &amp;quot;1/48000&amp;quot;
+      &amp;ldquo;time_base&amp;rdquo;: &amp;ldquo;&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;48000&lt;/sub&gt;&amp;rdquo;
     },
     {
-      &amp;quot;avg_frame_rate&amp;quot;: &amp;quot;0/0&amp;quot;,
-      &amp;quot;bit_rate&amp;quot;: &amp;quot;320000&amp;quot;,
-      &amp;quot;bits_per_sample&amp;quot;: 0,
-      &amp;quot;channel_layout&amp;quot;: &amp;quot;5.1(side)&amp;quot;,
-      &amp;quot;channels&amp;quot;: 6,
-      &amp;quot;codec_long_name&amp;quot;: &amp;quot;ATSC A/52A (AC-3)&amp;quot;,
-      &amp;quot;codec_name&amp;quot;: &amp;quot;ac3&amp;quot;,
-      &amp;quot;codec_tag&amp;quot;: &amp;quot;0x332d6361&amp;quot;,
-      &amp;quot;codec_tag_string&amp;quot;: &amp;quot;ac-3&amp;quot;,
-      &amp;quot;codec_time_base&amp;quot;: &amp;quot;1/48000&amp;quot;,
-      &amp;quot;codec_type&amp;quot;: &amp;quot;audio&amp;quot;,
-      &amp;quot;disposition&amp;quot;: {
-        &amp;quot;attached_pic&amp;quot;: 0,
-        &amp;quot;clean_effects&amp;quot;: 0,
-        &amp;quot;comment&amp;quot;: 0,
-        &amp;quot;default&amp;quot;: 1,
-        &amp;quot;dub&amp;quot;: 0,
-        &amp;quot;forced&amp;quot;: 0,
-        &amp;quot;hearing_impaired&amp;quot;: 0,
-        &amp;quot;karaoke&amp;quot;: 0,
-        &amp;quot;lyrics&amp;quot;: 0,
-        &amp;quot;original&amp;quot;: 0,
-        &amp;quot;visual_impaired&amp;quot;: 0
+      &amp;ldquo;avg_frame_rate&amp;rdquo;: &amp;ldquo;0/0&amp;rdquo;,
+      &amp;ldquo;bit_rate&amp;rdquo;: &amp;ldquo;320000&amp;rdquo;,
+      &amp;ldquo;bits_per_sample&amp;rdquo;: 0,
+      &amp;ldquo;channel_layout&amp;rdquo;: &amp;ldquo;5.1(side)&amp;rdquo;,
+      &amp;ldquo;channels&amp;rdquo;: 6,
+      &amp;ldquo;codec_long_name&amp;rdquo;: &amp;ldquo;ATSC A/52A (AC-3)&amp;rdquo;,
+      &amp;ldquo;codec_name&amp;rdquo;: &amp;ldquo;ac3&amp;rdquo;,
+      &amp;ldquo;codec_tag&amp;rdquo;: &amp;ldquo;0x332d6361&amp;rdquo;,
+      &amp;ldquo;codec_tag_string&amp;rdquo;: &amp;ldquo;ac-3&amp;rdquo;,
+      &amp;ldquo;codec_time_base&amp;rdquo;: &amp;ldquo;&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;48000&lt;/sub&gt;&amp;rdquo;,
+      &amp;ldquo;codec_type&amp;rdquo;: &amp;ldquo;audio&amp;rdquo;,
+      &amp;ldquo;disposition&amp;rdquo;: {
+        &amp;ldquo;attached_pic&amp;rdquo;: 0,
+        &amp;ldquo;clean_effects&amp;rdquo;: 0,
+        &amp;ldquo;comment&amp;rdquo;: 0,
+        &amp;ldquo;default&amp;rdquo;: 1,
+        &amp;ldquo;dub&amp;rdquo;: 0,
+        &amp;ldquo;forced&amp;rdquo;: 0,
+        &amp;ldquo;hearing_impaired&amp;rdquo;: 0,
+        &amp;ldquo;karaoke&amp;rdquo;: 0,
+        &amp;ldquo;lyrics&amp;rdquo;: 0,
+        &amp;ldquo;original&amp;rdquo;: 0,
+        &amp;ldquo;visual_impaired&amp;rdquo;: 0
       },
-      &amp;quot;dmix_mode&amp;quot;: &amp;quot;-1&amp;quot;,
-      &amp;quot;duration&amp;quot;: &amp;quot;634.144000&amp;quot;,
-      &amp;quot;duration_ts&amp;quot;: 30438912,
-      &amp;quot;index&amp;quot;: 2,
-      &amp;quot;loro_cmixlev&amp;quot;: &amp;quot;-1.000000&amp;quot;,
-      &amp;quot;loro_surmixlev&amp;quot;: &amp;quot;-1.000000&amp;quot;,
-      &amp;quot;ltrt_cmixlev&amp;quot;: &amp;quot;-1.000000&amp;quot;,
-      &amp;quot;ltrt_surmixlev&amp;quot;: &amp;quot;-1.000000&amp;quot;,
-      &amp;quot;nb_frames&amp;quot;: &amp;quot;19817&amp;quot;,
-      &amp;quot;r_frame_rate&amp;quot;: &amp;quot;0/0&amp;quot;,
-      &amp;quot;sample_fmt&amp;quot;: &amp;quot;fltp&amp;quot;,
-      &amp;quot;sample_rate&amp;quot;: &amp;quot;48000&amp;quot;,
-      &amp;quot;start_pts&amp;quot;: 0,
-      &amp;quot;start_time&amp;quot;: &amp;quot;0.000000&amp;quot;,
-      &amp;quot;tags&amp;quot;: {
-        &amp;quot;creation_time&amp;quot;: &amp;quot;2013-12-17 16:40:28&amp;quot;,
-        &amp;quot;handler_name&amp;quot;: &amp;quot;GPAC ISO Audio Handler&amp;quot;,
-        &amp;quot;language&amp;quot;: &amp;quot;und&amp;quot;
+      &amp;ldquo;dmix_mode&amp;rdquo;: &amp;ldquo;-1&amp;rdquo;,
+      &amp;ldquo;duration&amp;rdquo;: &amp;ldquo;634.144000&amp;rdquo;,
+      &amp;ldquo;duration_ts&amp;rdquo;: 30438912,
+      &amp;ldquo;index&amp;rdquo;: 2,
+      &amp;ldquo;loro_cmixlev&amp;rdquo;: &amp;ldquo;-1.000000&amp;rdquo;,
+      &amp;ldquo;loro_surmixlev&amp;rdquo;: &amp;ldquo;-1.000000&amp;rdquo;,
+      &amp;ldquo;ltrt_cmixlev&amp;rdquo;: &amp;ldquo;-1.000000&amp;rdquo;,
+      &amp;ldquo;ltrt_surmixlev&amp;rdquo;: &amp;ldquo;-1.000000&amp;rdquo;,
+      &amp;ldquo;nb_frames&amp;rdquo;: &amp;ldquo;19817&amp;rdquo;,
+      &amp;ldquo;r_frame_rate&amp;rdquo;: &amp;ldquo;0/0&amp;rdquo;,
+      &amp;ldquo;sample_fmt&amp;rdquo;: &amp;ldquo;fltp&amp;rdquo;,
+      &amp;ldquo;sample_rate&amp;rdquo;: &amp;ldquo;48000&amp;rdquo;,
+      &amp;ldquo;start_pts&amp;rdquo;: 0,
+      &amp;ldquo;start_time&amp;rdquo;: &amp;ldquo;0.000000&amp;rdquo;,
+      &amp;ldquo;tags&amp;rdquo;: {
+        &amp;ldquo;creation_time&amp;rdquo;: &amp;ldquo;2013-12-17 16:40:28&amp;rdquo;,
+        &amp;ldquo;handler_name&amp;rdquo;: &amp;ldquo;GPAC ISO Audio Handler&amp;rdquo;,
+        &amp;ldquo;language&amp;rdquo;: &amp;ldquo;und&amp;rdquo;
       },
-      &amp;quot;time_base&amp;quot;: &amp;quot;1/48000&amp;quot;
+      &amp;ldquo;time_base&amp;rdquo;: &amp;ldquo;&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;48000&lt;/sub&gt;&amp;rdquo;
     }
   ]
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/p&gt;
 
 &lt;p&gt;On the suface this looks like a mammoth task, but do not despair, the Go standard library has great tools like the &amp;ldquo;reflect&amp;rdquo; package, that allow for lexical scanning; the resulting data structure can be easily retrieved.&lt;/p&gt;
 
@@ -419,79 +421,80 @@ func main() {
 
 &lt;p&gt;This results in a nice output which can be the start of a package for decoding media data from ffprobe.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;package main
+&lt;pre class=&#34;prettyprint&#34;&gt;
+package main
 
 type Media struct {
-	Format struct {
-		BitRate        string  `json:&amp;quot;bit_rate&amp;quot;`
-		Duration       string  `json:&amp;quot;duration&amp;quot;`
-		Filename       string  `json:&amp;quot;filename&amp;quot;`
-		FormatLongName string  `json:&amp;quot;format_long_name&amp;quot;`
-		FormatName     string  `json:&amp;quot;format_name&amp;quot;`
-		NbPrograms     float64 `json:&amp;quot;nb_programs&amp;quot;`
-		NbStreams      float64 `json:&amp;quot;nb_streams&amp;quot;`
-		ProbeScore     float64 `json:&amp;quot;probe_score&amp;quot;`
-		Size           string  `json:&amp;quot;size&amp;quot;`
-		StartTime      string  `json:&amp;quot;start_time&amp;quot;`
-		Tags           struct {
-			Artist           string `json:&amp;quot;artist&amp;quot;`
-			Comment          string `json:&amp;quot;comment&amp;quot;`
-			CompatibleBrands string `json:&amp;quot;compatible_brands&amp;quot;`
-			Composer         string `json:&amp;quot;composer&amp;quot;`
-			CreationTime     string `json:&amp;quot;creation_time&amp;quot;`
-			Genre            string `json:&amp;quot;genre&amp;quot;`
-			MajorBrand       string `json:&amp;quot;major_brand&amp;quot;`
-			MinorVersion     string `json:&amp;quot;minor_version&amp;quot;`
-			Title            string `json:&amp;quot;title&amp;quot;`
-		} `json:&amp;quot;tags&amp;quot;`
-	} `json:&amp;quot;format&amp;quot;`
-	Streams []struct {
-		AvgFrameRate       string `json:&amp;quot;avg_frame_rate&amp;quot;`
-		BitRate            string `json:&amp;quot;bit_rate&amp;quot;`
-		BitsPerRawSample   string `json:&amp;quot;bits_per_raw_sample&amp;quot;`
-		CodecLongName      string `json:&amp;quot;codec_long_name&amp;quot;`
-		CodecName          string `json:&amp;quot;codec_name&amp;quot;`
-		CodecTag           string `json:&amp;quot;codec_tag&amp;quot;`
-		CodecTagString     string `json:&amp;quot;codec_tag_string&amp;quot;`
-		CodecTimeBase      string `json:&amp;quot;codec_time_base&amp;quot;`
-		CodecType          string `json:&amp;quot;codec_type&amp;quot;`
-		DisplayAspectRatio string `json:&amp;quot;display_aspect_ratio&amp;quot;`
-		Disposition        struct {
-			AttachedPic     float64 `json:&amp;quot;attached_pic&amp;quot;`
-			CleanEffects    float64 `json:&amp;quot;clean_effects&amp;quot;`
-			Comment         float64 `json:&amp;quot;comment&amp;quot;`
-			Default         float64 `json:&amp;quot;default&amp;quot;`
-			Dub             float64 `json:&amp;quot;dub&amp;quot;`
-			Forced          float64 `json:&amp;quot;forced&amp;quot;`
-			HearingImpaired float64 `json:&amp;quot;hearing_impaired&amp;quot;`
-			Karaoke         float64 `json:&amp;quot;karaoke&amp;quot;`
-			Lyrics          float64 `json:&amp;quot;lyrics&amp;quot;`
-			Original        float64 `json:&amp;quot;original&amp;quot;`
-			VisualImpaired  float64 `json:&amp;quot;visual_impaired&amp;quot;`
-		} `json:&amp;quot;disposition&amp;quot;`
-		Duration          string  `json:&amp;quot;duration&amp;quot;`
-		DurationTs        float64 `json:&amp;quot;duration_ts&amp;quot;`
-		HasBFrames        float64 `json:&amp;quot;has_b_frames&amp;quot;`
-		Height            float64 `json:&amp;quot;height&amp;quot;`
-		Index             float64 `json:&amp;quot;index&amp;quot;`
-		Level             float64 `json:&amp;quot;level&amp;quot;`
-		NbFrames          string  `json:&amp;quot;nb_frames&amp;quot;`
-		PixFmt            string  `json:&amp;quot;pix_fmt&amp;quot;`
-		Profile           string  `json:&amp;quot;profile&amp;quot;`
-		RFrameRate        string  `json:&amp;quot;r_frame_rate&amp;quot;`
-		SampleAspectRatio string  `json:&amp;quot;sample_aspect_ratio&amp;quot;`
-		StartPts          float64 `json:&amp;quot;start_pts&amp;quot;`
-		StartTime         string  `json:&amp;quot;start_time&amp;quot;`
-		Tags              struct {
-			CreationTime string `json:&amp;quot;creation_time&amp;quot;`
-			HandlerName  string `json:&amp;quot;handler_name&amp;quot;`
-			Language     string `json:&amp;quot;language&amp;quot;`
-		} `json:&amp;quot;tags&amp;quot;`
-		TimeBase string  `json:&amp;quot;time_base&amp;quot;`
-		Width    float64 `json:&amp;quot;width&amp;quot;`
-	} `json:&amp;quot;streams&amp;quot;`
+    Format struct {
+        BitRate        string  `json:&#34;bit_rate&#34;`
+        Duration       string  `json:&#34;duration&#34;`
+        Filename       string  `json:&#34;filename&#34;`
+        FormatLongName string  `json:&#34;format_long_name&#34;`
+        FormatName     string  `json:&#34;format_name&#34;`
+        NbPrograms     float64 `json:&#34;nb_programs&#34;`
+        NbStreams      float64 `json:&#34;nb_streams&#34;`
+        ProbeScore     float64 `json:&#34;probe_score&#34;`
+        Size           string  `json:&#34;size&#34;`
+        StartTime      string  `json:&#34;start_time&#34;`
+        Tags           struct {
+            Artist           string `json:&#34;artist&#34;`
+            Comment          string `json:&#34;comment&#34;`
+            CompatibleBrands string `json:&#34;compatible_brands&#34;`
+            Composer         string `json:&#34;composer&#34;`
+            CreationTime     string `json:&#34;creation_time&#34;`
+            Genre            string `json:&#34;genre&#34;`
+            MajorBrand       string `json:&#34;major_brand&#34;`
+            MinorVersion     string `json:&#34;minor_version&#34;`
+            Title            string `json:&#34;title&#34;`
+        } `json:&#34;tags&#34;`
+    } `json:&#34;format&#34;`
+    Streams []struct {
+        AvgFrameRate       string `json:&#34;avg_frame_rate&#34;`
+        BitRate            string `json:&#34;bit_rate&#34;`
+        BitsPerRawSample   string `json:&#34;bits_per_raw_sample&#34;`
+        CodecLongName      string `json:&#34;codec_long_name&#34;`
+        CodecName          string `json:&#34;codec_name&#34;`
+        CodecTag           string `json:&#34;codec_tag&#34;`
+        CodecTagString     string `json:&#34;codec_tag_string&#34;`
+        CodecTimeBase      string `json:&#34;codec_time_base&#34;`
+        CodecType          string `json:&#34;codec_type&#34;`
+        DisplayAspectRatio string `json:&#34;display_aspect_ratio&#34;`
+        Disposition        struct {
+            AttachedPic     float64 `json:&#34;attached_pic&#34;`
+            CleanEffects    float64 `json:&#34;clean_effects&#34;`
+            Comment         float64 `json:&#34;comment&#34;`
+            Default         float64 `json:&#34;default&#34;`
+            Dub             float64 `json:&#34;dub&#34;`
+            Forced          float64 `json:&#34;forced&#34;`
+            HearingImpaired float64 `json:&#34;hearing_impaired&#34;`
+            Karaoke         float64 `json:&#34;karaoke&#34;`
+            Lyrics          float64 `json:&#34;lyrics&#34;`
+            Original        float64 `json:&#34;original&#34;`
+            VisualImpaired  float64 `json:&#34;visual_impaired&#34;`
+        } `json:&#34;disposition&#34;`
+        Duration          string  `json:&#34;duration&#34;`
+        DurationTs        float64 `json:&#34;duration_ts&#34;`
+        HasBFrames        float64 `json:&#34;has_b_frames&#34;`
+        Height            float64 `json:&#34;height&#34;`
+        Index             float64 `json:&#34;index&#34;`
+        Level             float64 `json:&#34;level&#34;`
+        NbFrames          string  `json:&#34;nb_frames&#34;`
+        PixFmt            string  `json:&#34;pix_fmt&#34;`
+        Profile           string  `json:&#34;profile&#34;`
+        RFrameRate        string  `json:&#34;r_frame_rate&#34;`
+        SampleAspectRatio string  `json:&#34;sample_aspect_ratio&#34;`
+        StartPts          float64 `json:&#34;start_pts&#34;`
+        StartTime         string  `json:&#34;start_time&#34;`
+        Tags              struct {
+            CreationTime string `json:&#34;creation_time&#34;`
+            HandlerName  string `json:&#34;handler_name&#34;`
+            Language     string `json:&#34;language&#34;`
+        } `json:&#34;tags&#34;`
+        TimeBase string  `json:&#34;time_base&#34;`
+        Width    float64 `json:&#34;width&#34;`
+    } `json:&#34;streams&#34;`
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;
 
 &lt;p&gt;Now you might not require all the data in the structs, so remove any elements that aren&amp;rsquo;t required. As long as no child elements are needed this will be fine.&lt;/p&gt;
 </description>

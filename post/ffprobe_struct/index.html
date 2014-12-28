@@ -8,8 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="Andy Rees"> 
 
-    <title>Creating Go structs from ffprobe data - http://andyrees.github.io</title>
-    <link rel="canonical" href="http://andyrees.github.io/post/ffprobe_struct/">
+    <title>Creating Go structs from ffprobe data - http://localhost:1313</title>
+    <link rel="canonical" href="http://localhost:1313/post/ffprobe_struct/">
     
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/font-awesome.css" rel="stylesheet">
@@ -27,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://andyrees.github.io">My Blog</a>
+                <a class="navbar-brand" href="http://localhost:1313">My Blog</a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
@@ -49,199 +49,201 @@
 
 <p>JSON&rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler. Here is a simple JSON unmarshal example in go:</p>
 
-<pre><code>package main
+<pre class="prettyprint">
+package main
 
 import (
-	&quot;encoding/json&quot;
-	&quot;fmt&quot;
+    "encoding/json"
+    "fmt"
 )
 
 func main() {
-	var jsonData = []byte(`[
-		{&quot;Name&quot;: &quot;Wilma&quot;, &quot;Role&quot;: &quot;Boss&quot;},
-		{&quot;Name&quot;: &quot;Fred&quot;,  &quot;Role&quot;: &quot;Thinks he's the boss&quot;}
-	]`)
-	
-	type Flintstone struct {
-		Name string
-		Role string
-	}
-	var flintstones []Flintstone
-	err := json.Unmarshal(jsonData, &amp;flintstones)
-	if err != nil {
-		fmt.Println(&quot;error:&quot;, err)
-	}
-	fmt.Printf(&quot;%+v&quot;, flintstones)
+    var jsonData = []byte(`[
+        {"Name": "Wilma", "Role": "Boss"},
+        {"Name": "Fred",  "Role": "Thinks he's the boss"}
+    ]`)
+    
+    type Flintstone struct {
+        Name string
+        Role string
+    }
+    var flintstones []Flintstone
+    err := json.Unmarshal(jsonData, &flintstones)
+    if err != nil {
+        fmt.Println("error:", err)
+    }
+    fmt.Printf("%+v", flintstones)
 }
-</code></pre>
+</pre>
 
 <p>When it comes to video, data structs can be complex and this can make the task tedious. For example look at the result of this command on a sample file:</p>
 
 <pre><code>ffprobe -show_format -show_streams -print_format json /path/to/bbb_sunflower_2160p_60fps_normal.mp4
 </code></pre>
 
-<p>This is a simple ffprobe call on a sample mp4, we require both the video and audio streams and the format wrapper information. The output is formatted as json.</p>
-
-<pre><code>{
-  &quot;format&quot;: {
-    &quot;bit_rate&quot;: &quot;8487798&quot;,
-    &quot;duration&quot;: &quot;634.533333&quot;,
-    &quot;filename&quot;: &quot;/path/to/bbb_sunflower_2160p_60fps_normal.mp4&quot;,
-    &quot;format_long_name&quot;: &quot;QuickTime / MOV&quot;,
-    &quot;format_name&quot;: &quot;mov,mp4,m4a,3gp,3g2,mj2&quot;,
-    &quot;nb_programs&quot;: 0,
-    &quot;nb_streams&quot;: 3,
-    &quot;probe_score&quot;: 100,
-    &quot;size&quot;: &quot;673223862&quot;,
-    &quot;start_time&quot;: &quot;0.000000&quot;,
-    &quot;tags&quot;: {
-      &quot;artist&quot;: &quot;Blender Foundation 2008, Janus Bager Kristensen 2013&quot;,
-      &quot;comment&quot;: &quot;Creative Commons Attribution 3.0 - http://bbb3d.renderfarming.net&quot;,
-      &quot;compatible_brands&quot;: &quot;isomavc1&quot;,
-      &quot;composer&quot;: &quot;Sacha Goedegebure&quot;,
-      &quot;creation_time&quot;: &quot;2013-12-17 16:40:26&quot;,
-      &quot;genre&quot;: &quot;Animation&quot;,
-      &quot;major_brand&quot;: &quot;isom&quot;,
-      &quot;minor_version&quot;: &quot;1&quot;,
-      &quot;title&quot;: &quot;Big Buck Bunny, Sunflower version&quot;
+<p>This is a simple ffprobe call on a sample mp4, we require both the video and audio streams and the format wrapper information. The output is formatted as json.
+<pre class="prettyprint">
+```
+{
+  &ldquo;format&rdquo;: {
+    &ldquo;bit_rate&rdquo;: &ldquo;8487798&rdquo;,
+    &ldquo;duration&rdquo;: &ldquo;634.533333&rdquo;,
+    &ldquo;filename&rdquo;: &ldquo;/path/to/bbb_sunflower_2160p_60fps_normal.mp4&rdquo;,
+    &ldquo;format_long_name&rdquo;: &ldquo;QuickTime / MOV&rdquo;,
+    &ldquo;format_name&rdquo;: &ldquo;mov,mp4,m4a,3gp,3g2,mj2&rdquo;,
+    &ldquo;nb_programs&rdquo;: 0,
+    &ldquo;nb_streams&rdquo;: 3,
+    &ldquo;probe_score&rdquo;: 100,
+    &ldquo;size&rdquo;: &ldquo;673223862&rdquo;,
+    &ldquo;start_time&rdquo;: &ldquo;0.000000&rdquo;,
+    &ldquo;tags&rdquo;: {
+      &ldquo;artist&rdquo;: &ldquo;Blender Foundation 2008, Janus Bager Kristensen 2013&rdquo;,
+      &ldquo;comment&rdquo;: &ldquo;Creative Commons Attribution 3.0 - <a href="http://bbb3d.renderfarming.net&quot;">http://bbb3d.renderfarming.net&quot;</a>,
+      &ldquo;compatible_brands&rdquo;: &ldquo;isomavc1&rdquo;,
+      &ldquo;composer&rdquo;: &ldquo;Sacha Goedegebure&rdquo;,
+      &ldquo;creation_time&rdquo;: &ldquo;2013-12-17 16:40:26&rdquo;,
+      &ldquo;genre&rdquo;: &ldquo;Animation&rdquo;,
+      &ldquo;major_brand&rdquo;: &ldquo;isom&rdquo;,
+      &ldquo;minor_version&rdquo;: &ldquo;1&rdquo;,
+      &ldquo;title&rdquo;: &ldquo;Big Buck Bunny, Sunflower version&rdquo;
     }
   },
-  &quot;streams&quot;: [
+  &ldquo;streams&rdquo;: [
     {
-      &quot;avg_frame_rate&quot;: &quot;60/1&quot;,
-      &quot;bit_rate&quot;: &quot;8002648&quot;,
-      &quot;bits_per_raw_sample&quot;: &quot;8&quot;,
-      &quot;codec_long_name&quot;: &quot;H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10&quot;,
-      &quot;codec_name&quot;: &quot;h264&quot;,
-      &quot;codec_tag&quot;: &quot;0x31637661&quot;,
-      &quot;codec_tag_string&quot;: &quot;avc1&quot;,
-      &quot;codec_time_base&quot;: &quot;1/120&quot;,
-      &quot;codec_type&quot;: &quot;video&quot;,
-      &quot;display_aspect_ratio&quot;: &quot;16:9&quot;,
-      &quot;disposition&quot;: {
-        &quot;attached_pic&quot;: 0,
-        &quot;clean_effects&quot;: 0,
-        &quot;comment&quot;: 0,
-        &quot;default&quot;: 1,
-        &quot;dub&quot;: 0,
-        &quot;forced&quot;: 0,
-        &quot;hearing_impaired&quot;: 0,
-        &quot;karaoke&quot;: 0,
-        &quot;lyrics&quot;: 0,
-        &quot;original&quot;: 0,
-        &quot;visual_impaired&quot;: 0
+      &ldquo;avg_frame_rate&rdquo;: &ldquo;<sup>60</sup>&frasl;<sub>1</sub>&rdquo;,
+      &ldquo;bit_rate&rdquo;: &ldquo;8002648&rdquo;,
+      &ldquo;bits_per_raw_sample&rdquo;: &ldquo;8&rdquo;,
+      &ldquo;codec_long_name&rdquo;: &ldquo;H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10&rdquo;,
+      &ldquo;codec_name&rdquo;: &ldquo;h264&rdquo;,
+      &ldquo;codec_tag&rdquo;: &ldquo;0x31637661&rdquo;,
+      &ldquo;codec_tag_string&rdquo;: &ldquo;avc1&rdquo;,
+      &ldquo;codec_time_base&rdquo;: &ldquo;<sup>1</sup>&frasl;<sub>120</sub>&rdquo;,
+      &ldquo;codec_type&rdquo;: &ldquo;video&rdquo;,
+      &ldquo;display_aspect_ratio&rdquo;: &ldquo;16:9&rdquo;,
+      &ldquo;disposition&rdquo;: {
+        &ldquo;attached_pic&rdquo;: 0,
+        &ldquo;clean_effects&rdquo;: 0,
+        &ldquo;comment&rdquo;: 0,
+        &ldquo;default&rdquo;: 1,
+        &ldquo;dub&rdquo;: 0,
+        &ldquo;forced&rdquo;: 0,
+        &ldquo;hearing_impaired&rdquo;: 0,
+        &ldquo;karaoke&rdquo;: 0,
+        &ldquo;lyrics&rdquo;: 0,
+        &ldquo;original&rdquo;: 0,
+        &ldquo;visual_impaired&rdquo;: 0
       },
-      &quot;duration&quot;: &quot;634.533333&quot;,
-      &quot;duration_ts&quot;: 38072000,
-      &quot;has_b_frames&quot;: 2,
-      &quot;height&quot;: 2160,
-      &quot;index&quot;: 0,
-      &quot;level&quot;: 51,
-      &quot;nb_frames&quot;: &quot;38072&quot;,
-      &quot;pix_fmt&quot;: &quot;yuv420p&quot;,
-      &quot;profile&quot;: &quot;High&quot;,
-      &quot;r_frame_rate&quot;: &quot;60/1&quot;,
-      &quot;sample_aspect_ratio&quot;: &quot;1:1&quot;,
-      &quot;start_pts&quot;: 2000,
-      &quot;start_time&quot;: &quot;0.033333&quot;,
-      &quot;tags&quot;: {
-        &quot;creation_time&quot;: &quot;2013-12-17 16:40:26&quot;,
-        &quot;handler_name&quot;: &quot;GPAC ISO Video Handler&quot;,
-        &quot;language&quot;: &quot;und&quot;
+      &ldquo;duration&rdquo;: &ldquo;634.533333&rdquo;,
+      &ldquo;duration_ts&rdquo;: 38072000,
+      &ldquo;has_b_frames&rdquo;: 2,
+      &ldquo;height&rdquo;: 2160,
+      &ldquo;index&rdquo;: 0,
+      &ldquo;level&rdquo;: 51,
+      &ldquo;nb_frames&rdquo;: &ldquo;38072&rdquo;,
+      &ldquo;pix_fmt&rdquo;: &ldquo;yuv420p&rdquo;,
+      &ldquo;profile&rdquo;: &ldquo;High&rdquo;,
+      &ldquo;r_frame_rate&rdquo;: &ldquo;<sup>60</sup>&frasl;<sub>1</sub>&rdquo;,
+      &ldquo;sample_aspect_ratio&rdquo;: &ldquo;1:1&rdquo;,
+      &ldquo;start_pts&rdquo;: 2000,
+      &ldquo;start_time&rdquo;: &ldquo;0.033333&rdquo;,
+      &ldquo;tags&rdquo;: {
+        &ldquo;creation_time&rdquo;: &ldquo;2013-12-17 16:40:26&rdquo;,
+        &ldquo;handler_name&rdquo;: &ldquo;GPAC ISO Video Handler&rdquo;,
+        &ldquo;language&rdquo;: &ldquo;und&rdquo;
       },
-      &quot;time_base&quot;: &quot;1/60000&quot;,
-      &quot;width&quot;: 3840
+      &ldquo;time_base&rdquo;: &ldquo;<sup>1</sup>&frasl;<sub>60000</sub>&rdquo;,
+      &ldquo;width&rdquo;: 3840
     },
     {
-      &quot;avg_frame_rate&quot;: &quot;0/0&quot;,
-      &quot;bit_rate&quot;: &quot;160000&quot;,
-      &quot;bits_per_sample&quot;: 0,
-      &quot;channel_layout&quot;: &quot;stereo&quot;,
-      &quot;channels&quot;: 2,
-      &quot;codec_long_name&quot;: &quot;MP3 (MPEG audio layer 3)&quot;,
-      &quot;codec_name&quot;: &quot;mp3&quot;,
-      &quot;codec_tag&quot;: &quot;0x6134706d&quot;,
-      &quot;codec_tag_string&quot;: &quot;mp4a&quot;,
-      &quot;codec_time_base&quot;: &quot;1/48000&quot;,
-      &quot;codec_type&quot;: &quot;audio&quot;,
-      &quot;disposition&quot;: {
-        &quot;attached_pic&quot;: 0,
-        &quot;clean_effects&quot;: 0,
-        &quot;comment&quot;: 0,
-        &quot;default&quot;: 1,
-        &quot;dub&quot;: 0,
-        &quot;forced&quot;: 0,
-        &quot;hearing_impaired&quot;: 0,
-        &quot;karaoke&quot;: 0,
-        &quot;lyrics&quot;: 0,
-        &quot;original&quot;: 0,
-        &quot;visual_impaired&quot;: 0
+      &ldquo;avg_frame_rate&rdquo;: &ldquo;0/0&rdquo;,
+      &ldquo;bit_rate&rdquo;: &ldquo;160000&rdquo;,
+      &ldquo;bits_per_sample&rdquo;: 0,
+      &ldquo;channel_layout&rdquo;: &ldquo;stereo&rdquo;,
+      &ldquo;channels&rdquo;: 2,
+      &ldquo;codec_long_name&rdquo;: &ldquo;MP3 (MPEG audio layer 3)&rdquo;,
+      &ldquo;codec_name&rdquo;: &ldquo;mp3&rdquo;,
+      &ldquo;codec_tag&rdquo;: &ldquo;0x6134706d&rdquo;,
+      &ldquo;codec_tag_string&rdquo;: &ldquo;mp4a&rdquo;,
+      &ldquo;codec_time_base&rdquo;: &ldquo;<sup>1</sup>&frasl;<sub>48000</sub>&rdquo;,
+      &ldquo;codec_type&rdquo;: &ldquo;audio&rdquo;,
+      &ldquo;disposition&rdquo;: {
+        &ldquo;attached_pic&rdquo;: 0,
+        &ldquo;clean_effects&rdquo;: 0,
+        &ldquo;comment&rdquo;: 0,
+        &ldquo;default&rdquo;: 1,
+        &ldquo;dub&rdquo;: 0,
+        &ldquo;forced&rdquo;: 0,
+        &ldquo;hearing_impaired&rdquo;: 0,
+        &ldquo;karaoke&rdquo;: 0,
+        &ldquo;lyrics&rdquo;: 0,
+        &ldquo;original&rdquo;: 0,
+        &ldquo;visual_impaired&rdquo;: 0
       },
-      &quot;duration&quot;: &quot;634.200000&quot;,
-      &quot;duration_ts&quot;: 30441600,
-      &quot;index&quot;: 1,
-      &quot;nb_frames&quot;: &quot;26425&quot;,
-      &quot;r_frame_rate&quot;: &quot;0/0&quot;,
-      &quot;sample_fmt&quot;: &quot;s16p&quot;,
-      &quot;sample_rate&quot;: &quot;48000&quot;,
-      &quot;start_pts&quot;: 0,
-      &quot;start_time&quot;: &quot;0.000000&quot;,
-      &quot;tags&quot;: {
-        &quot;creation_time&quot;: &quot;2013-12-17 16:40:28&quot;,
-        &quot;handler_name&quot;: &quot;GPAC ISO Audio Handler&quot;,
-        &quot;language&quot;: &quot;und&quot;
+      &ldquo;duration&rdquo;: &ldquo;634.200000&rdquo;,
+      &ldquo;duration_ts&rdquo;: 30441600,
+      &ldquo;index&rdquo;: 1,
+      &ldquo;nb_frames&rdquo;: &ldquo;26425&rdquo;,
+      &ldquo;r_frame_rate&rdquo;: &ldquo;0/0&rdquo;,
+      &ldquo;sample_fmt&rdquo;: &ldquo;s16p&rdquo;,
+      &ldquo;sample_rate&rdquo;: &ldquo;48000&rdquo;,
+      &ldquo;start_pts&rdquo;: 0,
+      &ldquo;start_time&rdquo;: &ldquo;0.000000&rdquo;,
+      &ldquo;tags&rdquo;: {
+        &ldquo;creation_time&rdquo;: &ldquo;2013-12-17 16:40:28&rdquo;,
+        &ldquo;handler_name&rdquo;: &ldquo;GPAC ISO Audio Handler&rdquo;,
+        &ldquo;language&rdquo;: &ldquo;und&rdquo;
       },
-      &quot;time_base&quot;: &quot;1/48000&quot;
+      &ldquo;time_base&rdquo;: &ldquo;<sup>1</sup>&frasl;<sub>48000</sub>&rdquo;
     },
     {
-      &quot;avg_frame_rate&quot;: &quot;0/0&quot;,
-      &quot;bit_rate&quot;: &quot;320000&quot;,
-      &quot;bits_per_sample&quot;: 0,
-      &quot;channel_layout&quot;: &quot;5.1(side)&quot;,
-      &quot;channels&quot;: 6,
-      &quot;codec_long_name&quot;: &quot;ATSC A/52A (AC-3)&quot;,
-      &quot;codec_name&quot;: &quot;ac3&quot;,
-      &quot;codec_tag&quot;: &quot;0x332d6361&quot;,
-      &quot;codec_tag_string&quot;: &quot;ac-3&quot;,
-      &quot;codec_time_base&quot;: &quot;1/48000&quot;,
-      &quot;codec_type&quot;: &quot;audio&quot;,
-      &quot;disposition&quot;: {
-        &quot;attached_pic&quot;: 0,
-        &quot;clean_effects&quot;: 0,
-        &quot;comment&quot;: 0,
-        &quot;default&quot;: 1,
-        &quot;dub&quot;: 0,
-        &quot;forced&quot;: 0,
-        &quot;hearing_impaired&quot;: 0,
-        &quot;karaoke&quot;: 0,
-        &quot;lyrics&quot;: 0,
-        &quot;original&quot;: 0,
-        &quot;visual_impaired&quot;: 0
+      &ldquo;avg_frame_rate&rdquo;: &ldquo;0/0&rdquo;,
+      &ldquo;bit_rate&rdquo;: &ldquo;320000&rdquo;,
+      &ldquo;bits_per_sample&rdquo;: 0,
+      &ldquo;channel_layout&rdquo;: &ldquo;5.1(side)&rdquo;,
+      &ldquo;channels&rdquo;: 6,
+      &ldquo;codec_long_name&rdquo;: &ldquo;ATSC A/52A (AC-3)&rdquo;,
+      &ldquo;codec_name&rdquo;: &ldquo;ac3&rdquo;,
+      &ldquo;codec_tag&rdquo;: &ldquo;0x332d6361&rdquo;,
+      &ldquo;codec_tag_string&rdquo;: &ldquo;ac-3&rdquo;,
+      &ldquo;codec_time_base&rdquo;: &ldquo;<sup>1</sup>&frasl;<sub>48000</sub>&rdquo;,
+      &ldquo;codec_type&rdquo;: &ldquo;audio&rdquo;,
+      &ldquo;disposition&rdquo;: {
+        &ldquo;attached_pic&rdquo;: 0,
+        &ldquo;clean_effects&rdquo;: 0,
+        &ldquo;comment&rdquo;: 0,
+        &ldquo;default&rdquo;: 1,
+        &ldquo;dub&rdquo;: 0,
+        &ldquo;forced&rdquo;: 0,
+        &ldquo;hearing_impaired&rdquo;: 0,
+        &ldquo;karaoke&rdquo;: 0,
+        &ldquo;lyrics&rdquo;: 0,
+        &ldquo;original&rdquo;: 0,
+        &ldquo;visual_impaired&rdquo;: 0
       },
-      &quot;dmix_mode&quot;: &quot;-1&quot;,
-      &quot;duration&quot;: &quot;634.144000&quot;,
-      &quot;duration_ts&quot;: 30438912,
-      &quot;index&quot;: 2,
-      &quot;loro_cmixlev&quot;: &quot;-1.000000&quot;,
-      &quot;loro_surmixlev&quot;: &quot;-1.000000&quot;,
-      &quot;ltrt_cmixlev&quot;: &quot;-1.000000&quot;,
-      &quot;ltrt_surmixlev&quot;: &quot;-1.000000&quot;,
-      &quot;nb_frames&quot;: &quot;19817&quot;,
-      &quot;r_frame_rate&quot;: &quot;0/0&quot;,
-      &quot;sample_fmt&quot;: &quot;fltp&quot;,
-      &quot;sample_rate&quot;: &quot;48000&quot;,
-      &quot;start_pts&quot;: 0,
-      &quot;start_time&quot;: &quot;0.000000&quot;,
-      &quot;tags&quot;: {
-        &quot;creation_time&quot;: &quot;2013-12-17 16:40:28&quot;,
-        &quot;handler_name&quot;: &quot;GPAC ISO Audio Handler&quot;,
-        &quot;language&quot;: &quot;und&quot;
+      &ldquo;dmix_mode&rdquo;: &ldquo;-1&rdquo;,
+      &ldquo;duration&rdquo;: &ldquo;634.144000&rdquo;,
+      &ldquo;duration_ts&rdquo;: 30438912,
+      &ldquo;index&rdquo;: 2,
+      &ldquo;loro_cmixlev&rdquo;: &ldquo;-1.000000&rdquo;,
+      &ldquo;loro_surmixlev&rdquo;: &ldquo;-1.000000&rdquo;,
+      &ldquo;ltrt_cmixlev&rdquo;: &ldquo;-1.000000&rdquo;,
+      &ldquo;ltrt_surmixlev&rdquo;: &ldquo;-1.000000&rdquo;,
+      &ldquo;nb_frames&rdquo;: &ldquo;19817&rdquo;,
+      &ldquo;r_frame_rate&rdquo;: &ldquo;0/0&rdquo;,
+      &ldquo;sample_fmt&rdquo;: &ldquo;fltp&rdquo;,
+      &ldquo;sample_rate&rdquo;: &ldquo;48000&rdquo;,
+      &ldquo;start_pts&rdquo;: 0,
+      &ldquo;start_time&rdquo;: &ldquo;0.000000&rdquo;,
+      &ldquo;tags&rdquo;: {
+        &ldquo;creation_time&rdquo;: &ldquo;2013-12-17 16:40:28&rdquo;,
+        &ldquo;handler_name&rdquo;: &ldquo;GPAC ISO Audio Handler&rdquo;,
+        &ldquo;language&rdquo;: &ldquo;und&rdquo;
       },
-      &quot;time_base&quot;: &quot;1/48000&quot;
+      &ldquo;time_base&rdquo;: &ldquo;<sup>1</sup>&frasl;<sub>48000</sub>&rdquo;
     }
   ]
 }
-</code></pre>
+</pre></p>
 
 <p>On the suface this looks like a mammoth task, but do not despair, the Go standard library has great tools like the &ldquo;reflect&rdquo; package, that allow for lexical scanning; the resulting data structure can be easily retrieved.</p>
 
@@ -258,79 +260,80 @@ func main() {
 
 <p>This results in a nice output which can be the start of a package for decoding media data from ffprobe.</p>
 
-<pre><code>package main
+<pre class="prettyprint">
+package main
 
 type Media struct {
-	Format struct {
-		BitRate        string  `json:&quot;bit_rate&quot;`
-		Duration       string  `json:&quot;duration&quot;`
-		Filename       string  `json:&quot;filename&quot;`
-		FormatLongName string  `json:&quot;format_long_name&quot;`
-		FormatName     string  `json:&quot;format_name&quot;`
-		NbPrograms     float64 `json:&quot;nb_programs&quot;`
-		NbStreams      float64 `json:&quot;nb_streams&quot;`
-		ProbeScore     float64 `json:&quot;probe_score&quot;`
-		Size           string  `json:&quot;size&quot;`
-		StartTime      string  `json:&quot;start_time&quot;`
-		Tags           struct {
-			Artist           string `json:&quot;artist&quot;`
-			Comment          string `json:&quot;comment&quot;`
-			CompatibleBrands string `json:&quot;compatible_brands&quot;`
-			Composer         string `json:&quot;composer&quot;`
-			CreationTime     string `json:&quot;creation_time&quot;`
-			Genre            string `json:&quot;genre&quot;`
-			MajorBrand       string `json:&quot;major_brand&quot;`
-			MinorVersion     string `json:&quot;minor_version&quot;`
-			Title            string `json:&quot;title&quot;`
-		} `json:&quot;tags&quot;`
-	} `json:&quot;format&quot;`
-	Streams []struct {
-		AvgFrameRate       string `json:&quot;avg_frame_rate&quot;`
-		BitRate            string `json:&quot;bit_rate&quot;`
-		BitsPerRawSample   string `json:&quot;bits_per_raw_sample&quot;`
-		CodecLongName      string `json:&quot;codec_long_name&quot;`
-		CodecName          string `json:&quot;codec_name&quot;`
-		CodecTag           string `json:&quot;codec_tag&quot;`
-		CodecTagString     string `json:&quot;codec_tag_string&quot;`
-		CodecTimeBase      string `json:&quot;codec_time_base&quot;`
-		CodecType          string `json:&quot;codec_type&quot;`
-		DisplayAspectRatio string `json:&quot;display_aspect_ratio&quot;`
-		Disposition        struct {
-			AttachedPic     float64 `json:&quot;attached_pic&quot;`
-			CleanEffects    float64 `json:&quot;clean_effects&quot;`
-			Comment         float64 `json:&quot;comment&quot;`
-			Default         float64 `json:&quot;default&quot;`
-			Dub             float64 `json:&quot;dub&quot;`
-			Forced          float64 `json:&quot;forced&quot;`
-			HearingImpaired float64 `json:&quot;hearing_impaired&quot;`
-			Karaoke         float64 `json:&quot;karaoke&quot;`
-			Lyrics          float64 `json:&quot;lyrics&quot;`
-			Original        float64 `json:&quot;original&quot;`
-			VisualImpaired  float64 `json:&quot;visual_impaired&quot;`
-		} `json:&quot;disposition&quot;`
-		Duration          string  `json:&quot;duration&quot;`
-		DurationTs        float64 `json:&quot;duration_ts&quot;`
-		HasBFrames        float64 `json:&quot;has_b_frames&quot;`
-		Height            float64 `json:&quot;height&quot;`
-		Index             float64 `json:&quot;index&quot;`
-		Level             float64 `json:&quot;level&quot;`
-		NbFrames          string  `json:&quot;nb_frames&quot;`
-		PixFmt            string  `json:&quot;pix_fmt&quot;`
-		Profile           string  `json:&quot;profile&quot;`
-		RFrameRate        string  `json:&quot;r_frame_rate&quot;`
-		SampleAspectRatio string  `json:&quot;sample_aspect_ratio&quot;`
-		StartPts          float64 `json:&quot;start_pts&quot;`
-		StartTime         string  `json:&quot;start_time&quot;`
-		Tags              struct {
-			CreationTime string `json:&quot;creation_time&quot;`
-			HandlerName  string `json:&quot;handler_name&quot;`
-			Language     string `json:&quot;language&quot;`
-		} `json:&quot;tags&quot;`
-		TimeBase string  `json:&quot;time_base&quot;`
-		Width    float64 `json:&quot;width&quot;`
-	} `json:&quot;streams&quot;`
+    Format struct {
+        BitRate        string  `json:"bit_rate"`
+        Duration       string  `json:"duration"`
+        Filename       string  `json:"filename"`
+        FormatLongName string  `json:"format_long_name"`
+        FormatName     string  `json:"format_name"`
+        NbPrograms     float64 `json:"nb_programs"`
+        NbStreams      float64 `json:"nb_streams"`
+        ProbeScore     float64 `json:"probe_score"`
+        Size           string  `json:"size"`
+        StartTime      string  `json:"start_time"`
+        Tags           struct {
+            Artist           string `json:"artist"`
+            Comment          string `json:"comment"`
+            CompatibleBrands string `json:"compatible_brands"`
+            Composer         string `json:"composer"`
+            CreationTime     string `json:"creation_time"`
+            Genre            string `json:"genre"`
+            MajorBrand       string `json:"major_brand"`
+            MinorVersion     string `json:"minor_version"`
+            Title            string `json:"title"`
+        } `json:"tags"`
+    } `json:"format"`
+    Streams []struct {
+        AvgFrameRate       string `json:"avg_frame_rate"`
+        BitRate            string `json:"bit_rate"`
+        BitsPerRawSample   string `json:"bits_per_raw_sample"`
+        CodecLongName      string `json:"codec_long_name"`
+        CodecName          string `json:"codec_name"`
+        CodecTag           string `json:"codec_tag"`
+        CodecTagString     string `json:"codec_tag_string"`
+        CodecTimeBase      string `json:"codec_time_base"`
+        CodecType          string `json:"codec_type"`
+        DisplayAspectRatio string `json:"display_aspect_ratio"`
+        Disposition        struct {
+            AttachedPic     float64 `json:"attached_pic"`
+            CleanEffects    float64 `json:"clean_effects"`
+            Comment         float64 `json:"comment"`
+            Default         float64 `json:"default"`
+            Dub             float64 `json:"dub"`
+            Forced          float64 `json:"forced"`
+            HearingImpaired float64 `json:"hearing_impaired"`
+            Karaoke         float64 `json:"karaoke"`
+            Lyrics          float64 `json:"lyrics"`
+            Original        float64 `json:"original"`
+            VisualImpaired  float64 `json:"visual_impaired"`
+        } `json:"disposition"`
+        Duration          string  `json:"duration"`
+        DurationTs        float64 `json:"duration_ts"`
+        HasBFrames        float64 `json:"has_b_frames"`
+        Height            float64 `json:"height"`
+        Index             float64 `json:"index"`
+        Level             float64 `json:"level"`
+        NbFrames          string  `json:"nb_frames"`
+        PixFmt            string  `json:"pix_fmt"`
+        Profile           string  `json:"profile"`
+        RFrameRate        string  `json:"r_frame_rate"`
+        SampleAspectRatio string  `json:"sample_aspect_ratio"`
+        StartPts          float64 `json:"start_pts"`
+        StartTime         string  `json:"start_time"`
+        Tags              struct {
+            CreationTime string `json:"creation_time"`
+            HandlerName  string `json:"handler_name"`
+            Language     string `json:"language"`
+        } `json:"tags"`
+        TimeBase string  `json:"time_base"`
+        Width    float64 `json:"width"`
+    } `json:"streams"`
 }
-</code></pre>
+</pre>
 
 <p>Now you might not require all the data in the structs, so remove any elements that aren&rsquo;t required. As long as no child elements are needed this will be fine.</p>
 
@@ -341,7 +344,7 @@ type Media struct {
         <div class="col-md-3">
             <div class="well well-sm"> 
                 <h4>October 24, 2014<br>
-                <small>913 words</small></h4>
+                <small>914 words</small></h4>
                 <hr>
                 <strong>Categories</strong>
                 <ul class="list-unstyled">
@@ -382,5 +385,9 @@ type Media struct {
 
     <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.js"></script>
-</body>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>

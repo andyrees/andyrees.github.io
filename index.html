@@ -8,13 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="Andy Rees"> 
 
-    <title>My Blog - http://andyrees.github.io</title>
-    <link rel="canonical" href="http://andyrees.github.io/">
+    <title>My Blog - http://localhost:1313</title>
+    <link rel="canonical" href="http://localhost:1313/">
     
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/font-awesome.css" rel="stylesheet">
     <link href="/css/custom.css" rel="stylesheet">
-    <link href="http://andyrees.github.io/index.xml" rel="alternate" type="application/rss+xml" title="My Blog" />
+    <link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="My Blog" />
 </head>
 
 <body>
@@ -27,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://andyrees.github.io">My Blog</a>
+                <a class="navbar-brand" href="http://localhost:1313">My Blog</a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
@@ -45,32 +45,32 @@
         
             <div class="well well-sm">
     <h4>
-        <a href="http://andyrees.github.io/post/rock_spock/">Rock, paper, scissors, lizard, spock</a> <small class="pull-right">Posted on Dec 24, 2014</small><br>
+        <a href="http://localhost:1313/post/rock_spock/">Rock, paper, scissors, lizard, spock</a> <small class="pull-right">Posted on Dec 24, 2014</small><br>
         <small></small>
     </h4>
     <hr>
     <p>This was a fun twenty minutes, during a quiet moment in the office on Chrsitmas Eve. Daily Programmer Challenge The challenge is to implement a basic game of Rock Paper Scissors Lizard Spock (to be called RPSLP for short). Your game will get the human choice. The computer AI will randomly pick a move. It will compare the results and display the moves and the out come (who wins or if a tie).</p>
-    <a class="btn btn-primary btn-xs" href="http://andyrees.github.io/post/rock_spock/">Read More <span class="fa fa-angle-double-right"></span></a>
+    <a class="btn btn-primary btn-xs" href="http://localhost:1313/post/rock_spock/">Read More <span class="fa fa-angle-double-right"></span></a>
 </div>
         
             <div class="well well-sm">
     <h4>
-        <a href="http://andyrees.github.io/post/loudfixer/">loudfixer</a> <small class="pull-right">Posted on Nov 23, 2014</small><br>
+        <a href="http://localhost:1313/post/loudfixer/">loudfixer</a> <small class="pull-right">Posted on Nov 23, 2014</small><br>
         <small></small>
     </h4>
     <hr>
     <p>I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers. The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.</p>
-    <a class="btn btn-primary btn-xs" href="http://andyrees.github.io/post/loudfixer/">Read More <span class="fa fa-angle-double-right"></span></a>
+    <a class="btn btn-primary btn-xs" href="http://localhost:1313/post/loudfixer/">Read More <span class="fa fa-angle-double-right"></span></a>
 </div>
         
             <div class="well well-sm">
     <h4>
-        <a href="http://andyrees.github.io/post/ffprobe_struct/">Creating Go structs from ffprobe data</a> <small class="pull-right">Posted on Oct 24, 2014</small><br>
+        <a href="http://localhost:1313/post/ffprobe_struct/">Creating Go structs from ffprobe data</a> <small class="pull-right">Posted on Oct 24, 2014</small><br>
         <small></small>
     </h4>
     <hr>
     <p>One thing that Go is very good at, is handling JSON and XML data effortlessly and unmarshalling data is simple from either. The only thing that matters is that the decoding &lsquo;struct&rsquo; represents the source schema. That is the real trick though, as data schemas can be quite complex and in reality it can be tedious. JSON&rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler.</p>
-    <a class="btn btn-primary btn-xs" href="http://andyrees.github.io/post/ffprobe_struct/">Read More <span class="fa fa-angle-double-right"></span></a>
+    <a class="btn btn-primary btn-xs" href="http://localhost:1313/post/ffprobe_struct/">Read More <span class="fa fa-angle-double-right"></span></a>
 </div>
         
             
@@ -106,5 +106,9 @@
 
     <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.js"></script>
-</body>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>
