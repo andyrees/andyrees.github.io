@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Tips on My Blog </title>
+    <link>http://andyrees.github.io/tags/tips/</link>
+    <language>en-GB</language>
+    <author>Andy Rees</author>
+    <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
+    <updated>Tue, 20 Jan 2015 19:09:42 UTC</updated>
+    
+    <item>
+      <title>Date, timezones &amp; formatting in go</title>
+      <link>http://andyrees.github.io/post/timezones/</link>
+      <pubDate>Tue, 20 Jan 2015 19:09:42 UTC</pubDate>
+      <author>Andy Rees</author>
+      <guid>http://andyrees.github.io/post/timezones/</guid>
+      <description>
+
+&lt;h2 id=&#34;background:a19622341df1b6f39c8201860441e0a6&#34;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;I recently was required to create a reporting system in go, that took a custom date string in a non-standard format and then output it in a UTC style string. I found this simple task to be quite undocumented on Google, but eventually landed upon this method.&lt;/p&gt;
+
+&lt;p&gt;Firstly there are a couple of references that were handy in this&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/List_of_tz_database_time_zones&#34; target=&#34;_blank&#34;&gt;Wikipedia, List of tz database time zones&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://golang.org/src/time/format.go&#34;&gt;Golang Standard date time references&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/14106541/go-parsing-date-time-strings-which-are-not-standard-formats&#34;&gt;Stackoverflow, Go - Parsing date/time strings which are not &amp;lsquo;standard&amp;rsquo; formats&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;code:a19622341df1b6f39c8201860441e0a6&#34;&gt;Code&lt;/h2&gt;
+
+&lt;pre class=&#34;prettyprint&#34;&gt;
+package main
+
+import (
+    &#34;fmt&#34;
+    &#34;log&#34;
+    &#34;time&#34;
+)
+
+func main() {
+    /*This is a demonstration of using the date format
+      package and UTC locations. Take the current time, a format object
+      based on the time/format.go package constants. Print the first as
+      Israel Standard time and the seconds as America Denver time both
+      in the format specified in the formatString variable&#34;
+    */
+
+    t := time.Now()
+    fmt.Printf(&#34;Current timestamp: %v\n&#34;, t)
+
+    // create two timezone locations
+    location1, err := time.LoadLocation(&#34;Israel&#34;)
+    if err != nil {
+        log.Fatalln(&#34;Time parse error&#34;)
+    }
+
+    location2, err := time.LoadLocation(&#34;America/Denver&#34;)
+    if err != nil {
+        log.Fatalln(&#34;Time parse error&#34;)
+    }
+
+    formatString := &#34;Mon, 02 Jan 2006 15:04 -0700(MST)&#34;
+
+    fmt.Printf(&#34;%v\n&#34;, t.In(location1).Format(formatString))
+    fmt.Printf(&#34;%v\n&#34;, t.In(location2).Format(formatString))
+}
+&lt;/pre&gt;
+
+&lt;h2 id=&#34;output:a19622341df1b6f39c8201860441e0a6&#34;&gt;Output&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;Current timestamp: 2015-01-20 19:27:38.458723755 +0000 GMT
+Tue, 20 Jan 2015 21:27 +0200(IST)
+Tue, 20 Jan 2015 12:27 -0700(MST)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

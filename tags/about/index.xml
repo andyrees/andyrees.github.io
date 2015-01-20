@@ -14,13 +14,21 @@
       <pubDate>Mon, 01 Sep 2014 00:00:00 UTC</pubDate>
       <author>Andy Rees</author>
       <guid>http://andyrees.github.io/about/</guid>
-      <description>&lt;p&gt;Programming to me is the ability to elevate the mundane into the elegant. Take a repetitive task and spend time coding a solution and you not save any time. But try that twice, you might get a slight advantage, three times and there is no contest.&lt;/p&gt;
+      <description>&lt;p&gt;I enjoy programming and I love taking the mundane and finding elegant solutions. Take any boring, repetitive task; spend time coding a solution and you might not save any time. Try that more than once and you have will have definitely gained an advantage.&lt;/p&gt;
 
-&lt;p&gt;Like many others, I started with BASIC in the 70s on a BBC Micro, Assembly code at University, then C and C++ later, Bash, Java &amp;amp; C#. Python allowed me to enjoy programming again; once you get over the white space. But my recent obsession is &lt;a href=&#34;http://www.golang.org/&#34; target=&#34;_blank&#34;&gt;Golang&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Like many others, I started with BASIC in the 70s on a BBC Micro, Assembly code at University, then C and C++ later, Bash, Java &amp;amp; C#. At University I studied Electronic Engineering BENG (HONS), but came away with skills in business, advanced engineering mathematics, Digital &amp;amp; analogue electronics, programming.&lt;/p&gt;
+
+&lt;p&gt;Like the writer of the &lt;a href=&#34;http://xkcd.com/353/&#34;&gt;XKCD&lt;/a&gt; blog, Python allowed me to enjoy programming again; once you get used to the white space or get a decent ide like Pycharm. But my recent obsession is &lt;a href=&#34;http://www.golang.org/&#34; target=&#34;_blank&#34;&gt;Golang&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Python might be nice to write, but it can be complex to deploy. However, Go has inferred runtime static typing, compiles to an executable with no runtime dependencies and is garbage collected and is as much a pleasure to code as python.&lt;/p&gt;
 
 &lt;p&gt;Go is increasingly the answer for both small and large projects, in my day to day activities. My recent adventures with broadcast regulations and perceived loudness, ended with quite a nice example of Go&amp;rsquo;s effectiveness resulting in a really useful &lt;a href=&#34;https://github.com/andyrees/loudfixer&#34; target=&#34;_blank&#34;&gt;utility&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I recently wrote the Ooyala client API in GO, which was fun and enabled me to run a lot of imports and updates from an old system very quickly.&lt;/p&gt;
+
+&lt;p&gt;The most fun I have had so far is to write a REST based transcode engine in go that leverages FFMPEG and inotofy on Ubuntu. The result is a prioitisable, opensource transcode engine with a web front end in angularjs.&lt;/p&gt;
+
+&lt;p&gt;Go makes this so easy and with the REST backend, I could easily create a massive transcode nextwork and control it all via a master REST controller.&lt;/p&gt;
 </description>
     </item>
     

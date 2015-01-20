@@ -8,8 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="Andy Rees"> 
 
-    <title>loudfixer - http://andyrees.github.io</title>
-    <link rel="canonical" href="http://andyrees.github.io/post/loudfixer/">
+    <title>Date, timezones &amp; formatting in go - http://andyrees.github.io</title>
+    <link rel="canonical" href="http://andyrees.github.io/post/timezones/">
     
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/font-awesome.css" rel="stylesheet">
@@ -43,30 +43,70 @@
     <div class="row">
         <div class="col-md-9">
             <div class="well well-sm">
-                    <h3>loudfixer<br> <small></small></h3>
+                    <h3>Date, timezones &amp; formatting in go<br> <small></small></h3>
                     <hr>
-                    <p>I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers.</p>
+                    
 
-<p>The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.</p>
+<h2 id="background:a19622341df1b6f39c8201860441e0a6">Background</h2>
 
-<p>The result is a simple utilty to check the audio levels in a media file for compliance against the EBU R128 or ATSC A/85 RP standards.</p>
+<p>I recently was required to create a reporting system in go, that took a custom date string in a non-standard format and then output it in a UTC style string. I found this simple task to be quite undocumented on Google, but eventually landed upon this method.</p>
 
-<p><a href="http://auphonic.com/blog/15/" target="_blank">Audio loudness measurement and normalization with EBU R128 (Calm Act, ATSC A/85</a><sup><a href="#fn1" id="ref1">1</a></sup></p>
+<p>Firstly there are a couple of references that were handy in this</p>
 
-<p>This <a href="https://github.com/andyrees/loudfixer" target="_blank">utility</a> uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.</p>
+<ul>
+<li><p><a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank">Wikipedia, List of tz database time zones</a></p></li>
 
-<p>Once this is done it is possible to create a ffmpeg command to transcode the file according to the source settings, thus avoiding audio drift and any obvious deterioration, whilst correcting the audio levels and ensuring broadcast loudness audio level compliance.</p>
+<li><p><a href="https://golang.org/src/time/format.go">Golang Standard date time references</a></p></li>
 
-<p>Andy Rees</p>
+<li><p><a href="http://stackoverflow.com/questions/14106541/go-parsing-date-time-strings-which-are-not-standard-formats">Stackoverflow, Go - Parsing date/time strings which are not &lsquo;standard&rsquo; formats</a></p></li>
+</ul>
 
-<pre><code>Usage of loudfixer:
--autofix=false: True to automatically correct the audio levels
--ebu=true: True for EBUR 128, False for ATSC A/85 RP
--filename=&quot;&quot;: Full path of file to check
--output=&quot;json&quot;: choose: json | xml | simple
+<h2 id="code:a19622341df1b6f39c8201860441e0a6">Code</h2>
+
+<pre class="prettyprint">
+package main
+
+import (
+    "fmt"
+    "log"
+    "time"
+)
+
+func main() {
+    /*This is a demonstration of using the date format
+      package and UTC locations. Take the current time, a format object
+      based on the time/format.go package constants. Print the first as
+      Israel Standard time and the seconds as America Denver time both
+      in the format specified in the formatString variable"
+    */
+
+    t := time.Now()
+    fmt.Printf("Current timestamp: %v\n", t)
+
+    // create two timezone locations
+    location1, err := time.LoadLocation("Israel")
+    if err != nil {
+        log.Fatalln("Time parse error")
+    }
+
+    location2, err := time.LoadLocation("America/Denver")
+    if err != nil {
+        log.Fatalln("Time parse error")
+    }
+
+    formatString := "Mon, 02 Jan 2006 15:04 -0700(MST)"
+
+    fmt.Printf("%v\n", t.In(location1).Format(formatString))
+    fmt.Printf("%v\n", t.In(location2).Format(formatString))
+}
+</pre>
+
+<h2 id="output:a19622341df1b6f39c8201860441e0a6">Output</h2>
+
+<pre><code>Current timestamp: 2015-01-20 19:27:38.458723755 +0000 GMT
+Tue, 20 Jan 2015 21:27 +0200(IST)
+Tue, 20 Jan 2015 12:27 -0700(MST)
 </code></pre>
-
-<p><sup id="fn1">1. [GRH. (2012). Audio loudness measurement and normalization with EBU R128 (Calm Act, ATSC A/85). Available: <a href="http://auphonic.com/blog/15/">http://auphonic.com/blog/15/</a>. Last accessed 31 Aug 2014.]<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup></p>
 
             </div>
         </div>
@@ -74,20 +114,18 @@
         
         <div class="col-md-3">
             <div class="well well-sm"> 
-                <h4>November 23, 2014<br>
-                <small>258 words</small></h4>
+                <h4>January 20, 2015<br>
+                <small>215 words</small></h4>
                 <hr>
                 <strong>Categories</strong>
                 <ul class="list-unstyled">
                 
                     <li><a href="/categories/development">development</a></li>
                 
-                    <li><a href="/categories/transcoding">transcoding</a></li>
-                
                 </ul>
                 <hr>
                 <strong>Tags</strong><br>
-                <a class="label label-default" href="/tags/ebur128">ebur128</a> <a class="label label-default" href="/tags/golang">golang</a> <a class="label label-default" href="/tags/ffmpeg">ffmpeg</a> 
+                <a class="label label-default" href="/tags/golang">golang</a> <a class="label label-default" href="/tags/tips">tips</a> 
             </div>
                 <div class="panel panel-default">
         <div class="panel-heading" style="padding: 2px 15px;">
