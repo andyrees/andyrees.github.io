@@ -152,25 +152,20 @@ $ gox -h
 &lt;p&gt;Here are a few handy links an tutorials to get you started&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;The Official Google, web based tour of the Go Programming Language&lt;/strong&gt;. To get started with it, you don&amp;rsquo;t even need to have the tools installed. The following link provides an interactive web-based tutorial, and even has labs.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The Official Google, web based tour of the Go Programming Language&lt;/strong&gt;. To get started with it, you don&amp;rsquo;t even need to have the tools installed. The following link provides an interactive web-based tutorial, and even has labs.
+&lt;p&gt;&lt;a href=&#34;http://tour.golang.org&#34; class=&#34;btn btn-primary&#34;&gt;Tour of Go&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://tour.golang.org&#34;&gt;tour.golang.org&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Installation of the Go toolset&lt;/strong&gt;. When you are ready to give it a go on your own system, this guide wil help you get set up.
+&lt;p&gt;&lt;a href=&#34;https://golang.org/doc/install&#34; class=&#34;btn btn-primary&#34;&gt;Go Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Installation of the Go toolset&lt;/strong&gt;. When you are ready to give it a go on your own system, this guide wil help you get set up.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Getting started with Go&lt;/strong&gt;
+&lt;/p&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/2KmHtgtEZ1s&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://golang.org/doc/install&#34;&gt;Go Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Effective Go way&lt;/strong&gt;. How to write idiomatic code the Go way.
+&lt;p&gt;&lt;a href=&#34;https://golang.org/doc/effective_go.html&#34; class=&#34;btn btn-primary&#34;&gt;Effective Go&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Getting started with Go&lt;/strong&gt;&lt;/p&gt;
-
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/2KmHtgtEZ1s&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Effective Go way&lt;/strong&gt;. How to write idiomatic code the Go way.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://golang.org/doc/effective_go.html&#34;&gt;effective Go&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Go By Example&lt;/strong&gt;. This site has some great code examples of the basics of the language.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://gobyexample.com/&#34;&gt;Go By Example&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Go By Example&lt;/strong&gt;. This site has some great code examples of the basics of the language.
+&lt;p&gt;&lt;a href=&#34;https://gobyexample.com&#34; class=&#34;btn btn-primary&#34;&gt;Go By Example&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
