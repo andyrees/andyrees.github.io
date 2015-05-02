@@ -48,13 +48,21 @@
                     <hr>
                     <p>I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers.</p>
 
+<p><img class="img-thumbnail"
+width="50%" src="/images/loud.jpg" 
+alt="Suni" style="float:left;margin:0 15px 0 0;"/></p>
+
 <p>The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.</p>
 
 <p>The result is a simple utilty to check the audio levels in a media file for compliance against the EBU R128 or ATSC A/85 RP standards.</p>
 
 <p><a href="http://auphonic.com/blog/15/" target="_blank">Audio loudness measurement and normalization with EBU R128 (Calm Act, ATSC A/85</a><sup><a href="#fn1" id="ref1">1</a></sup></p>
 
-<p>This <a href="https://github.com/andyrees/loudfixer" target="_blank">utility</a> uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.</p>
+<div class="jumbotron">
+  <h1>Loudfixer</h1>
+  <p>This utility uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.</p>
+<p><a href="https://github.com/andyrees/loudfixer" class="btn btn-primary">Get Loudfixer</a>
+</div>
 
 <p>Once this is done it is possible to create a ffmpeg command to transcode the file according to the source settings, thus avoiding audio drift and any obvious deterioration, whilst correcting the audio levels and ensuring broadcast loudness audio level compliance.</p>
 
@@ -76,7 +84,7 @@
             <div class="col-md-3">
                 <div class="well well-sm"> 
                     <h4>November 23, 2014<br>
-                        <small>258 words</small></h4>
+                        <small>261 words</small></h4>
                         <hr>
                         <strong>Categories</strong>
                         <ul class="list-unstyled">

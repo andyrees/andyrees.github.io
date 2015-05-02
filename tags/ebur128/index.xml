@@ -16,13 +16,21 @@
       <guid>http://andyrees.github.io/2014/the-thing-you-dont-want-to-hear-about-loudness</guid>
       <description>&lt;p&gt;I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers.&lt;/p&gt;
 
+&lt;p&gt;&lt;img class=&#34;img-thumbnail&#34;
+width=&#34;50%&#34; src=&#34;http://andyrees.github.io/images/loud.jpg&#34; 
+alt=&#34;Suni&#34; style=&#34;float:left;margin:0 15px 0 0;&#34;/&gt;&lt;/p&gt;
+
 &lt;p&gt;The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.&lt;/p&gt;
 
 &lt;p&gt;The result is a simple utilty to check the audio levels in a media file for compliance against the EBU R128 or ATSC A/85 RP standards.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://auphonic.com/blog/15/&#34; target=&#34;_blank&#34;&gt;Audio loudness measurement and normalization with EBU R128 (Calm Act, ATSC A/85&lt;/a&gt;&lt;sup&gt;&lt;a href=&#34;#fn1&#34; id=&#34;ref1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;p&gt;This &lt;a href=&#34;https://github.com/andyrees/loudfixer&#34; target=&#34;_blank&#34;&gt;utility&lt;/a&gt; uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.&lt;/p&gt;
+&lt;div class=&#34;jumbotron&#34;&gt;
+  &lt;h1&gt;Loudfixer&lt;/h1&gt;
+  &lt;p&gt;This utility uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/andyrees/loudfixer&#34; class=&#34;btn btn-primary&#34;&gt;Get Loudfixer&lt;/a&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Once this is done it is possible to create a ffmpeg command to transcode the file according to the source settings, thus avoiding audio drift and any obvious deterioration, whilst correcting the audio levels and ensuring broadcast loudness audio level compliance.&lt;/p&gt;
 

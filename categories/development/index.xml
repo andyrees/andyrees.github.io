@@ -17,70 +17,50 @@
       <description>&lt;p&gt;The fastest way to mastery in any field is to emulate expertise of those at the top of their field. With that in mind, I have collected a few great links and articles that will catapult you into their esteemed company in no time at all.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Building Web Apps with Go
-Learn how to build and deploy web applications with Go. A useful overview from the creator of Martini and Negroni.
-&lt;a href=&#34;https://www.gitbook.com/book/codegangsta/building-web-apps-with-go/details&#34;&gt;&lt;/br&gt;
-&lt;img border=&#34;0&#34; alt=&#34;&#34; src=&#34;https://sm3lir.cloudimage.io/s/width/226/https://www.gitbook.com/cover/book/codegangsta/building-web-apps-with-go.jpg?build=1417051877195&amp;v=6.12.1&#34; width=&#34;100&#34;&gt;
-&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Building Web Apps with Go&lt;/strong&gt;&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;Go Concurrency Patterns: Pipelines and cancellation
-Creating streaming data pipelines using Go&amp;rsquo;s concurrency primitives&lt;/p&gt;
+&lt;p&gt;Learn how to build and deploy web applications with Go. A useful overview from the creator of Martini and Negroni.
+&lt;img border=&#34;0&#34; alt=&#34;&#34; src=&#34;https://sm3lir.cloudimage.io/s/width/226/https://www.gitbook.com/cover/book/codegangsta/building-web-apps-with-go.jpg?build=1417051877195&amp;v=6.12.1&#34; height=&#34;40%&#34;&gt;
+&lt;/a&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.golang.org/pipelines&#34;&gt;article&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;p&gt;&lt;p&gt;&lt;a href=&#34;https://www.gitbook.com/book/codegangsta/building-web-apps-with-go/details&#34; class=&#34;btn btn-primary&#34;&gt;Read&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Go Training Classes by Ardan Studios&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Go Concurrency Patterns&lt;/strong&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ArdanStudios/gotraining&#34;&gt;article&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;p&gt;Go&amp;rsquo;s concurrency primitives make it easy to construct streaming data pipelines that make efficient use of I/O and multiple CPUs. This article presents examples of such pipelines, highlights subtleties that arise when operations fail, and introduces techniques for dealing with failures cleanly.
+&lt;p&gt;&lt;a href=&#34;http://blog.golang.org/pipelines&#34; class=&#34;btn btn-primary&#34;&gt;article&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Twelve Go Best Practices, Francesc Campoy Flores&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Go Training Classes by Ardan Studios&lt;/strong&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.campoy.cat/2014/08/twelve-go-best-practices.html&#34;&gt;article&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;p&gt;The Ardan Labs Go Bootcamp is a 3 day class providing a comprehensive and idiomatic view of the Go programming language. The class covers topics ranging from language syntax, OOP, concurrency, channels, testing, debugging and more. Great for anyone interested in getting a jump start on learning Go or wanting to understand more about the language and internals. But if you can&amp;rsquo;t make it to the course, the code and course notes are available here.
+&lt;p&gt;&lt;a href=&#34;https://github.com/ArdanStudios/gotraining&#34; class=&#34;btn btn-primary&#34;&gt;notes&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Whispering Gophers, Network programming in Go, by Andrew Gerrand &amp;amp; Francesc Campoy.
-A great code lab that demonstrates network programming in Go.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Twelve Go Best Practices&lt;/strong&gt;, Francesc Campoy Flores&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://whispering-gophers.appspot.com/talk.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;p&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/8D3Vmm1BGoY&#34; frameborder=&#34;10&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/br&gt;
+&lt;a href=&#34;http://blog.campoy.cat/2014/08/twelve-go-best-practices.html&#34; class=&#34;btn btn-primary&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;10 things you (probably) don&amp;rsquo;t know about Go, Andrew Gerrand&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Whispering Gophers, Network programming in Go&lt;/strong&gt;, by Andrew Gerrand &amp;amp; Francesc Campoy.
+A great code lab that demonstrates network programming in Go.
+&lt;p&gt;&lt;a href=&#34;http://whispering-gophers.appspot.com/talk.slide&#34; class=&#34;btn btn-primary&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2012/10things.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;10 things you (probably) don&amp;rsquo;t know about Go&lt;/strong&gt;, Andrew Gerrand
+&lt;p&gt;&lt;a href=&#34;http://talks.golang.org/2012/10things.slide&#34; class=&#34;btn btn-primary&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Go: code that grows with grace, Andrew Gerrand&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Go: code that grows with grace&lt;/strong&gt;, Andrew Gerrand
+&lt;p&gt;&lt;iframe src=&#34;https://player.vimeo.com/video/53221560&#34; width=&#34;500&#34; height=&#34;281&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt; &lt;p&gt;&lt;a href=&#34;https://vimeo.com/53221560&#34;&gt;Go: code that grows with grace&lt;/a&gt; from &lt;a href=&#34;https://vimeo.com/user4280938&#34;&gt;&amp;Oslash;redev Conference&lt;/a&gt; on &lt;a href=&#34;https://vimeo.com&#34;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://talks.golang.org/2012/chat.slide&#34; class=&#34;btn btn-primary&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://vimeo.com/53221560&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2012/chat.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;A Tour of the Go Programming Language&lt;/strong&gt;, Russ Cox
+&lt;p&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/MzYZhh6gpI0&#34; frameborder=&#34;10&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/br&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;A Tour of the Go Programming Language, Russ Cox&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Go for Gophers&lt;/strong&gt;, Andrew Gerrand
+&lt;p&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/dKGmK_Z1Zl0&#34; frameborder=&#34;10&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/br&gt;
+&lt;p&gt;&lt;a href=&#34;http://talks.golang.org/2014/go4gophers.slide&#34; class=&#34;btn btn-primary&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/MzYZhh6gpI0&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Go for Gophers, Andrew Gerrand&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2014/go4gophers.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=dKGmK_Z1Zl0&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;JSON, interfaces, and go generate, Francesc Campoy&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2015/json.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=YgnD27GFcyA&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;JSON, interfaces, and go generate&lt;/strong&gt;, Francesc Campoy
+&lt;p&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/YgnD27GFcyA&#34; frameborder=&#34;10&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/br&gt;
+&lt;p&gt;&lt;a href=&#34;http://talks.golang.org/2015/json.slide&#34; class=&#34;btn btn-primary&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
@@ -94,6 +74,10 @@ A great code lab that demonstrates network programming in Go.&lt;/p&gt;
       <description>
 
 &lt;p&gt;5 Ways to become the MacGyver of Go, with nothing more than a paperclip, an elastic band, a magnet and the Go Standard Library&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&#34;img-thumbnail&#34;
+width=&#34;50%&#34; src=&#34;http://andyrees.github.io/images/swiss.jpg&#34; 
+alt=&#34;Suni&#34; style=&#34;float:left;margin:0 15px 0 0;&#34;/&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;install-the-go-toolset-from-source:f0efb89c388e307a3c86d9e1a4ed580e&#34;&gt;Install the Go toolset from source.&lt;/h3&gt;
 
@@ -203,7 +187,10 @@ $ gox -h
 
 &lt;p&gt;I recently was required to create a reporting system in go, that took a custom date string in a non-standard format and then output it in a UTC style string. I found this simple task to be quite undocumented on Google, but eventually landed upon this method.&lt;/p&gt;
 
-&lt;p&gt;Firstly there are a couple of references that were handy in this&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;img-thumbnail&#34;
+width=&#34;30%&#34; src=&#34;http://andyrees.github.io/images/time.jpg&#34; 
+alt=&#34;Suni&#34; style=&#34;float:right;margin:0 15px 0 0;&#34;/&gt;
+Firstly there are a couple of references that were handy in this&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/List_of_tz_database_time_zones&#34; target=&#34;_blank&#34;&gt;Wikipedia, List of tz database time zones&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -430,13 +417,21 @@ func main() {
       <guid>http://andyrees.github.io/2014/the-thing-you-dont-want-to-hear-about-loudness</guid>
       <description>&lt;p&gt;I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers.&lt;/p&gt;
 
+&lt;p&gt;&lt;img class=&#34;img-thumbnail&#34;
+width=&#34;50%&#34; src=&#34;http://andyrees.github.io/images/loud.jpg&#34; 
+alt=&#34;Suni&#34; style=&#34;float:left;margin:0 15px 0 0;&#34;/&gt;&lt;/p&gt;
+
 &lt;p&gt;The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.&lt;/p&gt;
 
 &lt;p&gt;The result is a simple utilty to check the audio levels in a media file for compliance against the EBU R128 or ATSC A/85 RP standards.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://auphonic.com/blog/15/&#34; target=&#34;_blank&#34;&gt;Audio loudness measurement and normalization with EBU R128 (Calm Act, ATSC A/85&lt;/a&gt;&lt;sup&gt;&lt;a href=&#34;#fn1&#34; id=&#34;ref1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;p&gt;This &lt;a href=&#34;https://github.com/andyrees/loudfixer&#34; target=&#34;_blank&#34;&gt;utility&lt;/a&gt; uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.&lt;/p&gt;
+&lt;div class=&#34;jumbotron&#34;&gt;
+  &lt;h1&gt;Loudfixer&lt;/h1&gt;
+  &lt;p&gt;This utility uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/andyrees/loudfixer&#34; class=&#34;btn btn-primary&#34;&gt;Get Loudfixer&lt;/a&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Once this is done it is possible to create a ffmpeg command to transcode the file according to the source settings, thus avoiding audio drift and any obvious deterioration, whilst correcting the audio levels and ensuring broadcast loudness audio level compliance.&lt;/p&gt;
 
@@ -459,11 +454,16 @@ func main() {
       <pubDate>Fri, 24 Oct 2014 10:01:04 UTC</pubDate>
       <author>Andy Rees</author>
       <guid>http://andyrees.github.io/2014/why-your-data-never-works-out-the-way-you-plan</guid>
-      <description>&lt;p&gt;Go handles JSON and XML data effortlessly and unmarshalling is simple. The only requirement is a decoding &amp;lsquo;struct&amp;rsquo; that accurately represents the source schema. That can be quite a task though, as data schemas can be quite complex and in reality it can be tedious.&lt;/p&gt;
+      <description>&lt;p&gt;Go handles JSON and XML data effortlessly and unmarshalling is simple. The only requirement is a decoding &amp;lsquo;struct&amp;rsquo; that accurately represents the source schema.&lt;/p&gt;
 
-&lt;p&gt;JSON&amp;rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;img-thumbnail&#34;
+width=&#34;30%&#34; src=&#34;http://andyrees.github.io/images/confused.jpg&#34; 
+alt=&#34;Suni&#34; style=&#34;float:right;margin:0 15px 0 0;&#34;/&gt;
+That can be quite a task though, as data schemas can be quite complex and in reality it can be tedious and you can find yourself lost in a sea of data.&lt;/p&gt;
 
-&lt;p&gt;Here is a simple JSON unmarshal example in go:&lt;/p&gt;
+&lt;p&gt;JSON&amp;rsquo;s readability and popularity recently has resulted in a lot of utilities, such as REST servicesm preferring JSON over the more traditional XML or SOAP. This makes the task of decoding much simpler.&lt;/p&gt;
+
+&lt;p&gt;Here is a simple example demonstrating how easy it is to unmarshal JSON in go:&lt;/p&gt;
 
 &lt;pre class=&#34;prettyprint&#34;&gt;
 package main
@@ -492,7 +492,7 @@ func main() {
 }
 &lt;/pre&gt;
 
-&lt;p&gt;When it comes to video, data structs can be complex and this can make the task tedious. For example look at the result of this command on a sample file:&lt;/p&gt;
+&lt;p&gt;Video, data structs can be complex and this can make the task tedious. For example look at the result of this command on a sample file:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;ffprobe -show_format -show_streams -print_format json /path/to/bbb_sunflower_2160p_60fps_normal.mp4
 &lt;/code&gt;&lt;/pre&gt;
@@ -661,7 +661,7 @@ func main() {
 }
 &lt;/pre&gt;&lt;/p&gt;
 
-&lt;p&gt;On the suface this looks like a mammoth task, but do not despair, the Go standard library has great tools like the &amp;ldquo;reflect&amp;rdquo; package, that allow for lexical scanning; the resulting data structure can be easily retrieved.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;On the suface this looks like a mammoth task&lt;/strong&gt;, but do not despair, the Go standard library has great tools like the &amp;ldquo;reflect&amp;rdquo; package, that allow for lexical scanning; the resulting data structure can be easily retrieved.&lt;/p&gt;
 
 &lt;div class=&#34;jumbotron&#34;&gt;
   &lt;h1&gt;&lt;a href=&#34;https://github.com/tmc/json-to-struct&#34; target=&#34;_blank&#34;&gt;Json-to-struct&lt;/a&gt;&lt;/h1&gt;

@@ -20,7 +20,10 @@
 
 &lt;p&gt;I recently was required to create a reporting system in go, that took a custom date string in a non-standard format and then output it in a UTC style string. I found this simple task to be quite undocumented on Google, but eventually landed upon this method.&lt;/p&gt;
 
-&lt;p&gt;Firstly there are a couple of references that were handy in this&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;img-thumbnail&#34;
+width=&#34;30%&#34; src=&#34;http://andyrees.github.io/images/time.jpg&#34; 
+alt=&#34;Suni&#34; style=&#34;float:right;margin:0 15px 0 0;&#34;/&gt;
+Firstly there are a couple of references that were handy in this&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/List_of_tz_database_time_zones&#34; target=&#34;_blank&#34;&gt;Wikipedia, List of tz database time zones&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;

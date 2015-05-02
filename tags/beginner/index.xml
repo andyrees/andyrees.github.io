@@ -17,70 +17,50 @@
       <description>&lt;p&gt;The fastest way to mastery in any field is to emulate expertise of those at the top of their field. With that in mind, I have collected a few great links and articles that will catapult you into their esteemed company in no time at all.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Building Web Apps with Go
-Learn how to build and deploy web applications with Go. A useful overview from the creator of Martini and Negroni.
-&lt;a href=&#34;https://www.gitbook.com/book/codegangsta/building-web-apps-with-go/details&#34;&gt;&lt;/br&gt;
-&lt;img border=&#34;0&#34; alt=&#34;&#34; src=&#34;https://sm3lir.cloudimage.io/s/width/226/https://www.gitbook.com/cover/book/codegangsta/building-web-apps-with-go.jpg?build=1417051877195&amp;v=6.12.1&#34; width=&#34;100&#34;&gt;
-&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Building Web Apps with Go&lt;/strong&gt;&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;Go Concurrency Patterns: Pipelines and cancellation
-Creating streaming data pipelines using Go&amp;rsquo;s concurrency primitives&lt;/p&gt;
+&lt;p&gt;Learn how to build and deploy web applications with Go. A useful overview from the creator of Martini and Negroni.
+&lt;img border=&#34;0&#34; alt=&#34;&#34; src=&#34;https://sm3lir.cloudimage.io/s/width/226/https://www.gitbook.com/cover/book/codegangsta/building-web-apps-with-go.jpg?build=1417051877195&amp;v=6.12.1&#34; height=&#34;40%&#34;&gt;
+&lt;/a&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.golang.org/pipelines&#34;&gt;article&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;p&gt;&lt;p&gt;&lt;a href=&#34;https://www.gitbook.com/book/codegangsta/building-web-apps-with-go/details&#34; class=&#34;btn btn-primary&#34;&gt;Read&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Go Training Classes by Ardan Studios&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Go Concurrency Patterns&lt;/strong&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ArdanStudios/gotraining&#34;&gt;article&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;p&gt;Go&amp;rsquo;s concurrency primitives make it easy to construct streaming data pipelines that make efficient use of I/O and multiple CPUs. This article presents examples of such pipelines, highlights subtleties that arise when operations fail, and introduces techniques for dealing with failures cleanly.
+&lt;p&gt;&lt;a href=&#34;http://blog.golang.org/pipelines&#34; class=&#34;btn btn-primary&#34;&gt;article&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Twelve Go Best Practices, Francesc Campoy Flores&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Go Training Classes by Ardan Studios&lt;/strong&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.campoy.cat/2014/08/twelve-go-best-practices.html&#34;&gt;article&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;p&gt;The Ardan Labs Go Bootcamp is a 3 day class providing a comprehensive and idiomatic view of the Go programming language. The class covers topics ranging from language syntax, OOP, concurrency, channels, testing, debugging and more. Great for anyone interested in getting a jump start on learning Go or wanting to understand more about the language and internals. But if you can&amp;rsquo;t make it to the course, the code and course notes are available here.
+&lt;p&gt;&lt;a href=&#34;https://github.com/ArdanStudios/gotraining&#34; class=&#34;btn btn-primary&#34;&gt;notes&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Whispering Gophers, Network programming in Go, by Andrew Gerrand &amp;amp; Francesc Campoy.
-A great code lab that demonstrates network programming in Go.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Twelve Go Best Practices&lt;/strong&gt;, Francesc Campoy Flores&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://whispering-gophers.appspot.com/talk.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;p&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/8D3Vmm1BGoY&#34; frameborder=&#34;10&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/br&gt;
+&lt;a href=&#34;http://blog.campoy.cat/2014/08/twelve-go-best-practices.html&#34; class=&#34;btn btn-primary&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;10 things you (probably) don&amp;rsquo;t know about Go, Andrew Gerrand&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Whispering Gophers, Network programming in Go&lt;/strong&gt;, by Andrew Gerrand &amp;amp; Francesc Campoy.
+A great code lab that demonstrates network programming in Go.
+&lt;p&gt;&lt;a href=&#34;http://whispering-gophers.appspot.com/talk.slide&#34; class=&#34;btn btn-primary&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2012/10things.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;10 things you (probably) don&amp;rsquo;t know about Go&lt;/strong&gt;, Andrew Gerrand
+&lt;p&gt;&lt;a href=&#34;http://talks.golang.org/2012/10things.slide&#34; class=&#34;btn btn-primary&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Go: code that grows with grace, Andrew Gerrand&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Go: code that grows with grace&lt;/strong&gt;, Andrew Gerrand
+&lt;p&gt;&lt;iframe src=&#34;https://player.vimeo.com/video/53221560&#34; width=&#34;500&#34; height=&#34;281&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt; &lt;p&gt;&lt;a href=&#34;https://vimeo.com/53221560&#34;&gt;Go: code that grows with grace&lt;/a&gt; from &lt;a href=&#34;https://vimeo.com/user4280938&#34;&gt;&amp;Oslash;redev Conference&lt;/a&gt; on &lt;a href=&#34;https://vimeo.com&#34;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://talks.golang.org/2012/chat.slide&#34; class=&#34;btn btn-primary&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://vimeo.com/53221560&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2012/chat.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;A Tour of the Go Programming Language&lt;/strong&gt;, Russ Cox
+&lt;p&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/MzYZhh6gpI0&#34; frameborder=&#34;10&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/br&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;A Tour of the Go Programming Language, Russ Cox&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Go for Gophers&lt;/strong&gt;, Andrew Gerrand
+&lt;p&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/dKGmK_Z1Zl0&#34; frameborder=&#34;10&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/br&gt;
+&lt;p&gt;&lt;a href=&#34;http://talks.golang.org/2014/go4gophers.slide&#34; class=&#34;btn btn-primary&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/MzYZhh6gpI0&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Go for Gophers, Andrew Gerrand&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2014/go4gophers.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=dKGmK_Z1Zl0&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;JSON, interfaces, and go generate, Francesc Campoy&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2015/json.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=YgnD27GFcyA&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;JSON, interfaces, and go generate&lt;/strong&gt;, Francesc Campoy
+&lt;p&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/YgnD27GFcyA&#34; frameborder=&#34;10&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/br&gt;
+&lt;p&gt;&lt;a href=&#34;http://talks.golang.org/2015/json.slide&#34; class=&#34;btn btn-primary&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>

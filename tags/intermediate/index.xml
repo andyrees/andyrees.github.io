@@ -18,6 +18,10 @@
 
 &lt;p&gt;5 Ways to become the MacGyver of Go, with nothing more than a paperclip, an elastic band, a magnet and the Go Standard Library&lt;/p&gt;
 
+&lt;p&gt;&lt;img class=&#34;img-thumbnail&#34;
+width=&#34;50%&#34; src=&#34;http://andyrees.github.io/images/swiss.jpg&#34; 
+alt=&#34;Suni&#34; style=&#34;float:left;margin:0 15px 0 0;&#34;/&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;install-the-go-toolset-from-source:f0efb89c388e307a3c86d9e1a4ed580e&#34;&gt;Install the Go toolset from source.&lt;/h3&gt;
 
 &lt;p&gt;This might sound crazy, as there are package installers available for most operating systems. But it has one really useful side effect. You can then create a cross compilation toolchain. So you can easily release multiple versions of your Go app. for instructions, click &lt;a href=&#34;https://golang.org/doc/install/source&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;

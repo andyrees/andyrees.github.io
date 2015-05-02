@@ -16,13 +16,21 @@
       <guid>http://andyrees.github.io/2014/the-thing-you-dont-want-to-hear-about-loudness</guid>
       <description>&lt;p&gt;I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers.&lt;/p&gt;
 
+&lt;p&gt;&lt;img class=&#34;img-thumbnail&#34;
+width=&#34;50%&#34; src=&#34;http://andyrees.github.io/images/loud.jpg&#34; 
+alt=&#34;Suni&#34; style=&#34;float:left;margin:0 15px 0 0;&#34;/&gt;&lt;/p&gt;
+
 &lt;p&gt;The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.&lt;/p&gt;
 
 &lt;p&gt;The result is a simple utilty to check the audio levels in a media file for compliance against the EBU R128 or ATSC A/85 RP standards.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://auphonic.com/blog/15/&#34; target=&#34;_blank&#34;&gt;Audio loudness measurement and normalization with EBU R128 (Calm Act, ATSC A/85&lt;/a&gt;&lt;sup&gt;&lt;a href=&#34;#fn1&#34; id=&#34;ref1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;p&gt;This &lt;a href=&#34;https://github.com/andyrees/loudfixer&#34; target=&#34;_blank&#34;&gt;utility&lt;/a&gt; uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.&lt;/p&gt;
+&lt;div class=&#34;jumbotron&#34;&gt;
+  &lt;h1&gt;Loudfixer&lt;/h1&gt;
+  &lt;p&gt;This utility uses the power of Go to easily parse the json results from a ffprobe call on a file and obtains the specifics of each stream in the media file. It then uses ffmpeg to check the file for its EBU loudness levels and returns the value.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/andyrees/loudfixer&#34; class=&#34;btn btn-primary&#34;&gt;Get Loudfixer&lt;/a&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Once this is done it is possible to create a ffmpeg command to transcode the file according to the source settings, thus avoiding audio drift and any obvious deterioration, whilst correcting the audio levels and ensuring broadcast loudness audio level compliance.&lt;/p&gt;
 
@@ -45,11 +53,16 @@
       <pubDate>Fri, 24 Oct 2014 10:01:04 UTC</pubDate>
       <author>Andy Rees</author>
       <guid>http://andyrees.github.io/2014/why-your-data-never-works-out-the-way-you-plan</guid>
-      <description>&lt;p&gt;Go handles JSON and XML data effortlessly and unmarshalling is simple. The only requirement is a decoding &amp;lsquo;struct&amp;rsquo; that accurately represents the source schema. That can be quite a task though, as data schemas can be quite complex and in reality it can be tedious.&lt;/p&gt;
+      <description>&lt;p&gt;Go handles JSON and XML data effortlessly and unmarshalling is simple. The only requirement is a decoding &amp;lsquo;struct&amp;rsquo; that accurately represents the source schema.&lt;/p&gt;
 
-&lt;p&gt;JSON&amp;rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;img-thumbnail&#34;
+width=&#34;30%&#34; src=&#34;http://andyrees.github.io/images/confused.jpg&#34; 
+alt=&#34;Suni&#34; style=&#34;float:right;margin:0 15px 0 0;&#34;/&gt;
+That can be quite a task though, as data schemas can be quite complex and in reality it can be tedious and you can find yourself lost in a sea of data.&lt;/p&gt;
 
-&lt;p&gt;Here is a simple JSON unmarshal example in go:&lt;/p&gt;
+&lt;p&gt;JSON&amp;rsquo;s readability and popularity recently has resulted in a lot of utilities, such as REST servicesm preferring JSON over the more traditional XML or SOAP. This makes the task of decoding much simpler.&lt;/p&gt;
+
+&lt;p&gt;Here is a simple example demonstrating how easy it is to unmarshal JSON in go:&lt;/p&gt;
 
 &lt;pre class=&#34;prettyprint&#34;&gt;
 package main
@@ -78,7 +91,7 @@ func main() {
 }
 &lt;/pre&gt;
 
-&lt;p&gt;When it comes to video, data structs can be complex and this can make the task tedious. For example look at the result of this command on a sample file:&lt;/p&gt;
+&lt;p&gt;Video, data structs can be complex and this can make the task tedious. For example look at the result of this command on a sample file:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;ffprobe -show_format -show_streams -print_format json /path/to/bbb_sunflower_2160p_60fps_normal.mp4
 &lt;/code&gt;&lt;/pre&gt;
@@ -247,7 +260,7 @@ func main() {
 }
 &lt;/pre&gt;&lt;/p&gt;
 
-&lt;p&gt;On the suface this looks like a mammoth task, but do not despair, the Go standard library has great tools like the &amp;ldquo;reflect&amp;rdquo; package, that allow for lexical scanning; the resulting data structure can be easily retrieved.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;On the suface this looks like a mammoth task&lt;/strong&gt;, but do not despair, the Go standard library has great tools like the &amp;ldquo;reflect&amp;rdquo; package, that allow for lexical scanning; the resulting data structure can be easily retrieved.&lt;/p&gt;
 
 &lt;div class=&#34;jumbotron&#34;&gt;
   &lt;h1&gt;&lt;a href=&#34;https://github.com/tmc/json-to-struct&#34; target=&#34;_blank&#34;&gt;Json-to-struct&lt;/a&gt;&lt;/h1&gt;

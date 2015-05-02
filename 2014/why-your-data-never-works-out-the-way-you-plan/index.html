@@ -46,11 +46,16 @@
                 <div class="well well-sm">
                     <h3>Why Your Data Never Works Out the Way You Plan<br> <small>Parsing data effectively from ffprobe</small></h3>
                     <hr>
-                    <p>Go handles JSON and XML data effortlessly and unmarshalling is simple. The only requirement is a decoding &lsquo;struct&rsquo; that accurately represents the source schema. That can be quite a task though, as data schemas can be quite complex and in reality it can be tedious.</p>
+                    <p>Go handles JSON and XML data effortlessly and unmarshalling is simple. The only requirement is a decoding &lsquo;struct&rsquo; that accurately represents the source schema.</p>
 
-<p>JSON&rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler.</p>
+<p><img class="img-thumbnail"
+width="30%" src="/images/confused.jpg" 
+alt="Suni" style="float:right;margin:0 15px 0 0;"/>
+That can be quite a task though, as data schemas can be quite complex and in reality it can be tedious and you can find yourself lost in a sea of data.</p>
 
-<p>Here is a simple JSON unmarshal example in go:</p>
+<p>JSON&rsquo;s readability and popularity recently has resulted in a lot of utilities, such as REST servicesm preferring JSON over the more traditional XML or SOAP. This makes the task of decoding much simpler.</p>
+
+<p>Here is a simple example demonstrating how easy it is to unmarshal JSON in go:</p>
 
 <pre class="prettyprint">
 package main
@@ -79,7 +84,7 @@ func main() {
 }
 </pre>
 
-<p>When it comes to video, data structs can be complex and this can make the task tedious. For example look at the result of this command on a sample file:</p>
+<p>Video, data structs can be complex and this can make the task tedious. For example look at the result of this command on a sample file:</p>
 
 <pre><code>ffprobe -show_format -show_streams -print_format json /path/to/bbb_sunflower_2160p_60fps_normal.mp4
 </code></pre>
@@ -248,7 +253,7 @@ func main() {
 }
 </pre></p>
 
-<p>On the suface this looks like a mammoth task, but do not despair, the Go standard library has great tools like the &ldquo;reflect&rdquo; package, that allow for lexical scanning; the resulting data structure can be easily retrieved.</p>
+<p><strong>On the suface this looks like a mammoth task</strong>, but do not despair, the Go standard library has great tools like the &ldquo;reflect&rdquo; package, that allow for lexical scanning; the resulting data structure can be easily retrieved.</p>
 
 <div class="jumbotron">
   <h1><a href="https://github.com/tmc/json-to-struct" target="_blank">Json-to-struct</a></h1>
@@ -347,7 +352,7 @@ type Media struct {
             <div class="col-md-3">
                 <div class="well well-sm"> 
                     <h4>October 24, 2014<br>
-                        <small>903 words</small></h4>
+                        <small>927 words</small></h4>
                         <hr>
                         <strong>Categories</strong>
                         <ul class="list-unstyled">
