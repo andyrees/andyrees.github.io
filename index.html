@@ -1,121 +1,191 @@
 <!doctype html>
 <html lang="en">
 <head>
-    
+	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Andy Rees"> 
 
-    <title>My Blog - http://andyrees.github.io</title>
-    <link rel="canonical" href="http://andyrees.github.io/">
-    
-    <link href="/css/bootstrap.css" rel="stylesheet">
+	<title>Andy&#39;s Blog - http://andyrees.github.io/</title>
+	<link rel="canonical" href="http://andyrees.github.io/">
+	
+    <link href="/css/bootstrap.min-cerulean.css" rel="stylesheet">
     <link href="/css/font-awesome.css" rel="stylesheet">
     <link href="/css/custom.css" rel="stylesheet">
-    <link href="http://andyrees.github.io/index.xml" rel="alternate" type="application/rss+xml" title="My Blog" />
+	
+	<link href="http://andyrees.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Andy&#39;s Blog" />
+	
 </head>
 
 <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://andyrees.github.io">My Blog</a>
-            </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/post/">Post Index</a></li>
-                    <li><a href="/about/">About Me</a></li>
-                    <li><a href="/post/index.xml" class="btn btn-info btn-xs"><i class="fa fa-rss fa-2x"></i></a></li>
-                    
-                </ul>
-            </div>
-        </div>
-    </nav>
-<div class="container">
-    <div class="row">
-        <div class="col-md-9">
-        
-            <div class="well well-sm">
-    <h4>
-        <a href="http://andyrees.github.io/post/timezones/">Date, timezones &amp; formatting in go</a> <small class="pull-right">Posted on Jan 20, 2015</small><br>
-        <small></small>
-    </h4>
-    <hr>
-    <p>Background I recently was required to create a reporting system in go, that took a custom date string in a non-standard format and then output it in a UTC style string. I found this simple task to be quite undocumented on Google, but eventually landed upon this method. Firstly there are a couple of references that were handy in this Wikipedia, List of tz database time zones Golang Standard date time references Stackoverflow, Go - Parsing date/time strings which are not &lsquo;standard&rsquo; formats Code package main import ( "fmt" "log" "time" ) func main() { /*This is a demonstration of using the date format package and UTC locations.</p>
-    <a class="btn btn-primary btn-xs" href="http://andyrees.github.io/post/timezones/">Read More <span class="fa fa-angle-double-right"></span></a>
-</div>
-        
-            <div class="well well-sm">
-    <h4>
-        <a href="http://andyrees.github.io/post/rock_spock/">Rock, paper, scissors, lizard, spock</a> <small class="pull-right">Posted on Dec 24, 2014</small><br>
-        <small></small>
-    </h4>
-    <hr>
-    <p>This was a fun twenty minutes, during a quiet moment in the office on Chrsitmas Eve. Daily Programmer Challenge The challenge is to implement a basic game of Rock Paper Scissors Lizard Spock (to be called RPSLP for short). Your game will get the human choice. The computer AI will randomly pick a move. It will compare the results and display the moves and the out come (who wins or if a tie).</p>
-    <a class="btn btn-primary btn-xs" href="http://andyrees.github.io/post/rock_spock/">Read More <span class="fa fa-angle-double-right"></span></a>
-</div>
-        
-            <div class="well well-sm">
-    <h4>
-        <a href="http://andyrees.github.io/post/loudfixer/">loudfixer</a> <small class="pull-right">Posted on Nov 23, 2014</small><br>
-        <small></small>
-    </h4>
-    <hr>
-    <p>I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers. The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.</p>
-    <a class="btn btn-primary btn-xs" href="http://andyrees.github.io/post/loudfixer/">Read More <span class="fa fa-angle-double-right"></span></a>
-</div>
-        
-            <div class="well well-sm">
-    <h4>
-        <a href="http://andyrees.github.io/post/ffprobe_struct/">Creating Go structs from ffprobe data</a> <small class="pull-right">Posted on Oct 24, 2014</small><br>
-        <small></small>
-    </h4>
-    <hr>
-    <p>One thing that Go is very good at, is handling JSON and XML data effortlessly and unmarshalling data is simple from either. The only thing that matters is that the decoding &lsquo;struct&rsquo; represents the source schema. That is the real trick though, as data schemas can be quite complex and in reality it can be tedious. JSON&rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler.</p>
-    <a class="btn btn-primary btn-xs" href="http://andyrees.github.io/post/ffprobe_struct/">Read More <span class="fa fa-angle-double-right"></span></a>
-</div>
-        
-            
-        
-        </div>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
-        
-        <div class="col-md-3">
-            <div class="panel panel-default">
+            <a class="navbar-brand" href="http://andyrees.github.io/">Andy&#39;s Blog</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/post/">Post Index</a></li>
+                <li><a href="/about/">About Me</a></li>
+                <li><a href="/post/index.xml" class="btn btn-info btn-xs"><i class="fa fa-rss fa-2x"></i></a></li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                
+                <div class="well well-sm">
+	<h4>
+		<a href="http://andyrees.github.io/2015/10-great-articles-about-go">10 Great Articles about Go</a>
+		<small class="pull-right">Posted on Mar 29, 2015</small>
+		<br>
+		<small>Wisdom from the Masters of Go</small>
+	</h4>
+	<hr>
+	<p><p>The fastest way to mastery in any field is to emulate expertise of those at the top of their field. With that in mind, I have collected a few great links and articles that will catapult you into their esteemed company in no time at all.</p>
+</p>
+	<a class="btn btn-primary btn-xs" href="http://andyrees.github.io/2015/10-great-articles-about-go">Read More<span class="fa fa-angle-double-right"></span></a>
+
+</div>
+
+                
+                <div class="well well-sm">
+	<h4>
+		<a href="http://andyrees.github.io/2015/5-ways-to-become-the-macgyver-of-go">5 Ways to become the MacGyver of Go</a>
+		<small class="pull-right">Posted on Mar 29, 2015</small>
+		<br>
+		<small>Getting productive the Standard Library</small>
+	</h4>
+	<hr>
+	<p><p>5 Ways to become the MacGyver of Go, with nothing more than a paperclip, an elastic band, a magnet and the Go Standard Library</p>
+</p>
+	<a class="btn btn-primary btn-xs" href="http://andyrees.github.io/2015/5-ways-to-become-the-macgyver-of-go">Read More<span class="fa fa-angle-double-right"></span></a>
+
+</div>
+
+                
+                <div class="well well-sm">
+	<h4>
+		<a href="http://andyrees.github.io/2015/how-to-start-using-go">How to start using Go</a>
+		<small class="pull-right">Posted on Mar 29, 2015</small>
+		<br>
+		<small>A practical guide</small>
+	</h4>
+	<hr>
+	<p><p>Go is a fast strongly typed, garbage collected modern language developed by Google and the open-source community. It can be deployed as a single binary and can easily cross compile for other platforms.</p>
+</p>
+	<a class="btn btn-primary btn-xs" href="http://andyrees.github.io/2015/how-to-start-using-go">Read More<span class="fa fa-angle-double-right"></span></a>
+
+</div>
+
+                
+                <div class="well well-sm">
+	<h4>
+		<a href="http://andyrees.github.io/2015/welcome-to-the-undocumented-zone">Welcome to the Undocumented Zone</a>
+		<small class="pull-right">Posted on Jan 20, 2015</small>
+		<br>
+		<small>Date, timezones &amp; formatting in Go</small>
+	</h4>
+	<hr>
+	<p><p>Picture a man going on a journey beyond sight and sound, he has left the pkg docs, he has entered the undocumented zone.</p>
+
+<p>I recently was required to create a reporting system in go, that took a custom date string in a non-standard format and then output it in a UTC style string. I found this simple task to be quite undocumented on Google, but eventually landed upon this method.</p>
+</p>
+	<a class="btn btn-primary btn-xs" href="http://andyrees.github.io/2015/welcome-to-the-undocumented-zone">Read More<span class="fa fa-angle-double-right"></span></a>
+
+</div>
+
+                
+                <div class="well well-sm">
+	<h4>
+		<a href="http://andyrees.github.io/2014/its-code-jim-but-not-as-we-know-it">It&#39;s code Jim, but not as we know it</a>
+		<small class="pull-right">Posted on Dec 24, 2014</small>
+		<br>
+		<small>Rock, paper, scissors, lizard, spock</small>
+	</h4>
+	<hr>
+	<p><p>This was a fun twenty minutes, during a quiet moment in the office on Christmas Eve.</p>
+</p>
+	<a class="btn btn-primary btn-xs" href="http://andyrees.github.io/2014/its-code-jim-but-not-as-we-know-it">Read More<span class="fa fa-angle-double-right"></span></a>
+
+</div>
+
+                
+                <div class="well well-sm">
+	<h4>
+		<a href="http://andyrees.github.io/2014/the-thing-you-dont-want-to-hear-about-loudness">The Thing You Don&#39;t Want to Hear About Loudness</a>
+		<small class="pull-right">Posted on Nov 23, 2014</small>
+		<br>
+		<small>and why the EBU are going to ask you to turn it down.</small>
+	</h4>
+	<hr>
+	<p><p>I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers.</p>
+</p>
+	<a class="btn btn-primary btn-xs" href="http://andyrees.github.io/2014/the-thing-you-dont-want-to-hear-about-loudness">Read More<span class="fa fa-angle-double-right"></span></a>
+
+</div>
+
+                
+                <div class="well well-sm">
+	<h4>
+		<a href="http://andyrees.github.io/2014/why-your-data-never-works-out-the-way-you-plan">Why Your Data Never Works Out the Way You Plan</a>
+		<small class="pull-right">Posted on Oct 24, 2014</small>
+		<br>
+		<small>Parsing data effectively from ffprobe</small>
+	</h4>
+	<hr>
+	<p><p>Go handles JSON and XML data effortlessly and unmarshalling is simple. The only requirement is a decoding &lsquo;struct&rsquo; that accurately represents the source schema. That can be quite a task though, as data schemas can be quite complex and in reality it can be tedious.</p>
+</p>
+	<a class="btn btn-primary btn-xs" href="http://andyrees.github.io/2014/why-your-data-never-works-out-the-way-you-plan">Read More<span class="fa fa-angle-double-right"></span></a>
+
+</div>
+
+                
+                
+                
+            </div>
+
+            
+            <div class="col-md-3">
+                    <div class="panel panel-default">
         <div class="panel-heading" style="padding: 2px 15px;">
             <h4>Connect with me</h4>
         </div>
         <div class="panel-body">
             <a href="https://github.com/andyrees/" class="btn btn-primary btn-xs"><i class="fa fa-github-square fa-2x"></i></a>
             <a href="https://twitter.com/andygolang" class="btn btn-info btn-xs"><i class="fa fa-twitter-square fa-2x"></i></a>
-             <a href="http://www.reddit.com/user/1spudrocket/" class="btn btn-info btn-xs"><i class="fa fa-reddit-square fa-2x"></i></a>
+            <a href="http://www.reddit.com/user/1spudrocket/" class="btn btn-info btn-xs"><i class="fa fa-reddit-square fa-2x"></i></a>
 
         </div>
     </div>
 
-        </div>
-    </div>
-        <footer>
-            <div class="row">
-                <hr>
-                <div class="col-sm-12">
-                    <p>&copy; Andy Rees 2015<br>
-                    Built with <a href="https://github.com/spf13/hugo" target="_blank">Hugo</a></p>
-                </div>
             </div>
-        </footer>
-</div>
-
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+        </div>
+                <footer>
+        	<div class="row">
+        		<hr>
+        		<div class="col-sm-12">
+        			<p>&copy; Andy Rees 2015<br>
+        				Built with <a href="https://github.com/spf13/hugo" target="_blank">Hugo</a></p>
+        			</div>
+        		</div>
+        	</footer>
+    </div>
+    
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 </body>
 </html>

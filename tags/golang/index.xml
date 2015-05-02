@@ -1,22 +1,205 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Golang on My Blog </title>
+    <title>Golang on Andy&#39;s Blog </title>
     <link>http://andyrees.github.io/tags/golang/</link>
     <language>en-GB</language>
     <author>Andy Rees</author>
     <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
-    <updated>Tue, 20 Jan 2015 19:09:42 UTC</updated>
+    <updated>Sun, 29 Mar 2015 23:09:29 BST</updated>
     
     <item>
-      <title>Date, timezones &amp; formatting in go</title>
-      <link>http://andyrees.github.io/post/timezones/</link>
-      <pubDate>Tue, 20 Jan 2015 19:09:42 UTC</pubDate>
+      <title>10 Great Articles about Go</title>
+      <link>http://andyrees.github.io/2015/10-great-articles-about-go</link>
+      <pubDate>Sun, 29 Mar 2015 23:09:29 BST</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/timezones/</guid>
+      <guid>http://andyrees.github.io/2015/10-great-articles-about-go</guid>
+      <description>&lt;p&gt;The fastest way to mastery in any field is to emulate expertise of those at the top of their field. With that in mind, I have collected a few great links and articles that will catapult you into their esteemed company in no time at all.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Building Web Apps with Go
+Learn how to build and deploy web applications with Go. A useful overview from the creator of Martini and Negroni.
+&lt;a href=&#34;https://www.gitbook.com/book/codegangsta/building-web-apps-with-go/details&#34;&gt;&lt;/br&gt;
+&lt;img border=&#34;0&#34; alt=&#34;&#34; src=&#34;https://sm3lir.cloudimage.io/s/width/226/https://www.gitbook.com/cover/book/codegangsta/building-web-apps-with-go.jpg?build=1417051877195&amp;v=6.12.1&#34; width=&#34;100&#34;&gt;
+&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go Concurrency Patterns: Pipelines and cancellation
+Creating streaming data pipelines using Go&amp;rsquo;s concurrency primitives&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.golang.org/pipelines&#34;&gt;article&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go Training Classes by Ardan Studios&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ArdanStudios/gotraining&#34;&gt;article&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Twelve Go Best Practices, Francesc Campoy Flores&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.campoy.cat/2014/08/twelve-go-best-practices.html&#34;&gt;article&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Whispering Gophers, Network programming in Go, by Andrew Gerrand &amp;amp; Francesc Campoy.
+A great code lab that demonstrates network programming in Go.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://whispering-gophers.appspot.com/talk.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;10 things you (probably) don&amp;rsquo;t know about Go, Andrew Gerrand&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2012/10things.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go: code that grows with grace, Andrew Gerrand&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://vimeo.com/53221560&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2012/chat.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;A Tour of the Go Programming Language, Russ Cox&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/MzYZhh6gpI0&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go for Gophers, Andrew Gerrand&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2014/go4gophers.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=dKGmK_Z1Zl0&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;JSON, interfaces, and go generate, Francesc Campoy&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2015/json.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=YgnD27GFcyA&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>5 Ways to become the MacGyver of Go</title>
+      <link>http://andyrees.github.io/2015/5-ways-to-become-the-macgyver-of-go</link>
+      <pubDate>Sun, 29 Mar 2015 19:36:35 BST</pubDate>
+      <author>Andy Rees</author>
+      <guid>http://andyrees.github.io/2015/5-ways-to-become-the-macgyver-of-go</guid>
       <description>
 
-&lt;h2 id=&#34;background:a19622341df1b6f39c8201860441e0a6&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;5 Ways to become the MacGyver of Go, with nothing more than a paperclip, an elastic band, a magnet and the Go Standard Library&lt;/p&gt;
+
+&lt;h3 id=&#34;install-the-go-toolset-from-source:f0efb89c388e307a3c86d9e1a4ed580e&#34;&gt;Install the Go toolset from source.&lt;/h3&gt;
+
+&lt;p&gt;This might sound crazy, as there are package installers available for most operating systems. But it has one really useful side effect. You can then create a cross compilation toolchain. So you can easily release multiple versions of your Go app. for instructions, click &lt;a href=&#34;https://golang.org/doc/install/source&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One great tool for this is &amp;ldquo;mitchellh/gox&amp;rdquo;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ go get github.com/mitchellh/gox
+...
+$ gox -h
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Before you use Gox, you must build the cross-compilation toolchain. Gox can do this for you. This only has to be done once (or whenever you update Go):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gox -build-toolchain
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once that is done, you&amp;rsquo;re ready to cross compile!&lt;/p&gt;
+
+&lt;h3 id=&#34;pimp-your-favourite-editor:f0efb89c388e307a3c86d9e1a4ed580e&#34;&gt;Pimp your favourite editor&lt;/h3&gt;
+
+&lt;p&gt;I don&amp;rsquo;t care how long you have been programming, nobody can remember the entire standard libray for a language.&lt;/p&gt;
+
+&lt;p&gt;This tends to create bad habits, as you can end up putting great effort into writing a piece of code and then find out later that it already exists in the standard library.&lt;/p&gt;
+
+&lt;p&gt;THios is where code completion, syntax highlighters come in to there own, as they can speed up the familiarity with the SL.&lt;/p&gt;
+
+&lt;p&gt;For Go, there are a number of great ones, but in my opinion, GoSublime for SublimeText2 / 3 is above them all, as it works with the installed version, so update your go toolchain and the code completion gos with it. It will also complete for your own packages.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SublimeText, &lt;a href=&#34;http://www.sublimetext.com&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GoSublime, &lt;a href=&#34;https://github.com/DisposaBoy/GoSublime&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;learn-the-standard-library:f0efb89c388e307a3c86d9e1a4ed580e&#34;&gt;Learn the Standard Library&lt;/h3&gt;
+
+&lt;p&gt;Save yourself the pain of reinventing the wheel and become familiar with the &lt;a href=&#34;http://golang.org/pkg&#34;&gt;standard Library&lt;/a&gt;. Some good resources for this are the following books:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://thestandardlibrary.com/&#34;&gt;Go, The Standard Library, Daniel Huckstep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.co.uk/Way-Go-Thorough-Introduction-Programming/dp/1469769166/ref=sr_1_1?ie=UTF8&amp;amp;qid=1430562219&amp;amp;sr=8-1&amp;amp;keywords=the+way+to+go+golang&#34;&gt;The Way to Go: A Thorough Introduction to the Go Programming Language, by Ivo Balbaert &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;make-use-of-http-godoc-org:f0efb89c388e307a3c86d9e1a4ed580e&#34;&gt;Make use of &lt;a href=&#34;http://godoc.org&#34;&gt;http://godoc.org&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://godoc.org&#34;&gt;GoDoc&lt;/a&gt; is a Go package search engine that hosts documentation for Go packages on Bitbucket, GitHub, Launchpad and Google Project Hosting.&lt;/p&gt;
+
+&lt;p&gt;It should be the first stop when creating a project that requires a new, complex package to be written, as it is quite likely that the functionlity already exists.&lt;/p&gt;
+
+&lt;h3 id=&#34;start-doing-the-reddit-daily-programmer-challenge:f0efb89c388e307a3c86d9e1a4ed580e&#34;&gt;Start doing the Reddit Daily Programmer Challenge&lt;/h3&gt;
+
+&lt;p&gt;The only way to effectively learn a language is to speak it regularly, but if your daily routine doesn&amp;rsquo;t provide this for you, there is always the Reddit Daily Programmer Challenge.&lt;/p&gt;
+
+&lt;p&gt;Find our more information &lt;a href=&#34;http://www.reddit.com/r/dailyprogrammer/wiki/index&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The challenges are always language agnostic and are posted three times a week at differing levels of difficulty. So no matter your level, you will find an interesting way to develop you programming skills.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.reddit.com/r/dailyprogrammer&#34;&gt;See the challenges here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to start using Go</title>
+      <link>http://andyrees.github.io/2015/how-to-start-using-go</link>
+      <pubDate>Sun, 29 Mar 2015 19:32:52 BST</pubDate>
+      <author>Andy Rees</author>
+      <guid>http://andyrees.github.io/2015/how-to-start-using-go</guid>
+      <description>&lt;p&gt;Go is a fast strongly typed, garbage collected modern language developed by Google and the open-source community. It can be deployed as a single binary and can easily cross compile for other platforms.&lt;/p&gt;
+
+&lt;p&gt;Here are a few handy links an tutorials to get you started&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The Official Google, web based tour of the Go Programming Language&lt;/strong&gt;. To get started with it, you don&amp;rsquo;t even need to have the tools installed. The following link provides an interactive web-based tutorial, and even has labs.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://tour.golang.org&#34;&gt;tour.golang.org&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Installation of the Go toolset&lt;/strong&gt;. When you are ready to give it a go on your own system, this guide wil help you get set up.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://golang.org/doc/install&#34;&gt;Go Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Getting started with Go&lt;/strong&gt;&lt;/p&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/2KmHtgtEZ1s&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Effective Go way&lt;/strong&gt;. How to write idiomatic code the Go way.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://golang.org/doc/effective_go.html&#34;&gt;effective Go&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Go By Example&lt;/strong&gt;. This site has some great code examples of the basics of the language.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gobyexample.com/&#34;&gt;Go By Example&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Welcome to the Undocumented Zone</title>
+      <link>http://andyrees.github.io/2015/welcome-to-the-undocumented-zone</link>
+      <pubDate>Tue, 20 Jan 2015 19:09:42 UTC</pubDate>
+      <author>Andy Rees</author>
+      <guid>http://andyrees.github.io/2015/welcome-to-the-undocumented-zone</guid>
+      <description>
+
+&lt;p&gt;Picture a man going on a journey beyond sight and sound, he has left the pkg docs, he has entered the undocumented zone.&lt;/p&gt;
 
 &lt;p&gt;I recently was required to create a reporting system in go, that took a custom date string in a non-standard format and then output it in a UTC style string. I found this simple task to be quite undocumented on Google, but eventually landed upon this method.&lt;/p&gt;
 
@@ -29,8 +212,6 @@
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/14106541/go-parsing-date-time-strings-which-are-not-standard-formats&#34;&gt;Stackoverflow, Go - Parsing date/time strings which are not &amp;lsquo;standard&amp;rsquo; formats&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&#34;code:a19622341df1b6f39c8201860441e0a6&#34;&gt;Code&lt;/h2&gt;
 
 &lt;pre class=&#34;prettyprint&#34;&gt;
 package main
@@ -80,18 +261,19 @@ Tue, 20 Jan 2015 12:27 -0700(MST)
     </item>
     
     <item>
-      <title>Rock, paper, scissors, lizard, spock</title>
-      <link>http://andyrees.github.io/post/rock_spock/</link>
+      <title>It&#39;s code Jim, but not as we know it</title>
+      <link>http://andyrees.github.io/2014/its-code-jim-but-not-as-we-know-it</link>
       <pubDate>Wed, 24 Dec 2014 11:56:34 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/rock_spock/</guid>
+      <guid>http://andyrees.github.io/2014/its-code-jim-but-not-as-we-know-it</guid>
       <description>
 
-&lt;p&gt;This was a fun twenty minutes, during a quiet moment in the office on Chrsitmas Eve.&lt;/p&gt;
+&lt;p&gt;This was a fun twenty minutes, during a quiet moment in the office on Christmas Eve.&lt;/p&gt;
 
 &lt;div class=&#34;jumbotron&#34;&gt;
-  &lt;h1&gt;Daily Programmer Challenge&lt;/h1&gt;
-  &lt;p&gt;The challenge is to implement a basic game of Rock Paper Scissors Lizard Spock (to be called RPSLP for short). Your game will get the human choice. The computer AI will randomly pick a move. It will compare the results and display the moves and the out come (who wins or if a tie).&lt;/p&gt;
+    &lt;H1&gt;It&#39;s code Jim, but not as we know it&lt;/H1&gt;
+    &lt;h3&gt;Daily Programmer Challenge&lt;/h3&gt;
+    &lt;p&gt;The challenge is to implement a basic game of Rock Paper Scissors Lizard Spock (to be called RPSLP for short). Your game will get the human choice. The computer AI will randomly pick a move. It will compare the results and display the moves and the out come (who wins or if a tie).&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&#34;input:59b853c0f757b83da7c357000896bee8&#34;&gt;Input&lt;/h2&gt;
@@ -241,11 +423,11 @@ func main() {
     </item>
     
     <item>
-      <title>loudfixer</title>
-      <link>http://andyrees.github.io/post/loudfixer/</link>
+      <title>The Thing You Don&#39;t Want to Hear About Loudness</title>
+      <link>http://andyrees.github.io/2014/the-thing-you-dont-want-to-hear-about-loudness</link>
       <pubDate>Sun, 23 Nov 2014 23:23:58 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/loudfixer/</guid>
+      <guid>http://andyrees.github.io/2014/the-thing-you-dont-want-to-hear-about-loudness</guid>
       <description>&lt;p&gt;I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers.&lt;/p&gt;
 
 &lt;p&gt;The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.&lt;/p&gt;
@@ -272,14 +454,16 @@ func main() {
     </item>
     
     <item>
-      <title>Creating Go structs from ffprobe data</title>
-      <link>http://andyrees.github.io/post/ffprobe_struct/</link>
+      <title>Why Your Data Never Works Out the Way You Plan</title>
+      <link>http://andyrees.github.io/2014/why-your-data-never-works-out-the-way-you-plan</link>
       <pubDate>Fri, 24 Oct 2014 10:01:04 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/ffprobe_struct/</guid>
-      <description>&lt;p&gt;One thing that &lt;a href=&#34;http://www.golang.org&#34; target=&#34;_blank&#34;&gt;Go&lt;/a&gt; is very good at, is handling JSON and XML data effortlessly and unmarshalling data is simple from either. The only thing that matters is that the decoding &amp;lsquo;struct&amp;rsquo; represents the source schema. That is the real trick though, as data schemas can be quite complex and in reality it can be tedious.&lt;/p&gt;
+      <guid>http://andyrees.github.io/2014/why-your-data-never-works-out-the-way-you-plan</guid>
+      <description>&lt;p&gt;Go handles JSON and XML data effortlessly and unmarshalling is simple. The only requirement is a decoding &amp;lsquo;struct&amp;rsquo; that accurately represents the source schema. That can be quite a task though, as data schemas can be quite complex and in reality it can be tedious.&lt;/p&gt;
 
-&lt;p&gt;JSON&amp;rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler. Here is a simple JSON unmarshal example in go:&lt;/p&gt;
+&lt;p&gt;JSON&amp;rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler.&lt;/p&gt;
+
+&lt;p&gt;Here is a simple JSON unmarshal example in go:&lt;/p&gt;
 
 &lt;pre class=&#34;prettyprint&#34;&gt;
 package main

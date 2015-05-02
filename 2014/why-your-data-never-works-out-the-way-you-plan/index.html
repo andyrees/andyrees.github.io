@@ -1,53 +1,56 @@
 <!doctype html>
 <html lang="en">
 <head>
-    
+	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Parsing data effectively from ffprobe">
     <meta name="author" content="Andy Rees"> 
 
-    <title>Creating Go structs from ffprobe data - http://andyrees.github.io</title>
-    <link rel="canonical" href="http://andyrees.github.io/post/ffprobe_struct/">
-    
-    <link href="/css/bootstrap.css" rel="stylesheet">
+	<title>Why Your Data Never Works Out the Way You Plan - http://andyrees.github.io/</title>
+	<link rel="canonical" href="http://andyrees.github.io/2014/why-your-data-never-works-out-the-way-you-plan">
+	
+    <link href="/css/bootstrap.min-cerulean.css" rel="stylesheet">
     <link href="/css/font-awesome.css" rel="stylesheet">
     <link href="/css/custom.css" rel="stylesheet">
-    
+	
 </head>
 
 <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://andyrees.github.io">My Blog</a>
-            </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/post/">Post Index</a></li>
-                    <li><a href="/about/">About Me</a></li>
-                    <li><a href="/post/index.xml" class="btn btn-info btn-xs"><i class="fa fa-rss fa-2x"></i></a></li>
-                    
-                </ul>
-            </div>
-        </div>
-    </nav>
-<div class="container">
-    <div class="row">
-        <div class="col-md-9">
-            <div class="well well-sm">
-                    <h3>Creating Go structs from ffprobe data<br> <small></small></h3>
-                    <hr>
-                    <p>One thing that <a href="http://www.golang.org" target="_blank">Go</a> is very good at, is handling JSON and XML data effortlessly and unmarshalling data is simple from either. The only thing that matters is that the decoding &lsquo;struct&rsquo; represents the source schema. That is the real trick though, as data schemas can be quite complex and in reality it can be tedious.</p>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
-<p>JSON&rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler. Here is a simple JSON unmarshal example in go:</p>
+            <a class="navbar-brand" href="http://andyrees.github.io/">Andy&#39;s Blog</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/post/">Post Index</a></li>
+                <li><a href="/about/">About Me</a></li>
+                <li><a href="/post/index.xml" class="btn btn-info btn-xs"><i class="fa fa-rss fa-2x"></i></a></li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="well well-sm">
+                    <h3>Why Your Data Never Works Out the Way You Plan<br> <small>Parsing data effectively from ffprobe</small></h3>
+                    <hr>
+                    <p>Go handles JSON and XML data effortlessly and unmarshalling is simple. The only requirement is a decoding &lsquo;struct&rsquo; that accurately represents the source schema. That can be quite a task though, as data schemas can be quite complex and in reality it can be tedious.</p>
+
+<p>JSON&rsquo;s readability and popularity recently has resulted in a lot of utilities preferring JSON. This makes the task of decoding much simpler.</p>
+
+<p>Here is a simple JSON unmarshal example in go:</p>
 
 <pre class="prettyprint">
 package main
@@ -337,54 +340,54 @@ type Media struct {
 
 <p>Now you might not require all the data in the structs, so remove any elements that aren&rsquo;t required. As long as no child elements are needed this will be fine.</p>
 
+                </div>
             </div>
-        </div>
 
-        
-        <div class="col-md-3">
-            <div class="well well-sm"> 
-                <h4>October 24, 2014<br>
-                <small>914 words</small></h4>
-                <hr>
-                <strong>Categories</strong>
-                <ul class="list-unstyled">
-                
-                    <li><a href="/categories/development">development</a></li>
-                
-                    <li><a href="/categories/transcoding">transcoding</a></li>
-                
-                </ul>
-                <hr>
-                <strong>Tags</strong><br>
-                <a class="label label-default" href="/tags/golang">golang</a> <a class="label label-default" href="/tags/ffmpeg">ffmpeg</a> <a class="label label-default" href="/tags/json-to-struct">json-to-struct</a> 
-            </div>
-                <div class="panel panel-default">
+            
+            <div class="col-md-3">
+                <div class="well well-sm"> 
+                    <h4>October 24, 2014<br>
+                        <small>903 words</small></h4>
+                        <hr>
+                        <strong>Categories</strong>
+                        <ul class="list-unstyled">
+                            
+                            <li><a href="/categories/development">development</a></li>
+                            
+                            <li><a href="/categories/transcoding">transcoding</a></li>
+                            
+                        </ul>
+                        <hr>
+                        <strong>Tags</strong><br>
+                        <a class="label label-default" href="/tags/golang">golang</a> <a class="label label-default" href="/tags/ffmpeg">ffmpeg</a> <a class="label label-default" href="/tags/json-to-struct">json-to-struct</a> 
+                    </div>
+                        <div class="panel panel-default">
         <div class="panel-heading" style="padding: 2px 15px;">
             <h4>Connect with me</h4>
         </div>
         <div class="panel-body">
             <a href="https://github.com/andyrees/" class="btn btn-primary btn-xs"><i class="fa fa-github-square fa-2x"></i></a>
             <a href="https://twitter.com/andygolang" class="btn btn-info btn-xs"><i class="fa fa-twitter-square fa-2x"></i></a>
-             <a href="http://www.reddit.com/user/1spudrocket/" class="btn btn-info btn-xs"><i class="fa fa-reddit-square fa-2x"></i></a>
+            <a href="http://www.reddit.com/user/1spudrocket/" class="btn btn-info btn-xs"><i class="fa fa-reddit-square fa-2x"></i></a>
 
         </div>
     </div>
 
-        </div>
-    </div>
-        <footer>
-            <div class="row">
-                <hr>
-                <div class="col-sm-12">
-                    <p>&copy; Andy Rees 2015<br>
-                    Built with <a href="https://github.com/spf13/hugo" target="_blank">Hugo</a></p>
                 </div>
             </div>
-        </footer>
-</div>
-
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+                    <footer>
+        	<div class="row">
+        		<hr>
+        		<div class="col-sm-12">
+        			<p>&copy; Andy Rees 2015<br>
+        				Built with <a href="https://github.com/spf13/hugo" target="_blank">Hugo</a></p>
+        			</div>
+        		</div>
+        	</footer>
+        </div>
+        
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 </body>
 </html>

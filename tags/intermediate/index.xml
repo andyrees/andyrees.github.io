@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intermediate on Andy&#39;s Blog </title>
+    <link>http://andyrees.github.io/tags/intermediate/</link>
+    <language>en-GB</language>
+    <author>Andy Rees</author>
+    <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
+    <updated>Sun, 29 Mar 2015 19:36:35 BST</updated>
+    
+    <item>
+      <title>5 Ways to become the MacGyver of Go</title>
+      <link>http://andyrees.github.io/2015/5-ways-to-become-the-macgyver-of-go</link>
+      <pubDate>Sun, 29 Mar 2015 19:36:35 BST</pubDate>
+      <author>Andy Rees</author>
+      <guid>http://andyrees.github.io/2015/5-ways-to-become-the-macgyver-of-go</guid>
+      <description>
+
+&lt;p&gt;5 Ways to become the MacGyver of Go, with nothing more than a paperclip, an elastic band, a magnet and the Go Standard Library&lt;/p&gt;
+
+&lt;h3 id=&#34;install-the-go-toolset-from-source:f0efb89c388e307a3c86d9e1a4ed580e&#34;&gt;Install the Go toolset from source.&lt;/h3&gt;
+
+&lt;p&gt;This might sound crazy, as there are package installers available for most operating systems. But it has one really useful side effect. You can then create a cross compilation toolchain. So you can easily release multiple versions of your Go app. for instructions, click &lt;a href=&#34;https://golang.org/doc/install/source&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One great tool for this is &amp;ldquo;mitchellh/gox&amp;rdquo;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ go get github.com/mitchellh/gox
+...
+$ gox -h
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Before you use Gox, you must build the cross-compilation toolchain. Gox can do this for you. This only has to be done once (or whenever you update Go):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gox -build-toolchain
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once that is done, you&amp;rsquo;re ready to cross compile!&lt;/p&gt;
+
+&lt;h3 id=&#34;pimp-your-favourite-editor:f0efb89c388e307a3c86d9e1a4ed580e&#34;&gt;Pimp your favourite editor&lt;/h3&gt;
+
+&lt;p&gt;I don&amp;rsquo;t care how long you have been programming, nobody can remember the entire standard libray for a language.&lt;/p&gt;
+
+&lt;p&gt;This tends to create bad habits, as you can end up putting great effort into writing a piece of code and then find out later that it already exists in the standard library.&lt;/p&gt;
+
+&lt;p&gt;THios is where code completion, syntax highlighters come in to there own, as they can speed up the familiarity with the SL.&lt;/p&gt;
+
+&lt;p&gt;For Go, there are a number of great ones, but in my opinion, GoSublime for SublimeText2 / 3 is above them all, as it works with the installed version, so update your go toolchain and the code completion gos with it. It will also complete for your own packages.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SublimeText, &lt;a href=&#34;http://www.sublimetext.com&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GoSublime, &lt;a href=&#34;https://github.com/DisposaBoy/GoSublime&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;learn-the-standard-library:f0efb89c388e307a3c86d9e1a4ed580e&#34;&gt;Learn the Standard Library&lt;/h3&gt;
+
+&lt;p&gt;Save yourself the pain of reinventing the wheel and become familiar with the &lt;a href=&#34;http://golang.org/pkg&#34;&gt;standard Library&lt;/a&gt;. Some good resources for this are the following books:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://thestandardlibrary.com/&#34;&gt;Go, The Standard Library, Daniel Huckstep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.co.uk/Way-Go-Thorough-Introduction-Programming/dp/1469769166/ref=sr_1_1?ie=UTF8&amp;amp;qid=1430562219&amp;amp;sr=8-1&amp;amp;keywords=the+way+to+go+golang&#34;&gt;The Way to Go: A Thorough Introduction to the Go Programming Language, by Ivo Balbaert &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;make-use-of-http-godoc-org:f0efb89c388e307a3c86d9e1a4ed580e&#34;&gt;Make use of &lt;a href=&#34;http://godoc.org&#34;&gt;http://godoc.org&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://godoc.org&#34;&gt;GoDoc&lt;/a&gt; is a Go package search engine that hosts documentation for Go packages on Bitbucket, GitHub, Launchpad and Google Project Hosting.&lt;/p&gt;
+
+&lt;p&gt;It should be the first stop when creating a project that requires a new, complex package to be written, as it is quite likely that the functionlity already exists.&lt;/p&gt;
+
+&lt;h3 id=&#34;start-doing-the-reddit-daily-programmer-challenge:f0efb89c388e307a3c86d9e1a4ed580e&#34;&gt;Start doing the Reddit Daily Programmer Challenge&lt;/h3&gt;
+
+&lt;p&gt;The only way to effectively learn a language is to speak it regularly, but if your daily routine doesn&amp;rsquo;t provide this for you, there is always the Reddit Daily Programmer Challenge.&lt;/p&gt;
+
+&lt;p&gt;Find our more information &lt;a href=&#34;http://www.reddit.com/r/dailyprogrammer/wiki/index&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The challenges are always language agnostic and are posted three times a week at differing levels of difficulty. So no matter your level, you will find an interesting way to develop you programming skills.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.reddit.com/r/dailyprogrammer&#34;&gt;See the challenges here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

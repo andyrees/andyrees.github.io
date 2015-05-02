@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Beginner on Andy&#39;s Blog </title>
+    <link>http://andyrees.github.io/tags/beginner/</link>
+    <language>en-GB</language>
+    <author>Andy Rees</author>
+    <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
+    <updated>Sun, 29 Mar 2015 23:09:29 BST</updated>
+    
+    <item>
+      <title>10 Great Articles about Go</title>
+      <link>http://andyrees.github.io/2015/10-great-articles-about-go</link>
+      <pubDate>Sun, 29 Mar 2015 23:09:29 BST</pubDate>
+      <author>Andy Rees</author>
+      <guid>http://andyrees.github.io/2015/10-great-articles-about-go</guid>
+      <description>&lt;p&gt;The fastest way to mastery in any field is to emulate expertise of those at the top of their field. With that in mind, I have collected a few great links and articles that will catapult you into their esteemed company in no time at all.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Building Web Apps with Go
+Learn how to build and deploy web applications with Go. A useful overview from the creator of Martini and Negroni.
+&lt;a href=&#34;https://www.gitbook.com/book/codegangsta/building-web-apps-with-go/details&#34;&gt;&lt;/br&gt;
+&lt;img border=&#34;0&#34; alt=&#34;&#34; src=&#34;https://sm3lir.cloudimage.io/s/width/226/https://www.gitbook.com/cover/book/codegangsta/building-web-apps-with-go.jpg?build=1417051877195&amp;v=6.12.1&#34; width=&#34;100&#34;&gt;
+&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go Concurrency Patterns: Pipelines and cancellation
+Creating streaming data pipelines using Go&amp;rsquo;s concurrency primitives&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.golang.org/pipelines&#34;&gt;article&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go Training Classes by Ardan Studios&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ArdanStudios/gotraining&#34;&gt;article&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Twelve Go Best Practices, Francesc Campoy Flores&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.campoy.cat/2014/08/twelve-go-best-practices.html&#34;&gt;article&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Whispering Gophers, Network programming in Go, by Andrew Gerrand &amp;amp; Francesc Campoy.
+A great code lab that demonstrates network programming in Go.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://whispering-gophers.appspot.com/talk.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;10 things you (probably) don&amp;rsquo;t know about Go, Andrew Gerrand&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2012/10things.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go: code that grows with grace, Andrew Gerrand&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://vimeo.com/53221560&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2012/chat.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;A Tour of the Go Programming Language, Russ Cox&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/MzYZhh6gpI0&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go for Gophers, Andrew Gerrand&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2014/go4gophers.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=dKGmK_Z1Zl0&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;JSON, interfaces, and go generate, Francesc Campoy&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://talks.golang.org/2015/json.slide&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=YgnD27GFcyA&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to start using Go</title>
+      <link>http://andyrees.github.io/2015/how-to-start-using-go</link>
+      <pubDate>Sun, 29 Mar 2015 19:32:52 BST</pubDate>
+      <author>Andy Rees</author>
+      <guid>http://andyrees.github.io/2015/how-to-start-using-go</guid>
+      <description>&lt;p&gt;Go is a fast strongly typed, garbage collected modern language developed by Google and the open-source community. It can be deployed as a single binary and can easily cross compile for other platforms.&lt;/p&gt;
+
+&lt;p&gt;Here are a few handy links an tutorials to get you started&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The Official Google, web based tour of the Go Programming Language&lt;/strong&gt;. To get started with it, you don&amp;rsquo;t even need to have the tools installed. The following link provides an interactive web-based tutorial, and even has labs.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://tour.golang.org&#34;&gt;tour.golang.org&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Installation of the Go toolset&lt;/strong&gt;. When you are ready to give it a go on your own system, this guide wil help you get set up.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://golang.org/doc/install&#34;&gt;Go Installation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Getting started with Go&lt;/strong&gt;&lt;/p&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/2KmHtgtEZ1s&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Effective Go way&lt;/strong&gt;. How to write idiomatic code the Go way.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://golang.org/doc/effective_go.html&#34;&gt;effective Go&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Go By Example&lt;/strong&gt;. This site has some great code examples of the basics of the language.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gobyexample.com/&#34;&gt;Go By Example&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

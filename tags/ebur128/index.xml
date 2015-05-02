@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Ebur128 on My Blog </title>
+    <title>Ebur128 on Andy&#39;s Blog </title>
     <link>http://andyrees.github.io/tags/ebur128/</link>
     <language>en-GB</language>
     <author>Andy Rees</author>
@@ -9,11 +9,11 @@
     <updated>Sun, 23 Nov 2014 23:23:58 UTC</updated>
     
     <item>
-      <title>loudfixer</title>
-      <link>http://andyrees.github.io/post/loudfixer/</link>
+      <title>The Thing You Don&#39;t Want to Hear About Loudness</title>
+      <link>http://andyrees.github.io/2014/the-thing-you-dont-want-to-hear-about-loudness</link>
       <pubDate>Sun, 23 Nov 2014 23:23:58 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/loudfixer/</guid>
+      <guid>http://andyrees.github.io/2014/the-thing-you-dont-want-to-hear-about-loudness</guid>
       <description>&lt;p&gt;I work in TV/broadcast and perceived loudness is increasingly becoming an issue. This is the perceived volume jump between programs, i.e. when the adverts come on and you blow your speakers.&lt;/p&gt;
 
 &lt;p&gt;The tools to check and correct are very expensive however. So I decided to take advantage of the EBU R128 analysis algorithm built into ffmpeg and create a nice utility to check and then correct the levels without any audio drift.&lt;/p&gt;

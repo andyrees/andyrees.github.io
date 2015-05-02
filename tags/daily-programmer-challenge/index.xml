@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Daily Programmer Challenge on My Blog </title>
+    <title>Daily Programmer Challenge on Andy&#39;s Blog </title>
     <link>http://andyrees.github.io/tags/daily-programmer-challenge/</link>
     <language>en-GB</language>
     <author>Andy Rees</author>
@@ -9,18 +9,19 @@
     <updated>Wed, 24 Dec 2014 11:56:34 UTC</updated>
     
     <item>
-      <title>Rock, paper, scissors, lizard, spock</title>
-      <link>http://andyrees.github.io/post/rock_spock/</link>
+      <title>It&#39;s code Jim, but not as we know it</title>
+      <link>http://andyrees.github.io/2014/its-code-jim-but-not-as-we-know-it</link>
       <pubDate>Wed, 24 Dec 2014 11:56:34 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/rock_spock/</guid>
+      <guid>http://andyrees.github.io/2014/its-code-jim-but-not-as-we-know-it</guid>
       <description>
 
-&lt;p&gt;This was a fun twenty minutes, during a quiet moment in the office on Chrsitmas Eve.&lt;/p&gt;
+&lt;p&gt;This was a fun twenty minutes, during a quiet moment in the office on Christmas Eve.&lt;/p&gt;
 
 &lt;div class=&#34;jumbotron&#34;&gt;
-  &lt;h1&gt;Daily Programmer Challenge&lt;/h1&gt;
-  &lt;p&gt;The challenge is to implement a basic game of Rock Paper Scissors Lizard Spock (to be called RPSLP for short). Your game will get the human choice. The computer AI will randomly pick a move. It will compare the results and display the moves and the out come (who wins or if a tie).&lt;/p&gt;
+    &lt;H1&gt;It&#39;s code Jim, but not as we know it&lt;/H1&gt;
+    &lt;h3&gt;Daily Programmer Challenge&lt;/h3&gt;
+    &lt;p&gt;The challenge is to implement a basic game of Rock Paper Scissors Lizard Spock (to be called RPSLP for short). Your game will get the human choice. The computer AI will randomly pick a move. It will compare the results and display the moves and the out come (who wins or if a tie).&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&#34;input:59b853c0f757b83da7c357000896bee8&#34;&gt;Input&lt;/h2&gt;

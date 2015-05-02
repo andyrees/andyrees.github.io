@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Tips on My Blog </title>
+    <title>Tips on Andy&#39;s Blog </title>
     <link>http://andyrees.github.io/tags/tips/</link>
     <language>en-GB</language>
     <author>Andy Rees</author>
@@ -9,14 +9,14 @@
     <updated>Tue, 20 Jan 2015 19:09:42 UTC</updated>
     
     <item>
-      <title>Date, timezones &amp; formatting in go</title>
-      <link>http://andyrees.github.io/post/timezones/</link>
+      <title>Welcome to the Undocumented Zone</title>
+      <link>http://andyrees.github.io/2015/welcome-to-the-undocumented-zone</link>
       <pubDate>Tue, 20 Jan 2015 19:09:42 UTC</pubDate>
       <author>Andy Rees</author>
-      <guid>http://andyrees.github.io/post/timezones/</guid>
+      <guid>http://andyrees.github.io/2015/welcome-to-the-undocumented-zone</guid>
       <description>
 
-&lt;h2 id=&#34;background:a19622341df1b6f39c8201860441e0a6&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;Picture a man going on a journey beyond sight and sound, he has left the pkg docs, he has entered the undocumented zone.&lt;/p&gt;
 
 &lt;p&gt;I recently was required to create a reporting system in go, that took a custom date string in a non-standard format and then output it in a UTC style string. I found this simple task to be quite undocumented on Google, but eventually landed upon this method.&lt;/p&gt;
 
@@ -29,8 +29,6 @@
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/14106541/go-parsing-date-time-strings-which-are-not-standard-formats&#34;&gt;Stackoverflow, Go - Parsing date/time strings which are not &amp;lsquo;standard&amp;rsquo; formats&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&#34;code:a19622341df1b6f39c8201860441e0a6&#34;&gt;Code&lt;/h2&gt;
 
 &lt;pre class=&#34;prettyprint&#34;&gt;
 package main

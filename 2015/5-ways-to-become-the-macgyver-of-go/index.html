@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+	
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Getting productive the Standard Library">
+    <meta name="author" content="Andy Rees"> 
+
+	<title>5 Ways to become the MacGyver of Go - http://andyrees.github.io/</title>
+	<link rel="canonical" href="http://andyrees.github.io/2015/5-ways-to-become-the-macgyver-of-go">
+	
+    <link href="/css/bootstrap.min-cerulean.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+	
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="http://andyrees.github.io/">Andy&#39;s Blog</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/post/">Post Index</a></li>
+                <li><a href="/about/">About Me</a></li>
+                <li><a href="/post/index.xml" class="btn btn-info btn-xs"><i class="fa fa-rss fa-2x"></i></a></li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="well well-sm">
+                    <h3>5 Ways to become the MacGyver of Go<br> <small>Getting productive the Standard Library</small></h3>
+                    <hr>
+                    
+
+<p>5 Ways to become the MacGyver of Go, with nothing more than a paperclip, an elastic band, a magnet and the Go Standard Library</p>
+
+<h3 id="install-the-go-toolset-from-source:f0efb89c388e307a3c86d9e1a4ed580e">Install the Go toolset from source.</h3>
+
+<p>This might sound crazy, as there are package installers available for most operating systems. But it has one really useful side effect. You can then create a cross compilation toolchain. So you can easily release multiple versions of your Go app. for instructions, click <a href="https://golang.org/doc/install/source">here</a>.</p>
+
+<p>One great tool for this is &ldquo;mitchellh/gox&rdquo;.</p>
+
+<pre><code>$ go get github.com/mitchellh/gox
+...
+$ gox -h
+...
+</code></pre>
+
+<p>Before you use Gox, you must build the cross-compilation toolchain. Gox can do this for you. This only has to be done once (or whenever you update Go):</p>
+
+<pre><code>$ gox -build-toolchain
+...
+</code></pre>
+
+<p>Once that is done, you&rsquo;re ready to cross compile!</p>
+
+<h3 id="pimp-your-favourite-editor:f0efb89c388e307a3c86d9e1a4ed580e">Pimp your favourite editor</h3>
+
+<p>I don&rsquo;t care how long you have been programming, nobody can remember the entire standard libray for a language.</p>
+
+<p>This tends to create bad habits, as you can end up putting great effort into writing a piece of code and then find out later that it already exists in the standard library.</p>
+
+<p>THios is where code completion, syntax highlighters come in to there own, as they can speed up the familiarity with the SL.</p>
+
+<p>For Go, there are a number of great ones, but in my opinion, GoSublime for SublimeText2 / 3 is above them all, as it works with the installed version, so update your go toolchain and the code completion gos with it. It will also complete for your own packages.</p>
+
+<ul>
+<li>SublimeText, <a href="http://www.sublimetext.com">link</a></li>
+<li>GoSublime, <a href="https://github.com/DisposaBoy/GoSublime">link</a></li>
+</ul>
+
+<h3 id="learn-the-standard-library:f0efb89c388e307a3c86d9e1a4ed580e">Learn the Standard Library</h3>
+
+<p>Save yourself the pain of reinventing the wheel and become familiar with the <a href="http://golang.org/pkg">standard Library</a>. Some good resources for this are the following books:</p>
+
+<ul>
+<li><a href="http://thestandardlibrary.com/">Go, The Standard Library, Daniel Huckstep</a></li>
+<li><a href="http://www.amazon.co.uk/Way-Go-Thorough-Introduction-Programming/dp/1469769166/ref=sr_1_1?ie=UTF8&amp;qid=1430562219&amp;sr=8-1&amp;keywords=the+way+to+go+golang">The Way to Go: A Thorough Introduction to the Go Programming Language, by Ivo Balbaert </a></li>
+</ul>
+
+<h3 id="make-use-of-http-godoc-org:f0efb89c388e307a3c86d9e1a4ed580e">Make use of <a href="http://godoc.org">http://godoc.org</a></h3>
+
+<p><a href="http://godoc.org">GoDoc</a> is a Go package search engine that hosts documentation for Go packages on Bitbucket, GitHub, Launchpad and Google Project Hosting.</p>
+
+<p>It should be the first stop when creating a project that requires a new, complex package to be written, as it is quite likely that the functionlity already exists.</p>
+
+<h3 id="start-doing-the-reddit-daily-programmer-challenge:f0efb89c388e307a3c86d9e1a4ed580e">Start doing the Reddit Daily Programmer Challenge</h3>
+
+<p>The only way to effectively learn a language is to speak it regularly, but if your daily routine doesn&rsquo;t provide this for you, there is always the Reddit Daily Programmer Challenge.</p>
+
+<p>Find our more information <a href="http://www.reddit.com/r/dailyprogrammer/wiki/index">here</a></p>
+
+<p>The challenges are always language agnostic and are posted three times a week at differing levels of difficulty. So no matter your level, you will find an interesting way to develop you programming skills.</p>
+
+<p><a href="https://www.reddit.com/r/dailyprogrammer">See the challenges here</a></p>
+
+                </div>
+            </div>
+
+            
+            <div class="col-md-3">
+                <div class="well well-sm"> 
+                    <h4>March 29, 2015<br>
+                        <small>447 words</small></h4>
+                        <hr>
+                        <strong>Categories</strong>
+                        <ul class="list-unstyled">
+                            
+                            <li><a href="/categories/development">development</a></li>
+                            
+                            <li><a href="/categories/tutorial">tutorial</a></li>
+                            
+                        </ul>
+                        <hr>
+                        <strong>Tags</strong><br>
+                        <a class="label label-default" href="/tags/golang">golang</a> <a class="label label-default" href="/tags/intermediate">intermediate</a> 
+                    </div>
+                        <div class="panel panel-default">
+        <div class="panel-heading" style="padding: 2px 15px;">
+            <h4>Connect with me</h4>
+        </div>
+        <div class="panel-body">
+            <a href="https://github.com/andyrees/" class="btn btn-primary btn-xs"><i class="fa fa-github-square fa-2x"></i></a>
+            <a href="https://twitter.com/andygolang" class="btn btn-info btn-xs"><i class="fa fa-twitter-square fa-2x"></i></a>
+            <a href="http://www.reddit.com/user/1spudrocket/" class="btn btn-info btn-xs"><i class="fa fa-reddit-square fa-2x"></i></a>
+
+        </div>
+    </div>
+
+                </div>
+            </div>
+                    <footer>
+        	<div class="row">
+        		<hr>
+        		<div class="col-sm-12">
+        			<p>&copy; Andy Rees 2015<br>
+        				Built with <a href="https://github.com/spf13/hugo" target="_blank">Hugo</a></p>
+        			</div>
+        		</div>
+        	</footer>
+        </div>
+        
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</body>
+</html>

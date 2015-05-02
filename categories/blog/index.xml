@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Blog on My Blog </title>
+    <title>Blog on Andy&#39;s Blog </title>
     <link>http://andyrees.github.io/categories/blog/</link>
     <language>en-GB</language>
     <author>Andy Rees</author>
@@ -14,9 +14,20 @@
       <pubDate>Mon, 01 Sep 2014 00:00:00 UTC</pubDate>
       <author>Andy Rees</author>
       <guid>http://andyrees.github.io/about/</guid>
-      <description>&lt;p&gt;I enjoy programming and I love taking the mundane and finding elegant solutions. Take any boring, repetitive task; spend time coding a solution and you might not save any time. Try that more than once and you have will have definitely gained an advantage.&lt;/p&gt;
+      <description>
 
-&lt;p&gt;Like many others, I started with BASIC in the 70s on a BBC Micro, Assembly code at University, then C and C++ later, Bash, Java &amp;amp; C#. At University I studied Electronic Engineering BENG (HONS), but came away with skills in business, advanced engineering mathematics, Digital &amp;amp; analogue electronics, programming.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;img-thumbnail&#34;
+width=&#34;50%&#34; src=&#34;http://andyrees.github.io/images/profile.png&#34; 
+alt=&#34;Suni&#34; style=&#34;float:left;margin:0 15px 0 0;&#34;/&gt;
+&lt;p class=&#34;lead&#34;&gt;
+Hi I&amp;rsquo;m Andy and welcome to my blog.
+&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;I live in Devon in the UK with my wife Rebecca and enjoy working out, photography, programming and technology in general. I like programming but I love taking mundane tasks and simplifying them with code.&lt;/p&gt;
+
+&lt;p&gt;I started programming with BASIC in the 70s on a BBC Micro, Assembly code at University, then C and C++ later, Bash, Java &amp;amp; C#. At University I studied Electronic Engineering BENG (HONS), but came away with skills in business, advanced engineering mathematics, Digital &amp;amp; analogue electronics, programming.&lt;/p&gt;
+
+&lt;h4 id=&#34;from-python-to-go:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;From Python to Go&lt;/h4&gt;
 
 &lt;p&gt;Like the writer of the &lt;a href=&#34;http://xkcd.com/353/&#34;&gt;XKCD&lt;/a&gt; blog, Python allowed me to enjoy programming again; once you get used to the white space or get a decent ide like Pycharm. But my recent obsession is &lt;a href=&#34;http://www.golang.org/&#34; target=&#34;_blank&#34;&gt;Golang&lt;/a&gt;.&lt;/p&gt;
 
@@ -24,9 +35,11 @@
 
 &lt;p&gt;Go is increasingly the answer for both small and large projects, in my day to day activities. My recent adventures with broadcast regulations and perceived loudness, ended with quite a nice example of Go&amp;rsquo;s effectiveness resulting in a really useful &lt;a href=&#34;https://github.com/andyrees/loudfixer&#34; target=&#34;_blank&#34;&gt;utility&lt;/a&gt;.&lt;/p&gt;
 
+&lt;h4 id=&#34;give-it-a-r-e-s-t:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Give it a R.E.S.T.&lt;/h4&gt;
+
 &lt;p&gt;I recently wrote the Ooyala client API in GO, which was fun and enabled me to run a lot of imports and updates from an old system very quickly.&lt;/p&gt;
 
-&lt;p&gt;The most fun I have had so far is to write a REST based transcode engine in go that leverages FFMPEG and inotofy on Ubuntu. The result is a prioitisable, opensource transcode engine with a web front end in angularjs.&lt;/p&gt;
+&lt;p&gt;The most fun I have had so far is to write a REST based transcode engine in go that leverages FFMPEG and inotify on Ubuntu. The result is a prioitisable, opensource transcode engine with a web front end in angularjs.&lt;/p&gt;
 
 &lt;p&gt;Go makes this so easy and with the REST backend, I could easily create a massive transcode nextwork and control it all via a master REST controller.&lt;/p&gt;
 </description>
