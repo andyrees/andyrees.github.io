@@ -6,7 +6,98 @@
     <language>en-GB</language>
     <author>Andy Rees</author>
     <rights>Copyright (c) 2014, Andy Rees; all rights reserved.</rights>
-    <updated>Sun, 29 Mar 2015 23:09:29 BST</updated>
+    <updated>Tue, 04 Aug 2015 20:28:22 BST</updated>
+    
+    <item>
+      <title>Your Code a Mess? Maybe it&#39;s time to bring in the Decorators</title>
+      <link>http://andyrees.github.io/2015/your-code-a-mess-maybe-its-time-to-bring-in-the-decorators</link>
+      <pubDate>Tue, 04 Aug 2015 20:28:22 BST</pubDate>
+      <author>Andy Rees</author>
+      <guid>http://andyrees.github.io/2015/your-code-a-mess-maybe-its-time-to-bring-in-the-decorators</guid>
+      <description>
+
+&lt;p&gt;&lt;script src=&#34;https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;decorators-in-go:a593262b97a8f3ec1e2657c7b6ab1472&#34;&gt;Decorators in Go&lt;/h1&gt;
+
+&lt;p&gt;In computer science a decorator is pattern for adding functionality (i.e. logging, authentication) to another function by wrapping it.&lt;/p&gt;
+
+&lt;p&gt;This is really useful for web handlers, but is also poorly documented in Go and has resulted in a miriad of middleware libraries being created, which, in my humble opinion, tend to be overkill for such a simple requirement.&lt;/p&gt;
+
+&lt;p&gt;In any language you should never wander far from the standard library, if the situation doesn&amp;rsquo;t warrant it and you should always avoid re-inventing the wheel.&lt;/p&gt;
+
+&lt;p&gt;It is so simple to decorate functions in Python, I couldn&amp;rsquo;t believe that it would be so difficult to replicate this functionality in Go.&lt;/p&gt;
+
+&lt;p&gt;After ardous hours of googling I found a great example by &lt;a href=&#34;https://gist.github.com/alehano/8785933&#34;&gt;Alex Alehano&lt;/a&gt;, that shows the most concise example, can be easily applied to http handlers in GO and this is the result.&lt;/p&gt;
+
+&lt;h3 id=&#34;decorating-a-simple-function-example:a593262b97a8f3ec1e2657c7b6ab1472&#34;&gt;Decorating a simple function Example&lt;/h3&gt;
+
+&lt;p&gt;This example decorates the &amp;lsquo;myFunction&amp;rsquo; function with simple logger:&lt;/p&gt;
+
+&lt;pre class=&#34;prettyprint lang-Go&#34;&gt;
+package main
+
+import (
+    &#34;log&#34;
+    &#34;fmt&#34;
+)
+
+func decorator(fn func(s string)) func(s string) {
+    return func(s string) {
+        log.Println(&#34;starting&#34;)
+        fn(s)
+        log.Println(&#34;completed&#34;)
+    }
+}
+
+func myFunction(s string) {
+    fmt.Println(s)
+}
+
+func main() {
+    f := decorator(myFunction)
+    f(&#34;Hello Decorator&#34;)
+    // or decorator(myFunction)(&#34;Hello Decorator&#34;)
+}
+&lt;/pre&gt;
+
+&lt;h3 id=&#34;applying-decorators-to-the-standard-libraries-http-package:a593262b97a8f3ec1e2657c7b6ab1472&#34;&gt;Applying decorators to the Standard Libraries&amp;rsquo; HTTP Package&lt;/h3&gt;
+
+&lt;pre class=&#34;prettyprint lang-Go&#34;&gt;
+package main
+
+import (
+    &#34;fmt&#34;
+    &#34;log&#34;
+    &#34;net/http&#34;
+)
+
+func simpleHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprint(w, &#34;Hello World&#34;)
+}
+
+func decorator(f http.HandlerFunc) http.HandlerFunc {
+    return func(w http.ResponseWriter, r *http.Request) {
+        // Do extra stuff here, e.g. check API keys in header, 
+        // restrict hosts etc
+        log.Println(&#34;Started&#34;, r.)
+        f(w, r) // call function here
+        log.Println(&#34;Done&#34;)
+    }
+}
+
+func main() {
+    http.HandleFunc(&#34;/decorated&#34;, decorator(simpleHandler))
+    http.HandleFunc(&#34;/notdecorated&#34;, simpleHandler)
+
+    http.ListenAndServe(&#34;127.0.0.1:8080&#34;, nil)
+}
+
+&lt;/pre&gt;
+
+&lt;p&gt;This way readable and simplicity are maintained by decorating the handlers in Go, which give the desired functionality without the dreaded code bloat.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>10 Great Articles about Go</title>
